@@ -1,3 +1,140 @@
-# index:
-#    path: /index
-#    controller: App\Controller\DefaultController::index
+gram_main_home:
+  path: / 
+  controller: App\Controller\DefaultController::index
+# le controlleur à appeler quand l'url correspond sous la forme :
+#    App\Controller\NomDuController::nomDeLaMethodePublique
+
+#la route pour le logout est particulière : il suffit de créer une route qui a le name entré dans le fichier
+# security.yaml (voir commentaire)
+# et de définir son path. Pas besoin de contrôlleur, car elle sera "interceptée" par symfony pour faire
+# la déconnexion.
+app_logout:
+    path: /logout
+    methods: GET
+
+################################################################
+#                            CATEGORY                #
+################################################################
+
+gram_category_showAll:
+    path: category/show-all
+    controller: App\Controller\CategoryController::showAll 
+
+
+
+################################################################
+#                            URLPHOTO                      #
+################################################################
+
+gram_url_photo_create:
+  path: /url_photo/create
+  controller: App\Controller\UrlphotoController::create
+
+gram_url_photo_update:
+  path: /url_photo/update/{idUser}
+  controller: App\Controller\UrlphotoController::update
+
+################################################################
+#                            DESCRIPTION                   #
+################################################################
+
+gram_description_create:
+    path: /description/create
+    controller: App\Controller\DescriptionController::create
+
+gram_description_update:
+    path: /description/update/{idUser}
+    controller: App\Controller\DescriptionController::update
+    requirements:
+        idDescription: '\d+'
+
+################################################################
+#                            RESTAURANT                    #
+################################################################
+gram_restaurant_show:
+    path: /restaurant/show/{idRestaurant}
+    # {idRestaurant} est un paramètre. Sa valeur n'est pas fixe, et il sera transmis à une variable
+    # du même nom dans le controller appelé. Ici $idRestaurant sera transmis à la méthode show() de RestaurantController.
+    controller: App\Controller\RestaurantController::show
+    requirements:
+        idRestaurant: '\d+'
+
+gram_restaurant_showall: # Faire un switch avec findBy dans restaurant pour afficher par catégorie
+    path: /restaurant/show-all
+    controller: App\Controller\RestaurantController::showAll
+
+
+
+################################################################
+#                            FAVORITE                  #
+################################################################
+
+gram_favorite_create: # Faire un switch avec findBy dans user pour afficher par restaurant
+    path: /favorite/create
+    controller: App\Controller\FavoriteController::create
+
+gram_favorite_update:
+    path: /favorite/update/{idRestaurant}
+    controller: App\Controller\FavoriteController::update
+    requirements:
+        id: '\d+'
+
+gram_favorite_remove:
+    path: /favorite/remove/{idRestaurant}
+     controller: App\Controller\FavoriteController::remove
+
+gram_favorite_show:
+    path: /favorite/remove/{idRestaurant}
+     controller: App\Controller\FavoriteController::show
+
+gram_favorite_showAll:
+    path: /favorite/show-all
+    controller: App\Controller\FavoriteController::showAll 
+
+################################################################
+#                           GALLERY               #
+################################################################
+
+gram_gallery_showAll:
+    path: /gallery/show-all
+    controller: App\Controller\GalleryController::showAll 
+
+
+################################################################
+#                         Pages Statiques                      #
+################################################################
+# Quand il n'y a pas besoin d'un controller parce que la page contient un contenu fixe,
+# on écrit une route comme d'habitude, mais au lieu d'un de nos controller, on appelle
+# un controlleur Symfony : le TemplateController. Et on precise quel template il faut
+# rendre.
+
+# Dans notre projet ce sont tous les liens du footer
+gram_apropos:
+    path:          /a-propos
+    controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        # le chemin du template à afficher.
+        template:  'statique/apropos.html.twig'
+
+
+gram_cgv:
+    path:          /cgv
+    controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        # le chemin du template à afficher.
+        template:  'statique/cgv.html.twig'
+
+gram_newsletter:
+    path:          /newsletter
+    controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        # le chemin du template à afficher.
+        template:  'statique/newsletter.html.twig'
+
+
+gram_contact:
+    path:          /contact
+    controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        # le chemin du template à afficher.
+        template:  'statique/contact.html.twig'
