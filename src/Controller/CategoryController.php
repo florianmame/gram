@@ -40,7 +40,7 @@ class CategoryController extends AbstractController
           'category/showAll.html.twig',
           [
               "allCategories" => $allCategories ,
-          ]
+          ],
       ) ;
     }
 

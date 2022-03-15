@@ -18,8 +18,17 @@
         </h1>
 
         <nav class="log-nav">
-           
-
+            {# Le if ... else ... endif ci-dessous permet d'afficher un contenu différent suivant que l'utilisateur #}
+            {# est authentifié (loged-in) ou pas, grace à la fonction is_granted de twig #}
+            {% if is_granted('ROLE_USER') %}
+                {# Quand un utilisateur est connecté, on peut accéder à l'objet qui le représente dans  #}
+                {# app.user, qui est disponible par défaut dans tous les templates  #}
+                <p>Bonjour {{ app.user.prenom }}</p>
+                <a href="{{ path("app_logout") }}">Déconnexion</a>
+            {% else %}
+                <a href="{{ path('app_login') }}">Se connecter</a>
+                <a href="{{ path('app_register') }}">Créer un compte</a>
+            {% endif %}
         </nav>
     </header>
 
