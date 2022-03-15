@@ -60,11 +60,9 @@ gram_category_showAll:
 #     requirements:
 #         idRestaurant: '\d+'
 
-# gram_restaurant_showall: # Faire un switch avec findBy dans restaurant pour afficher par catégorie
-#     path: /restaurant/show-all
-#     controller: App\Controller\RestaurantController::showAll
-
-
+gram_restaurant_showall: # Faire plusieurs findBy dans restaurant pour afficher par catégorie
+    path: /restaurant/show-all
+    controller: App\Controller\RestaurantController::showAll
 
 # ################################################################
 # #                            FAVORITE                  #

@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Restaurants - {{ parent() }}{% endblock title %}
+
+{% block innerContent %}
+    <h2>Nos Restaurants par catégorie</h2>
+
+    <ul>
+    {% for restaurant in allRestaurants %}
+
+        <li></li>
+
+    {% endfor %}
+    </ul>
+
+{% endblock innerContent %}
