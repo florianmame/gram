@@ -1,6 +1,7 @@
+
 gram_main_home:
   path: / 
-  controller: App\Controller\DefaultController::index
+  controller: App\Controller\CategoryController::showAll
 # le controlleur à appeler quand l'url correspond sous la forme :
 #    App\Controller\NomDuController::nomDeLaMethodePublique
 
@@ -22,82 +23,82 @@ gram_category_showAll:
 
 
 
-################################################################
-#                            URLPHOTO                      #
-################################################################
+# ################################################################
+# #                            URLPHOTO                      #
+# ################################################################
 
-gram_url_photo_create:
-  path: /url_photo/create
-  controller: App\Controller\UrlphotoController::create
+# gram_url_photo_create:
+#   path: /url_photo/create
+#   controller: App\Controller\UrlphotoController::create
 
-gram_url_photo_update:
-  path: /url_photo/update/{idUser}
-  controller: App\Controller\UrlphotoController::update
+# gram_url_photo_update:
+#   path: /url_photo/update/{idUser}
+#   controller: App\Controller\UrlphotoController::update
 
-################################################################
-#                            DESCRIPTION                   #
-################################################################
+# ################################################################
+# #                            DESCRIPTION                   #
+# ################################################################
 
-gram_description_create:
-    path: /description/create
-    controller: App\Controller\DescriptionController::create
+# gram_description_create:
+#     path: /description/create
+#     controller: App\Controller\DescriptionController::create
 
-gram_description_update:
-    path: /description/update/{idUser}
-    controller: App\Controller\DescriptionController::update
-    requirements:
-        idDescription: '\d+'
+# gram_description_update:
+#     path: /description/update/{idUser}
+#     controller: App\Controller\DescriptionController::update
+#     requirements:
+#         idDescription: '\d+'
 
-################################################################
-#                            RESTAURANT                    #
-################################################################
-gram_restaurant_show:
-    path: /restaurant/show/{idRestaurant}
-    # {idRestaurant} est un paramètre. Sa valeur n'est pas fixe, et il sera transmis à une variable
-    # du même nom dans le controller appelé. Ici $idRestaurant sera transmis à la méthode show() de RestaurantController.
-    controller: App\Controller\RestaurantController::show
-    requirements:
-        idRestaurant: '\d+'
+# ################################################################
+# #                            RESTAURANT                    #
+# ################################################################
+# gram_restaurant_show:
+#     path: /restaurant/show/{idRestaurant}
+#     # {idRestaurant} est un paramètre. Sa valeur n'est pas fixe, et il sera transmis à une variable
+#     # du même nom dans le controller appelé. Ici $idRestaurant sera transmis à la méthode show() de RestaurantController.
+#     controller: App\Controller\RestaurantController::show
+#     requirements:
+#         idRestaurant: '\d+'
 
-gram_restaurant_showall: # Faire un switch avec findBy dans restaurant pour afficher par catégorie
-    path: /restaurant/show-all
-    controller: App\Controller\RestaurantController::showAll
+# gram_restaurant_showall: # Faire un switch avec findBy dans restaurant pour afficher par catégorie
+#     path: /restaurant/show-all
+#     controller: App\Controller\RestaurantController::showAll
 
 
 
-################################################################
-#                            FAVORITE                  #
-################################################################
+# ################################################################
+# #                            FAVORITE                  #
+# ################################################################
 
-gram_favorite_create: # Faire un switch avec findBy dans user pour afficher par restaurant
-    path: /favorite/create
-    controller: App\Controller\FavoriteController::create
+# gram_favorite_create: # Faire un switch avec findBy dans user pour afficher par restaurant
+#     path: /favorite/create
+#     controller: App\Controller\FavoriteController::create
 
-gram_favorite_update:
-    path: /favorite/update/{idRestaurant}
-    controller: App\Controller\FavoriteController::update
-    requirements:
-        id: '\d+'
+# gram_favorite_update:
+#     path: /favorite/update/{idRestaurant}
+#     controller: App\Controller\FavoriteController::update
+#     requirements:
+#         id: '\d+'
 
-gram_favorite_remove:
-    path: /favorite/remove/{idRestaurant}
-     controller: App\Controller\FavoriteController::remove
+# gram_favorite_remove:
+#     path: /favorite/remove/{idRestaurant}
+#      controller: App\Controller\FavoriteController::remove
 
-gram_favorite_show:
-    path: /favorite/remove/{idRestaurant}
-     controller: App\Controller\FavoriteController::show
+# gram_favorite_show:
+#     path: /favorite/remove/{idRestaurant}
+#      controller: App\Controller\FavoriteController::show
 
-gram_favorite_showAll:
-    path: /favorite/show-all
-    controller: App\Controller\FavoriteController::showAll 
+# gram_favorite_showAll:
+#     path: /favorite/show-all
+#     controller: App\Controller\FavoriteController::showAll 
 
-################################################################
-#                           GALLERY               #
-################################################################
+# ################################################################
+# #                           GALLERY               #
+# ################################################################
 
-gram_gallery_showAll:
-    path: /gallery/show-all
-    controller: App\Controller\GalleryController::showAll 
+# gram_gallery_showAll:
+#     path: /gallery/show-all
+#     controller: App\Controller\GalleryController::showAll 
 
 
 ################################################################
@@ -138,3 +139,5 @@ gram_contact:
     defaults:
         # le chemin du template à afficher.
         template:  'statique/contact.html.twig'
+
+
