@@ -18,10 +18,12 @@
                   {% for category in allCategories %}
                       <tr>
                           <td>
-                              <a href="{{ path("gram_main_home", { idCategory : category.id }) }}">
-                              </a>
+                          <a href="{{path('gram_restaurant_showall', {category : category.id})}}">{{ category.name }}</a>
+                             
+                          
                           </td>
                         </tr>
+                        {{ dump(category.id , category.name ) }}
                 {% endfor %}
               </tbody>
     </table>

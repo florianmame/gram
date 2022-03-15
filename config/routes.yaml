@@ -1,4 +1,3 @@
-
 gram_main_home:
   path: / 
   controller: App\Controller\CategoryController::showAll
@@ -23,9 +22,9 @@ gram_category_showAll:
 
 
 
-# ################################################################
-# #                            URLPHOTO                      #
-# ################################################################
+################################################################
+#                            URLPHOTO                      #
+################################################################
 
 # gram_url_photo_create:
 #   path: /url_photo/create
@@ -35,9 +34,9 @@ gram_category_showAll:
 #   path: /url_photo/update/{idUser}
 #   controller: App\Controller\UrlphotoController::update
 
-# ################################################################
-# #                            DESCRIPTION                   #
-# ################################################################
+################################################################
+#                            DESCRIPTION                   #
+################################################################
 
 # gram_description_create:
 #     path: /description/create
@@ -49,9 +48,9 @@ gram_category_showAll:
 #     requirements:
 #         idDescription: '\d+'
 
-# ################################################################
-# #                            RESTAURANT                    #
-# ################################################################
+################################################################
+#                            RESTAURANT                    #
+################################################################
 # gram_restaurant_show:
 #     path: /restaurant/show/{idRestaurant}
 #     # {idRestaurant} est un paramètre. Sa valeur n'est pas fixe, et il sera transmis à une variable
@@ -60,9 +59,9 @@ gram_category_showAll:
 #     requirements:
 #         idRestaurant: '\d+'
 
-# gram_restaurant_showall: # Faire un switch avec findBy dans restaurant pour afficher par catégorie
-#     path: /restaurant/show-all
-#     controller: App\Controller\RestaurantController::showAll
+gram_restaurant_showall: # Faire un switch avec findBy dans restaurant pour afficher par catégorie
+    path: /restaurant/show-all
+    controller: App\Controller\RestaurantController::showAll
 
 
 
@@ -74,23 +73,9 @@ gram_category_showAll:
 #     path: /favorite/create
 #     controller: App\Controller\FavoriteController::create
 
-# gram_favorite_update:
-#     path: /favorite/update/{idRestaurant}
-#     controller: App\Controller\FavoriteController::update
-#     requirements:
-#         id: '\d+'
-
 # gram_favorite_remove:
 #     path: /favorite/remove/{idRestaurant}
 #      controller: App\Controller\FavoriteController::remove
-
-# gram_favorite_show:
-#     path: /favorite/remove/{idRestaurant}
-#      controller: App\Controller\FavoriteController::show
-
-# gram_favorite_showAll:
-#     path: /favorite/show-all
-#     controller: App\Controller\FavoriteController::showAll 
 
 # ################################################################
 # #                           GALLERY               #
