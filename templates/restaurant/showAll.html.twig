@@ -5,10 +5,17 @@
 {% block innerContent %}
     <h2>Nos Restaurants par catégorie</h2>
 
-    <ul>
-    {% for restaurant in allRestaurants %}
 
-        <li></li>
+    <ul>
+    {% for category in categories %}
+
+        <li>{{ category.name }}</li>
+        <ul>
+            {% for restaurant in category.restaurants %}
+                <li>{{restaurant.name}}</li>
+
+            {% endfor %}
+        </ul>
 
     {% endfor %}
     </ul>
