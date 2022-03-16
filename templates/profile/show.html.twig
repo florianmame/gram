@@ -23,7 +23,17 @@
 
            
                   <h2>Profile</h2>
-  
+                      {{ user.urlPhoto}} 
+                      {{ user.name}} 
+                      {{ user.firstName }}
+                      {{ user.city }}
+                      {{ user.description }}
+
+
+                    {% for restaurant in restaurants.user %}
+                <a href="{{path('gram_restaurant_show', {restaurant : restaurant.id})}}"><li>{{restaurant.name}}</li>
+                </a>
+               {% endfor %}
                         {{ dump(user ) }}
   
 {% endblock innerContent %}

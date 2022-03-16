@@ -28,6 +28,9 @@ class RestaurantController extends AbstractController {
         );
     }
     
+  
+
+
 
     public function show($idRestaurant) {
         $restaurantRepo = $this->doctrine->getRepository(Restaurant::class);
@@ -42,4 +45,17 @@ class RestaurantController extends AbstractController {
         );
     }
 
+
+    public function profile($idRestaurant) {
+      $restaurantRepo = $this->doctrine->getRepository(Restaurant::class);
+
+      $restaurant = $restaurantRepo->find($idRestaurant);
+
+      return $this->render(
+          'profile/show.html.twig',
+          [
+              "restaurant" => $restaurant,
+          ]
+      );
+  }
 }

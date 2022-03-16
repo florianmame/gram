@@ -19,6 +19,16 @@ gram_profile_show:
     path: /profile/show/{user}
     controller: App\Controller\UserController::show
 
+
+
+################################################################
+# #                           PARAMETER             #
+# ################################################################
+gram_parameter_show:
+    path: /parameter/show/{user}
+    controller: App\Controller\UserController::parameter
+
+
 ################################################################
 #                            CATEGORY                #
 ################################################################
@@ -58,13 +68,13 @@ gram_category_showAll:
 ################################################################
 #                            RESTAURANT                    #
 ################################################################
-# gram_restaurant_show:
-#     path: /restaurant/show/{idRestaurant}
-#     # {idRestaurant} est un paramètre. Sa valeur n'est pas fixe, et il sera transmis à une variable
-#     # du même nom dans le controller appelé. Ici $idRestaurant sera transmis à la méthode show() de RestaurantController.
-#     controller: App\Controller\RestaurantController::show
-#     requirements:
-#         idRestaurant: '\d+'
+gram_restaurant_show:
+    path: /restaurant/show/{idRestaurant}
+    # {idRestaurant} est un paramètre. Sa valeur n'est pas fixe, et il sera transmis à une variable
+    # du même nom dans le controller appelé. Ici $idRestaurant sera transmis à la méthode show() de RestaurantController.
+    controller: App\Controller\RestaurantController::show
+    requirements:
+        idRestaurant: '\d+'
 
 gram_restaurant_showall: # Faire un switch avec findBy dans restaurant pour afficher par catégorie
     path: /restaurant/show-all
