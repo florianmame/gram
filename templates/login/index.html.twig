@@ -9,13 +9,10 @@
   </style>
 
   <div class="example-wrapper">
-      <h1>Hello {{ controller_name }}! ✅</h1>
+      <h1>Hello ! ✅</h1>
 
-      This friendly message is coming from:
-      <ul>
-          <li>Your controller at <code><a href="{{ '/Users/moussaillon/Desktop/projet_gram/gram/src/Controller/LoginController.php'|file_link(0) }}">src/Controller/LoginController.php</a></code></li>
-          <li>Your template at <code><a href="{{ '/Users/moussaillon/Desktop/projet_gram/gram/templates/login/index.html.twig'|file_link(0) }}">templates/login/index.html.twig</a></code></li>
-      </ul>
+    <h2>Connecte toi ici !</h2>
+     
 
       {% block innerContent %}
       {% if error %}
@@ -24,15 +21,6 @@
 
       <form action="{{ path('app_login') }}" method="post">
           <label for="username">Email:</label>
-          <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}"/>
-          
-          <label for="username">date de naissance :</label>
-          <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}"/>
-          
-          <label for="username">name:</label>
-          <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}"/>
-
-          <label for="username">first_name:</label>
           <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}"/>
 
           <label for="password">Password:</label>
