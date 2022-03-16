@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}User - {{ parent() }}{% endblock title %}
+
+{% block innerContent %}
+    <h2>Profil</h2>
+<h2>{{ idUser: user.id }}</h2>
+
+    <ul>
+       {{ dump(user.id ) }}
+    </ul>
+
+{% endblock innerContent %}
