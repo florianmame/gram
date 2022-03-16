@@ -8,4 +8,5 @@ migrations/
 /public/bundles/
 /var/
 /vendor/
+composer.lock/
 ###< symfony/framework-bundle ###

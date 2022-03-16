@@ -21,7 +21,7 @@ class FavoriteController extends AbstractController {
         $favorites = $userRepo->findAll();
 
         return $this->render(
-            'favorite/showAll.html.twig',
+            'favorite/home.html.twig',
             [
                 "favorites" => $favorites,
             ]
