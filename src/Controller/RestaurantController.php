@@ -12,16 +12,13 @@ class RestaurantController extends AbstractController {
 
     private $doctrine;
 
-    public function __construct(ManagerRegistry $doctrine)
-    {
+    public function __construct(ManagerRegistry $doctrine) {
         $this->doctrine = $doctrine;
     }
 
     public function showAll() {
         $categoryRepo = $this->doctrine->getRepository(Category::class);
         $categories = $categoryRepo->findAll();
-        
-    
 
         return $this->render(
             'restaurant/showAll.html.twig',
