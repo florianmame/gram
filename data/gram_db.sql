@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : ven. 11 mars 2022 à 13:47
+-- Généré le : mer. 16 mars 2022 à 13:07
 -- Version du serveur :  5.7.32
 -- Version de PHP : 7.4.12
 
@@ -222,6 +222,14 @@ CREATE TABLE `user_restaurant` (
   `user_id` int(11) NOT NULL,
   `restaurant_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `user_restaurant`
+--
+
+INSERT INTO `user_restaurant` (`user_id`, `restaurant_id`) VALUES
+(10, 3),
+(10, 5);
 
 --
 -- Index pour les tables déchargées

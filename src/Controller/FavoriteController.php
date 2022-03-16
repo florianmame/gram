@@ -25,7 +25,7 @@ class FavoriteController extends AbstractController {
             [
                 ""
             ]
-        )
+            );
     }
 
     public function show() {
