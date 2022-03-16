@@ -1,11 +1,11 @@
-{% extends 'layout.html.twig' %}
+{# {% extends 'layout.html.twig' %}
 
 {% block title %}User - {{ parent() }}{% endblock title %}
 
 {% block innerContent %}
     <h2>Profil</h2>
 <h2>{{user.id }}</h2>
-<h2>{{user.name }}</h2>
+<p>{{user.name }}</p>
 <h2>{{user.city }}</h2>
 
 
@@ -13,4 +13,17 @@
        {{ dump(user) }}
     </ul>
 
+{% endblock innerContent %} #}
+
+{% extends 'layout.html.twig' %} 
+  
+  {% block title %}Profile - {{ parent() }}{% endblock title %}
+
+{% block innerContent %}
+
+           
+                  <h2>Profile</h2>
+  
+                        {{ dump(user ) }}
+  
 {% endblock innerContent %}

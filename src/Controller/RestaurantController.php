@@ -27,6 +27,7 @@ class RestaurantController extends AbstractController {
             ]
         );
     }
+    
 
     public function show($idRestaurant) {
         $restaurantRepo = $this->doctrine->getRepository(Restaurant::class);

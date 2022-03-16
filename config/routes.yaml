@@ -76,6 +76,11 @@ gram_restaurant_showall: # Faire un switch avec findBy dans restaurant pour affi
 # #                            FAVORITE                  #
 # ################################################################
 
+
+gram_favorite_showall: # 
+    path: /favorite/show-all
+    controller: App\Controller\FavoriteController::showAll
+
 # gram_favorite_create: # Faire un switch avec findBy dans user pour afficher par restaurant
 #     path: /favorite/create
 #     controller: App\Controller\FavoriteController::create
