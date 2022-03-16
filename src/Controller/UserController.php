@@ -18,13 +18,20 @@ class UserController extends AbstractController
         $this->doctrine = $doctrine ;
     }
 
-    public function show(User $user)
+    public function show($user)
     {
-       
+        // Il faut avoir le répository d'une Classe d'entité pour pouvoir passer des requêtes en BDD portant sur
+        // cette entité
+        $userRepo = $this->doctrine->getRepository(User::class) ;
+
+        // Ici, il y a une fonction que nous avons écrite dans categoryRepository, pour obtenir
+        //les catégories classés par date ascendante (par ordre alphabétique),
+        $userInfo = $userRepo->find($user);
+
         return $this->render(
           'profile/show.html.twig',
           [
-              "user" => $user ,
+              "user" => $userInfo ,
           ],
       ) ;
     }
