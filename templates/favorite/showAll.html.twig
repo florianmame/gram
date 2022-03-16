@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Favoris - {{ parent() }}{% endblock title %}
+
+{% block innerContent %}
+    <h2>Favoris</h2>
+
+
+    <ul>
+    {% for favorite in favorites %}
+
+        <li>{{ favorite.name }}</li>
+        <ul>
+            {% for user in favorite.users %}
+                <li>{{user.name}}</li>
+
+            {% endfor %}
+        </ul>
+
+    {% endfor %}
+    </ul>
+
+{% endblock innerContent %} 

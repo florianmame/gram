@@ -18,26 +18,26 @@ class FavoriteController extends AbstractController {
 
     public function showAll() {
         $userRepo = $this->doctrine->getRepository(User::class);
-        $users = $userRepo->findAll();
+        $favorites = $userRepo->findAll();
 
         return $this->render(
-            'user/profile.html.twig',
+            'favorite/showAll.html.twig',
             [
-                ""
+                "favorites" => $favorites,
             ]
             );
     }
 
-    public function show() {
-        $userRepo = $this->doctrine->getRepository(User::class);
-    }
+    // public function show() {
+    //     $userRepo = $this->doctrine->getRepository(User::class);
+    // }
 
-    public function create() {
-        $userRepo = $this->doctrine->getRepository(User::class);
-    }
+    // public function create() {
+    //     $userRepo = $this->doctrine->getRepository(User::class);
+    // }
 
-    public function remove() {
-        $userRepo = $this->doctrine->getRepository(User::class);
-    }
+    // public function remove() {
+    //     $userRepo = $this->doctrine->getRepository(User::class);
+    // }
 
 }
