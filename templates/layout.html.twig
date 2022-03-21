@@ -10,13 +10,13 @@
 {#    et rends le templating plus fléxible. #}
 
 {% block body %}
+    <div id='root'></div>
     <header>
-        
-            <p><a href="{{ path("gram_main_home") }}">  Bienvenue sur Gram !</a></p>
-            <p><a href="{{ path('gram_apropos') }}">- À propos</a></p>
-              
-            
- 
+        <h1>
+            <a href="{{ path("gram_main_home") }}">
+                Bienvenue sur Gram !
+            </a>
+        </h1>
 
         <nav class="log-nav">
             {# Le if ... else ... endif ci-dessous permet d'afficher un contenu différent suivant que l'utilisateur #}
@@ -43,6 +43,7 @@
     <footer>
         <nav class="row">
             <div class="col-sm-12 col-md-6 col-lg-3">
+                <p><a href="{{ path('gram_apropos') }}">- À propos</a></p>
                 <p><a href="{{ path('gram_cgv') }}">- CGV</a></p>
                 <p><a href="{{ path('gram_contact') }}">- Nous contacter</p>
             </div>

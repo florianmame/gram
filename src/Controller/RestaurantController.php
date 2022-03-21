@@ -21,15 +21,13 @@ class RestaurantController extends AbstractController {
         $categories = $categoryRepo->findAll();
 
         return $this->render(
-            'restaurant/showAll.html.twig',
+            'category/showAll.html.twig',
             [
                 "categories" => $categories,
             ]
         );
     }
     
-  
-
 
 
     public function show($idRestaurant) {
@@ -38,7 +36,7 @@ class RestaurantController extends AbstractController {
         $restaurant = $restaurantRepo->find($idRestaurant);
 
         return $this->render(
-            'restaurant/show.html.twig',
+            'category/showAll.html.twig',
             [
                 "restaurant" => $restaurant,
             ]
