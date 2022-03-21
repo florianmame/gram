@@ -38,10 +38,6 @@ class FavoriteController extends AbstractController {
             );
     }
 
-    // public function show() {
-    //     $userRepo = $this->doctrine->getRepository(User::class);
-    // }
-
     // public function create() {
     //     $userRepo = $this->doctrine->getRepository(User::class);
     // }
