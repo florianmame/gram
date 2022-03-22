@@ -55,18 +55,17 @@
     </ul> 
 
 
-    <h2>Nos Restaurants favoris</h2>
-
+    <h2>Mes Restaurants favoris</h2>
 
     <ul>
     {# on boucle sur users pour récupérer tous les users #}
     {% for user in users %}
         {{user.name}}
         <ul>
-        {# on boucle sur les restaurants car il y'a une table de jointure avec restaurants #}
+        {# on boucle sur les restaurants car il y a une table de jointure avec restaurants #}
             {% for restaurant in user.restaurants %}
-            {# On affiche ensuite chaque restaurants qui  #}
-                <a href="{{path('api_data')}}"><li>{{restaurant.name}} </li></a>
+            {# On affiche ensuite chaque restaurant mis en favori par l'utilisateur #}
+                <a href="{{path('api_data')}}"><li>{{restaurant.name}}<a href="#"><strong> Ajouter aux favoris</strong></a><a href="#"><strong> Supprimer des favoris</strong></a></li></a>
 
             {% endfor %}
         </ul>

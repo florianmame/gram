@@ -11,9 +11,8 @@
         {{ user.city }}
         {{ user.description }}
 
-
         {% for restaurant in user.restaurants %}
-        <li>{{restaurant.name}}</li></a>
+        <li>{{restaurant.name}}<a href="#"><strong> Supprimer des favoris</strong></a></li>
         {% endfor %}
         
         {{ dump(user ) }}

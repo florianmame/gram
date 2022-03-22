@@ -34,6 +34,12 @@ class UserController extends AbstractController
         //les catégories classés par date ascendante (par ordre alphabétique),
         $userInfo = $userRepo->find($user);
 
+        // foreach (restaurant as $restaurants) {
+        //     $entityManager = $this->doctrine->getManager();
+        //     $entityManager->remove;
+        //     $entityManager->flush();
+        // }
+
         return $this->render(
 
           'profile/show.html.twig',
