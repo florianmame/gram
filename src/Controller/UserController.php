@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Restaurant;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,8 +19,13 @@ class UserController extends AbstractController
         $this->doctrine = $doctrine ;
     }
 
-    public function show($user)
+    public function show()
     {
+        
+        $restaurantRepo = $this->doctrine->getRepository(Restaurant::class);
+        $restaurants = $restaurantRepo->findAll();
+
+        $user = $this->getUser();
         // Il faut avoir le répository d'une Classe d'entité pour pouvoir passer des requêtes en BDD portant sur
         // cette entité
         $userRepo = $this->doctrine->getRepository(User::class) ;
@@ -29,8 +35,10 @@ class UserController extends AbstractController
         $userInfo = $userRepo->find($user);
 
         return $this->render(
+
           'profile/show.html.twig',
           [
+              "restaurants" => $restaurants,
               "user" => $userInfo ,
           ],
       ) ;

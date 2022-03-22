@@ -18,7 +18,7 @@ app_logout:
 # ################################################################
 
 gram_profile_show:
-    path: /profile/show/{user}
+    path: /profile/show
     controller: App\Controller\UserController::show
 
 
