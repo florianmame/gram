@@ -5,8 +5,8 @@
     
 
 {% block innerContent %}
- {{ dump(restaurant) }}
- {{ dump(allCategories) }}
+ {{ dump(users) }}
+ {{ dump(restaurants) }}
  {% if allCategories is empty  %}
         <h3> Il n'y a aucune catégories pour l'instant. </h3>
     {% else %}
@@ -25,7 +25,7 @@
                              
                           
                           </td>
-                        </tr>
+                      </tr>
              
                 {% endfor %}
               </tbody>
@@ -38,16 +38,40 @@
     {% for category in allCategories %}
 
         <li>{{ category.name }}</li>
+            <ul>
+                {% for restaurant in category.restaurants %}
+                  <a href="{{path('api_data')}}">  <li>{{restaurant.name}}{{restaurant.address}}</li></a>
+                    <ul>
+                       {% for user in restaurant.users %}
+                           <li>{{user.name}}</li>
+
+                       {% endfor %}
+                    </ul>
+            
+                   
+                {% endfor %}
+            </ul>
+    {% endfor %}
+    </ul> 
+
+
+    <h2>Nos Restaurants favoris</h2>
+
+
+    <ul>
+    {# on boucle sur users pour récupérer tous les users #}
+    {% for user in users %}
+        {{user.name}}
         <ul>
-            {% for restaurant in category.restaurants %}
-                <a href="{{path('api_data')}}"><li>{{restaurant.name}} {{restaurant.address}}</li></a>
+        {# on boucle sur les restaurants car il y'a une table de jointure avec restaurants #}
+            {% for restaurant in user.restaurants %}
+            {# On affiche ensuite chaque restaurants qui  #}
+                <a href="{{path('api_data')}}"><li>{{restaurant.name}} </li></a>
 
             {% endfor %}
         </ul>
 
     {% endfor %}
     </ul> 
-
-
 
 {% endblock innerContent %}
