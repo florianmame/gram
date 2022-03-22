@@ -111,6 +111,13 @@ gram_apropos:
         # le chemin du template à afficher.
         template:  'statique/apropos.html.twig'
 
+gram_condition_general:
+    path:          /
+    controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        # le chemin du template à afficher.
+        template:  'statique/apropos.html.twig'
+
 
 gram_cgv:
     path:          /cgv
