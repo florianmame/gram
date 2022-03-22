@@ -1,6 +1,8 @@
 gram_main_home:
   path: / 
-  controller: App\Controller\CategoryController::showAll
+  controller: 
+      App\Controller\HomeController::categoryHome
+
 # le controlleur à appeler quand l'url correspond sous la forme :
 #    App\Controller\NomDuController::nomDeLaMethodePublique
 
@@ -19,13 +21,13 @@ gram_profile_show:
     path: /profile/show/{user}
     controller: App\Controller\UserController::show
 
-################################################################
-#                            CATEGORY                #
-################################################################
 
-gram_category_showAll:
-    path: category/show-all
-    controller: App\Controller\CategoryController::showAll 
+################################################################
+# #                           PARAMETER             #
+# ################################################################
+gram_parameter_show:
+    path: /parameter/show/{user}
+    controller: App\Controller\UserController::parameter
 
 
 
@@ -58,23 +60,23 @@ gram_category_showAll:
 ################################################################
 #                            RESTAURANT                    #
 ################################################################
-# gram_restaurant_show:
-#     path: /restaurant/show/{idRestaurant}
-#     # {idRestaurant} est un paramètre. Sa valeur n'est pas fixe, et il sera transmis à une variable
-#     # du même nom dans le controller appelé. Ici $idRestaurant sera transmis à la méthode show() de RestaurantController.
-#     controller: App\Controller\RestaurantController::show
-#     requirements:
-#         idRestaurant: '\d+'
 
-gram_restaurant_showall: # Faire un switch avec findBy dans restaurant pour afficher par catégorie
-    path: /restaurant/show-all
-    controller: App\Controller\RestaurantController::showAll
+gram_restaurant_show:
+    path: /restaurant/show/{idRestaurant}
+    # {idRestaurant} est un paramètre. Sa valeur n'est pas fixe, et il sera transmis à une variable
+    # du même nom dans le controller appelé. Ici $idRestaurant sera transmis à la méthode show() de RestaurantController.
+    controller: App\Controller\RestaurantController::show
+    requirements:
+        idRestaurant: '\d+'
 
-
-
-# ################################################################
+# ###############################################################
 # #                            FAVORITE                  #
 # ################################################################
+
+
+gram_favorite_showall: # 
+    path: /favorite/show-all
+    controller: App\Controller\FavoriteController::showAll
 
 # gram_favorite_create: # Faire un switch avec findBy dans user pour afficher par restaurant
 #     path: /favorite/create
@@ -133,3 +135,6 @@ gram_contact:
         template:  'statique/contact.html.twig'
 
 
+api_data:
+  path: /api_data
+  controller: App\Controller\ApiController::getData

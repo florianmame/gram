@@ -12,12 +12,14 @@
         <li>{{ category.name }}</li>
         <ul>
             {% for restaurant in category.restaurants %}
-                <li>{{restaurant.name}}</li>
+                <a href="{{path('gram_restaurant_showall')}}"><li>{{restaurant.name}}</li></a>
 
             {% endfor %}
         </ul>
 
     {% endfor %}
     </ul>
+
+
 
 {% endblock innerContent %} 

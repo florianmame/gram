@@ -2,6 +2,8 @@
   
   {% block title %}Category - {{ parent() }}{% endblock title %}
 
+
+
 {% block innerContent %}
 
  {% if allCategories is empty  %}
@@ -23,9 +25,28 @@
                           
                           </td>
                         </tr>
-                        {{ dump(category.id , category.name ) }}
+             
                 {% endfor %}
               </tbody>
     </table>
+  
+    <h2>Nos Restaurants par catégorie</h2>
+
+
+    <ul>
+    {% for category in categories %}
+
+        <li>{{ category.name }}</li>
+        <ul>
+            {% for restaurant in category.restaurants %}
+                <a href="{{path('gram_restaurant_showall')}}"><li>{{restaurant.name}}</li></a>
+
+            {% endfor %}
+        </ul>
+
+    {% endfor %}
+    </ul>
+
+
 
 {% endblock innerContent %}
