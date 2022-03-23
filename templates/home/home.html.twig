@@ -40,22 +40,22 @@
             <ul>
                 {% for restaurant in category.restaurants %}
                 <ul>
-                    {# on boucle sur les restaurants car il y a une table de jointure avec restaurants #}
-                    {# {% for restaurant in user.restaurants %} #}
                     {# On affiche ensuite chaque restaurant mis en favori par l'utilisateur #}
-                        <a href="#">
-                            <li>{{restaurant.name}}
-                                {% if is_granted('ROLE_USER') %}
-                                    {% if %}
-                                        <a href="#"><strong> Ajouter aux favoris</strong></a>
-                                    {% endif %}
-                                    {% if %}
-                                        <a href="{{ path('gram_main_remove', {restaurant: restaurant.id}) }}"><strong> Supprimer des favoris</strong></a>
-                                    {% endif %}
-                                {% endif %}
-                            </li>
-                        </a>
-                    {# {% endfor %} #}
+                    <a href="#">
+                        <li>{{restaurant.name}}
+                            {% if is_granted('ROLE_USER') %}
+                                {# on boucle sur les restaurants car il y a une table de jointure avec restaurants #}
+                                {# {% for restaurant in user.restaurants %} #}
+                                    {# {{ dump(user.restaurants) }} #}
+                                {# {% endfor %} #}
+                                {#{% if array_key_exists(restaurant, users)  %} #}
+                                    <a href="{{ path('gram_main_remove', {restaurant: restaurant.id}) }}"><strong> Supprimer des favoris</strong></a>
+                                {# {% else %} #}
+                                    <a href="#"><strong> Ajouter aux favoris</strong></a>
+                                {# {% endif %} #}
+                            {% endif %}
+                        </li>
+                    </a>
                 </ul>
                 {% endfor %}
             </ul>

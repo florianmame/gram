@@ -105,10 +105,5 @@ class HomeController extends AbstractController
 
         // Après avoir exécuté cette fonction ayant pour paramètre l'id du restaurant présente dans l'URL, il faut une nouvelle route, qu'on indique ici
         return $this->redirectToRoute('gram_main_home');
-    }
-
-
-
-    
-    
+    }  
   }
