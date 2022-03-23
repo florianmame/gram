@@ -5,8 +5,8 @@
     
 
 {% block innerContent %}
- {{ dump(users) }}
- {{ dump(restaurants) }}
+{# {{ dump(users) }} #}
+{# {{ dump(restaurants) }} #}
  {% if allCategories is empty  %}
         <h3> Il n'y a aucune catégories pour l'instant. </h3>
     {% else %}
@@ -33,14 +33,13 @@
   
     <h2>Nos Restaurants par catégorie</h2>
 
-
     <ul>
     {% for category in allCategories %}
 
         <li>{{ category.name }}</li>
             <ul>
                 {% for restaurant in category.restaurants %}
-                  <a href="{{path('api_data')}}">  <li>{{restaurant.name}}{{restaurant.address}}</li></a>
+                  <a href="#">  <li>{{restaurant.name}}{{restaurant.address}}</li></a>
                     <ul>
                        {% for user in restaurant.users %}
                            <li>{{user.name}}</li>
@@ -65,7 +64,7 @@
         {# on boucle sur les restaurants car il y a une table de jointure avec restaurants #}
             {% for restaurant in user.restaurants %}
             {# On affiche ensuite chaque restaurant mis en favori par l'utilisateur #}
-                <a href="{{path('api_data')}}"><li>{{restaurant.name}}<a href="#"><strong> Ajouter aux favoris</strong></a><a href="#"><strong> Supprimer des favoris</strong></a></li></a>
+                <a href="#"><li>{{restaurant.name}}<a href="{{ path('gram_profile_remove', {restaurant: restaurant.id}) }}"><strong> Ajouter aux favoris</strong></a><a href="#"><strong> Supprimer des favoris</strong></a></li></a>
 
             {% endfor %}
         </ul>

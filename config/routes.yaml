@@ -1,9 +1,17 @@
+# ################################################################
+# #                           MAIN              #
+# ################################################################
+
 gram_main_home:
   path: / 
   controller: 
       App\Controller\HomeController::categoryHome
 
-# le controlleur à appeler quand l'url correspond sous la forme :
+gram_main_remove:
+    path: /remove{restaurant}
+    controller: App\Controller\UserController::remove
+
+# le controller à appeler quand l'url correspond sous la forme :
 #    App\Controller\NomDuController::nomDeLaMethodePublique
 
 #la route pour le logout est particulière : il suffit de créer une route qui a le name entré dans le fichier
