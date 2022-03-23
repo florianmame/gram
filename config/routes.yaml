@@ -21,6 +21,9 @@ gram_profile_show:
     path: /profile/show
     controller: App\Controller\UserController::show
 
+# gram_profile_remove:
+    # path: /profile/show
+    # controller: App\Controller\UserController::remove
 
 ################################################################
 # #                           PARAMETER             #
@@ -28,8 +31,6 @@ gram_profile_show:
 gram_parameter_show:
     path: /parameter/show/{user}
     controller: App\Controller\UserController::parameter
-
-
 
 ################################################################
 #                            URLPHOTO                      #

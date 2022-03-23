@@ -34,6 +34,7 @@ class UserController extends AbstractController
         //les catégories classés par date ascendante (par ordre alphabétique),
         $userInfo = $userRepo->find($user);
 
+        ///////////// Si on avait fait le remove à l'intérieur de show (à supprimer) //////////////////////////
         // foreach (restaurant as $restaurants) {
         //     $entityManager = $this->doctrine->getManager();
         //     $entityManager->remove;
@@ -49,6 +50,18 @@ class UserController extends AbstractController
           ],
       ) ;
     }
+
+    public function remove($idRestaurant){
+        $restaurantRepo = $this->doctrine->getRepository(User::class);
+        $restaurant = $restaurantRepo->find($idRestaurant);
+
+        $em=$this->doctrine->getManager();
+        $em->remove($restaurant);
+        $em->flush();
+
+        return $this->redirectToRoute('gram_profile_show');
+    }
+
     public function Parameter($user)
     {
         // Il faut avoir le répository d'une Classe d'entité pour pouvoir passer des requêtes en BDD portant sur
