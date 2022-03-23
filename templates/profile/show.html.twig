@@ -5,14 +5,14 @@
 {% block innerContent %}
            
     <h2>Profil</h2>
-        {{ user.urlPhoto}} 
-        {{ user.name}} 
+        {{ user.urlPhoto }} 
+        {{ user.name }} 
         {{ user.firstName }}
         {{ user.city }}
         {{ user.description }}
 
         {% for restaurant in user.restaurants %}
-        <li>{{restaurant.name}}<a href="{{restaurant.id}}"><strong> Supprimer des favoris</strong></a></li>
+        <li>{ {restaurant.name }}<a href="{{ path("gram_profile_show", {idRestaurant: restaurant.id}) }}"><strong> Supprimer des favoris</strong></a></li>
         {% endfor %}
         
         {{ dump(user ) }}
