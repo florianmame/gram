@@ -12,7 +12,7 @@
         {{ user.description }}
 
         {% for restaurant in user.restaurants %}
-        <li>{ {restaurant.name }}<a href="{{ path("gram_profile_show", {idRestaurant: restaurant.id}) }}"><strong> Supprimer des favoris</strong></a></li>
+        <li>{{ restaurant.name }}<a href="{{ path("gram_profile_remove", {idRestaurant: restaurant.id}) }}"><strong> Supprimer des favoris</strong></a></li>
         {% endfor %}
         
         {{ dump(user ) }}
