@@ -47,7 +47,7 @@ class UserController extends AbstractController
     }
 
     // On fait une fonction remove, pour supprimer les favoris du profil
-    // Il faut mettre l'id du restaurant en paramètre pour savoir quel restaurant l'utilisateur veut supprimer
+    // Il faut mettre l'id du restaurant en paramètre pour savoir quel restaurant l'utilisateur veut supprimer (ici, on type la variable pour éviter d'éventuelles erreurs)
     public function remove(int $restaurant, RestaurantRepository $restaurantRepo){
         // On utilise la méthode find car on ne doit trouver qu'un restaurant
         $restaurant = $restaurantRepo->find($restaurant);
