@@ -34,13 +34,6 @@ class UserController extends AbstractController
         //les catégories classés par date ascendante (par ordre alphabétique),
         $userInfo = $userRepo->find($user);
 
-        ///////////// Si on avait fait le remove à l'intérieur de show (à supprimer) //////////////////////////
-        // foreach (restaurant as $restaurants) {
-        //     $entityManager = $this->doctrine->getManager();
-        //     $entityManager->remove;
-        //     $entityManager->flush();
-        // }
-
         return $this->render(
 
           'profile/show.html.twig',
@@ -54,16 +47,18 @@ class UserController extends AbstractController
     // On fait une fonction remove, pour supprimer les favoris du profil
     // Il faut mettre idRestaurant en paramètre pour savoir quel restaurant l'utilisateur veut supprimer
     public function remove($idRestaurant){
+        
+        $userRestaurant = $this->getUser();
         // On va chercher le repository de la classe User pour dialoguer avec la base de données via Doctrine
-        $restaurantRepo = $this->doctrine->getRepository(User::class);
+        $userRepo = $this->doctrine->getRepository(User::class);
         // On utilise la méthode find car on ne doit trouver qu'un restaurant
         // Du côté de la vue (show.html.twig), on ira récupérer l'id du restaurant dans l'url générée par le lien cliqué
-        $restaurant = $restaurantRepo->find($idRestaurant);
+        $userRestaurant = $userRepo->find($idRestaurant);
 
         // On utilise l'EntityManager pour apporter des modifications à la base de données
         $em=$this->doctrine->getManager();
         // Dans le cas d'une suppression, on utilise remove, et non persist, pour marquer l'objet à supprimer
-        $em->remove($restaurant);
+        $em->remove($userRestaurant);
         // Avec flush, si il n'y a pas d'erreur, la modification s'exécute sur l'objet marqué : ça y est, le restaurant est supprimé des favoris
         $em->flush();
 
