@@ -22,7 +22,7 @@ gram_profile_show:
     controller: App\Controller\UserController::show
 
 gram_profile_remove:
-    path: /profile/show/{idRestaurant}
+    path: /profile/remove/{restaurant}
     controller: App\Controller\UserController::remove
 
 ################################################################
