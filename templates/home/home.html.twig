@@ -39,37 +39,27 @@
         <li>{{ category.name }}</li>
             <ul>
                 {% for restaurant in category.restaurants %}
-                  <a href="#">  <li>{{restaurant.name}}{{restaurant.address}}</li></a>
-                    <ul>
-                       {% for user in restaurant.users %}
-                           <li>{{user.name}}</li>
-
-                       {% endfor %}
-                    </ul>
-            
-                   
+                <ul>
+                    {# on boucle sur les restaurants car il y a une table de jointure avec restaurants #}
+                    {# {% for restaurant in user.restaurants %} #}
+                    {# On affiche ensuite chaque restaurant mis en favori par l'utilisateur #}
+                        <a href="#">
+                            <li>{{restaurant.name}}
+                                {% if is_granted('ROLE_USER') %}
+                                    {% if %}
+                                        <a href="#"><strong> Ajouter aux favoris</strong></a>
+                                    {% endif %}
+                                    {% if %}
+                                        <a href="{{ path('gram_main_remove', {restaurant: restaurant.id}) }}"><strong> Supprimer des favoris</strong></a>
+                                    {% endif %}
+                                {% endif %}
+                            </li>
+                        </a>
+                    {# {% endfor %} #}
+                </ul>
                 {% endfor %}
             </ul>
     {% endfor %}
-    </ul> 
-
-
-    <h2>Mes Restaurants favoris</h2>
-
-    <ul>
-    {# on boucle sur users pour récupérer tous les users #}
-    {% for user in users %}
-        {{user.name}}
-        <ul>
-        {# on boucle sur les restaurants car il y a une table de jointure avec restaurants #}
-            {% for restaurant in user.restaurants %}
-            {# On affiche ensuite chaque restaurant mis en favori par l'utilisateur #}
-                <a href="#"><li>{{restaurant.name}}<a href="{{ path('gram_profile_remove', {restaurant: restaurant.id}) }}"><strong> Ajouter aux favoris</strong></a><a href="#"><strong> Supprimer des favoris</strong></a></li></a>
-
-            {% endfor %}
-        </ul>
-
-    {% endfor %}
-    </ul> 
+    </ul>
 
 {% endblock innerContent %}

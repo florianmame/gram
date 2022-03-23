@@ -14,7 +14,11 @@
         <!-- On boucle sur les restaurants de user pour afficher les favoris grâce à la fonction show de UserController.php -->
         {% for restaurant in user.restaurants %}
         <!-- On récupère l'id du restaurant dans l'url générée par le lien cliqué pour le passer en argument de la fonction remove dans UserController.php  -->
-        <li>{{ restaurant.name }}<a href="{{ path('gram_profile_remove', {restaurant: restaurant.id}) }}"><strong> Supprimer des favoris</strong></a></li>
+        <li>{{ restaurant.name }}
+            <a href="{{ path('gram_profile_remove', {restaurant: restaurant.id}) }}">
+                <strong> Supprimer des favoris</strong>
+            </a>
+        </li>
         {{ dump(restaurant.id) }}
         {% endfor %}
         

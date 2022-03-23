@@ -25,7 +25,7 @@ class HomeController extends AbstractController
     {
       
       
-      //Répository de la Classe d'entité pour pouvoir passer des requêtes en BDD portant sur les users
+      //Répository de la classe d'entité pour pouvoir passer des requêtes en BDD portant sur les users
       $userRepo = $this->doctrine->getRepository(User::class);
       
       //Répository de la Classe d'entité pour pouvoir passer des requêtes en BDD portant sur les catégories
