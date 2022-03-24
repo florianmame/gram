@@ -25,8 +25,8 @@
                 {# Quand un utilisateur est connecté, on peut accéder à l'objet qui le représente dans  #}
                 {# app.user, qui est disponible par défaut dans tous les templates  #}
                 <p>Bonjour {{ app.user.firstName }}</p>
-                <a href="{{ path("gram_profile_show") }}">Profil</a>
                 <a href="{{ path("app_logout") }}">Déconnexion</a>
+                <a href="{{ path('gram_profile_show') }}">Profil</a>
             {% else %}
                 <a href="{{ path('app_login') }}">Se connecter</a>
                 <a href="{{ path('app_register') }}">Créer un compte</a>
