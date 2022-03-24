@@ -52,7 +52,7 @@
                                     {# Sinon, si ce restaurant n'est pas en favori #}
                                 {% else %}
                                     {# On appelle la fonction add sur l'id du restaurant concerné #}
-                                    <a href="#"><strong> Ajouter aux favoris</strong></a>
+                                    <a href="{{ path('gram_main_add', {restaurant: restaurant.id}) }}"><strong> Ajouter aux favoris</strong></a>
                                 {% endif %}
                             {% endif %}
                         </li>

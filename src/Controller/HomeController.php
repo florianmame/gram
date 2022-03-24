@@ -106,5 +106,23 @@ class HomeController extends AbstractController
 
         // Après avoir exécuté cette fonction ayant pour paramètre l'id du restaurant présente dans l'URL, il faut une nouvelle route, qu'on indique ici
         return $this->redirectToRoute('gram_main_home');
-    }  
+    }
+
+    public function add(int $restaurant, RestaurantRepository $restaurantRepo){
+      // On utilise la méthode find car on ne doit trouver qu'un restaurant
+      $restaurant = $restaurantRepo->find($restaurant);
+      // On va chercher le repository de la classe User pour dialoguer avec la base de données via Doctrine
+      $userConnected = $this->getUser();
+
+      // On utilise la fonction removeRestaurant qui appartient à la classe User   
+      $userConnected->addRestaurant($restaurant);
+
+      // On utilise l'EntityManager pour apporter des modifications à la base de données
+      $em=$this->doctrine->getManager();
+      // Avec flush, si il n'y a pas d'erreur, la modification s'exécute sur l'objet marqué : ça y est, le restaurant est supprimé des favoris
+      $em->flush();
+
+      // Après avoir exécuté cette fonction ayant pour paramètre l'id du restaurant présente dans l'URL, il faut une nouvelle route, qu'on indique ici
+      return $this->redirectToRoute('gram_main_home');
+  }  
   }

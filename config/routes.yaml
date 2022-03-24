@@ -16,6 +16,11 @@ gram_main_remove:
     path: /remove{restaurant}
     controller: App\Controller\HomeController::remove
 
+gram_main_add:
+    path: /add{restaurant}
+    controller:
+        App\Controller\HomeController::add
+
 # le controller à appeler quand l'url correspond sous la forme :
 #    App\Controller\NomDuController::nomDeLaMethodePublique
 
