@@ -50,7 +50,7 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // For example:
-        return new RedirectResponse($this->urlGenerator->generate('gram_profile_show'));
+        return new RedirectResponse($this->urlGenerator->generate('gram_main_home'));
         throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
