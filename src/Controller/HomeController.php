@@ -2,14 +2,15 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\Category;
 use App\Entity\Restaurant;
-use App\Entity\User;
-use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\ORM\EntityRepository;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\RestaurantRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 
 class HomeController extends AbstractController
@@ -21,7 +22,7 @@ class HomeController extends AbstractController
         $this->doctrine = $doctrine ;
     }
 
-    public function CategoryHome() /*showAll*/
+    public function Home() /*showAll*/
     {
       
       

@@ -5,10 +5,8 @@
     
 
 {% block innerContent %}
-{# {{ dump(users) }} #}
-{# {{ dump(restaurants) }} #}
  {% if allCategories is empty  %}
-        <h3> Il n'y a aucune catégories pour l'instant. </h3>
+        <h3> Il n'y a aucune catégorie pour l'instant. </h3>
     {% else %}
      <table class="table table-striped table-hover">
               <thead class="thead-dark">
@@ -34,25 +32,28 @@
     <h2>Nos Restaurants par catégorie</h2>
 
     <ul>
+    {# On boucle sur le tableau des catégories #}
     {% for category in allCategories %}
-
+    {# Puis on affiche le nom de chaque catégorie #}
         <li>{{ category.name }}</li>
             <ul>
+                {# A l'intérieur de cette catégorie, on boucle sur les restaurants présents dans la table Category #}
                 {% for restaurant in category.restaurants %}
                 <ul>
-                    {# On affiche ensuite chaque restaurant mis en favori par l'utilisateur #}
                     <a href="#">
+                        {# On affiche le nom de chaque restaurant correspondant à cette catégorie #}
                         <li>{{restaurant.name}}
+                            {# Si l'utilisateur est connecté #}
                             {% if is_granted('ROLE_USER') %}
-                                {# on boucle sur les restaurants car il y a une table de jointure avec restaurants #}
-                                {# {% for restaurant in user.restaurants %} #}
-                                    {# {{ dump(user.restaurants) }} #}
-                                {# {% endfor %} #}
-                                {#{% if array_key_exists(restaurant, users)  %} #}
+                                {# Si l'user est présent dans la table de ce restaurant (et donc que le restaurant est en favori de ce user, étant donné qu'on est dans une relation many to many) #}
+                                {% if app.user in restaurant.users %}
+                                    {# On appelle la fonction remove sur l'id du restaurant concerné #}
                                     <a href="{{ path('gram_main_remove', {restaurant: restaurant.id}) }}"><strong> Supprimer des favoris</strong></a>
-                                {# {% else %} #}
+                                    {# Sinon, si ce restaurant n'est pas en favori #}
+                                {% else %}
+                                    {# On appelle la fonction add sur l'id du restaurant concerné #}
                                     <a href="#"><strong> Ajouter aux favoris</strong></a>
-                                {# {% endif %} #}
+                                {% endif %}
                             {% endif %}
                         </li>
                     </a>

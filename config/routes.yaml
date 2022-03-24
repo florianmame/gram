@@ -5,16 +5,16 @@
 gram_main_home:
   path: / 
   controller: 
-      App\Controller\HomeController::categoryHome
+      App\Controller\HomeController::Home
 
-# gram_main_show:
-    # path: /
-    # controller:
-        # App\Controller\HomeController::show
+gram_main_show:
+    path: /
+    controller:
+        App\Controller\HomeController::show
 
 gram_main_remove:
     path: /remove{restaurant}
-    controller: App\Controller\UserController::remove
+    controller: App\Controller\HomeController::remove
 
 # le controller à appeler quand l'url correspond sous la forme :
 #    App\Controller\NomDuController::nomDeLaMethodePublique
