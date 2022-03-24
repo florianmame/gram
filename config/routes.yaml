@@ -7,11 +7,6 @@ gram_main_home:
   controller: 
       App\Controller\HomeController::Home
 
-gram_main_show:
-    path: /
-    controller:
-        App\Controller\HomeController::show
-
 gram_main_remove:
     path: /remove{restaurant}
     controller: App\Controller\HomeController::remove
