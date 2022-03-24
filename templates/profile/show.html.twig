@@ -4,10 +4,9 @@
 
 {# Correspond au bloc main du HTML d'origine #}
 {% block innerContent %}
-{# ***** SECTION DE LA DISCPTION DE CHAQUE CARD QUAND ELLE EST CLICKE - UNE PETITE BANDEAU SE OUVRE ET SE FERME - *EXEMPLE - COLLAPSE BOOTSTRAP* *** ACTION APLIQUER SUR TOUTES LES CARDS AVEC LES DONNES DE LA DATA BASE (SQL)** #}
-        
-        {# Débout de la section Descriptif Profil #}
+{# Section de la description de chaque card quand elle est cliquée. Un bandeau s'ouvre et se ferme (modale). #}
 
+{# Début de la section Descriptif Profil #}
 <section class="container-fluid partenaire  mw-100 pt-1 mb-1 mt-5"> 
            
     <div>
@@ -22,7 +21,7 @@
             <div id="valeur-illustration john" class="d-flex justify-content-center mw-100 mt-n5 col-6 offset-3 pb-4 mt-n5" style="margin-top: -350px;">
                 <img class=" d-flex john" src="{{ user.urlPhoto }}" alt="Photo de profil">
             </div>
-            <h4 class="text-center justify-content-center">{{ user.firstName }}<span class="brandon">{{ user.name }}</span></h4>
+            <h4 class="text-center justify-content-center">{{ user.firstName }} <span class="brandon">{{ user.name }}</span></h4>
             <p class="text-center col-6 offset-3 justify-content-center flex-wrap">{{ user.description }}</p>
         </article>
     </div>
@@ -51,7 +50,6 @@
                 </div>
             </div>
         {% endfor %}
-    Ì
 
         {# <!-- On boucle sur les restaurants de user pour afficher les favoris grâce à la fonction show de UserController.php -->
         {% for restaurant in user.restaurants %}
