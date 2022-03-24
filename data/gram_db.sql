@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : mar. 22 mars 2022 à 14:49
+-- Généré le : jeu. 24 mars 2022 à 15:36
 -- Version du serveur :  5.7.32
 -- Version de PHP : 7.4.12
 
@@ -215,7 +215,9 @@ INSERT INTO `user` (`id`, `email`, `roles`, `password`, `name`, `first_name`, `d
 (13, 'lorem@gmail.com', '[\"ROLE_USER\"]', '$2y$13$lfPnS67gkBnHZKSr0ZmU..B6Ri.RXqu838tEdNcOMUCimhOemo3MG', 'Ipsum', 'Lorem', NULL, 'Paris', 607080910, NULL),
 (14, 'ipsum@gmail.com', '[\"ROLE_USER\"]', '$2y$13$oowiubjsZdWY6NKMHKTbou6lVyj79XsH/2IFdq0WPpDTytAXmds..', 'Sic', 'Amet', NULL, 'Paris', 607080910, NULL),
 (15, 'jeanne@gmail.com', '[\"ROLE_USER\"]', '$2y$13$pnmsa9InErLmozOCspCXh.KXbXw3yMuO7oOdsdOEuCP2XnXiq5Fku', 'Sic', 'Jeanne', NULL, 'Paris', 607080910, NULL),
-(16, 'marcel@gmail.com', '[\"ROLE_USER\"]', '$2y$13$mNogT.k/Irkg/89VRaZnkeCp40IXIeKgocpj39IkjTNnyPPz9OhQO', 'Lin', 'Marcel', NULL, 'Paris', 607080910, NULL);
+(16, 'marcel@gmail.com', '[\"ROLE_USER\"]', '$2y$13$mNogT.k/Irkg/89VRaZnkeCp40IXIeKgocpj39IkjTNnyPPz9OhQO', 'Lin', 'Marcel', NULL, 'Paris', 607080910, NULL),
+(17, 'michel@protonmail.com', '[\"ROLE_USER\"]', '$2y$13$qdtnYGptwuVR6XuhGtJeveE463lAvrVBuXsVeNDmtn4WzmGHJrge.', 'Simon', 'Michel', 'Je suis un utilisateur à la recherche de bons restaurants.', 'Paris 20ème', 607080910, NULL),
+(18, 'maria@tutanota.com', '[\"ROLE_USER\"]', '$2y$13$0nIQymrliIBUC8y0QOsl6OMcG6KPMV61mm1Tk1By75.ztMbu2cNM2', 'Le Tallec', 'Maria', 'Je suis passionnée de cuisine fusion.', 'Pont-Aven', 607080910, NULL);
 
 -- --------------------------------------------------------
 
@@ -235,16 +237,19 @@ CREATE TABLE `user_restaurant` (
 INSERT INTO `user_restaurant` (`user_id`, `restaurant_id`) VALUES
 (10, 3),
 (10, 5),
-(12, 3),
-(12, 4),
+(12, 8),
+(12, 26),
+(12, 30),
 (13, 2),
 (13, 5),
 (14, 6),
 (14, 7),
 (15, 9),
 (15, 12),
-(16, 10),
-(16, 11);
+(18, 16),
+(18, 22),
+(18, 25),
+(18, 30);
 
 --
 -- Index pour les tables déchargées
@@ -311,7 +316,7 @@ ALTER TABLE `restaurant`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Contraintes pour les tables déchargées
