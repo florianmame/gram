@@ -3,25 +3,23 @@
 {% block title %}S'inscrire{% endblock %}
 
 {% block innerContent %}
+
     <h1>S'inscrire</h1>
 
     
     {{ form_start(registrationForm) }}
-    <div class="form-group">
-        {{ form_row(registrationForm.email) }}
-    </div>
-    <div class="form-group">
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-    </div>
-    <div class="form-group"></div>
-        {{ form_row(registrationForm.description) }}
-    </div>
-    <div class="form-group"></div>
-        {{ form_row(registrationForm.agreeTerms) }}
-    </div>
 
-        <button type="submit" class="btn btn-primary">Créer le compte</button>
+        {# Il y a deux manières de faire un formulaire Bootstrap avec le twig. Voici l'une des deux manières, l'autre se trouve dans RegistrationFormType.php #}
+
+        {# {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Mot de passe'
+        }) }}
+        {{ form_row(registrationForm.description) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn btn-primary">Créer un compte</button> #}
+
     {{ form_end(registrationForm) }}
+
 {% endblock %}
