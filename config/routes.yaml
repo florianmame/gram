@@ -1,7 +1,7 @@
 gram_main_home:
   path: / 
   controller: 
-      App\Controller\HomeController::categoryHome
+      App\Controller\HomeController::Home
 
 # le controlleur à appeler quand l'url correspond sous la forme :
 #    App\Controller\NomDuController::nomDeLaMethodePublique

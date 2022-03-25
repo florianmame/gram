@@ -21,7 +21,7 @@ class HomeController extends AbstractController
         $this->doctrine = $doctrine ;
     }
 
-    public function CategoryHome() /*showAll*/
+    public function Home() /*showAll*/
     {
       
       
@@ -48,8 +48,10 @@ class HomeController extends AbstractController
           ],
           [
               "name" => "ASC",
+
           ]
         )  ;
+        
             // On retourne les résultats de toutes les variables. Dans render on prépare l'affichage qui se fera dans home.html.twig
         return $this->render(
           'home/home.html.twig',
