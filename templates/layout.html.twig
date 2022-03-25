@@ -11,15 +11,22 @@
 
 {% block body %}
     <div id='root'></div>
-    <header>
-        <h1>
-            <a href="{{ path("gram_main_home") }}">
-                Bienvenue sur Gram !
-            </a>
-        </h1>
 
-        <nav class="log-nav">
-            {# Le if ... else ... endif ci-dessous permet d'afficher un contenu différent suivant que l'utilisateur #}
+    <title>Le repère des resto</title>
+  </head>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/"><img src="styles/css/img/logo_gram.png" alt="logo-gram" id="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="/">Home</a>
+          {# <a class="nav-item nav-link" href="#">Galerie</a> #}
+          <a class="nav-item nav-link" href="/a-propos">A propos</a>
+        
+{# Le if ... else ... endif ci-dessous permet d'afficher un contenu différent suivant que l'utilisateur #}
             {# est authentifié (loged-in) ou pas, grace à la fonction is_granted de twig #}
             {% if is_granted('ROLE_USER') %}
                 {# Quand un utilisateur est connecté, on peut accéder à l'objet qui le représente dans  #}
@@ -31,9 +38,16 @@
                 <a href="{{ path('app_login') }}">Se connecter</a>
                 <a href="{{ path('app_register') }}">Créer un compte</a>
             {% endif %}
-        </nav>
-    </header>
+  
+        </div>
+      </div>
+    </nav>
+  </header>
 
+  
+    
+
+  
     <main>
         {#         Le bloc content, qu'on crée ici et qu'on laisse vide. #}
         {#           C'est là que viendra s'insérer le contenu affichable propre à chaque template de notre projet #}
@@ -41,26 +55,28 @@
         {% endblock %}
     </main>
 
-    <footer>
-        <nav class="row">
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <p><a href="{{ path('gram_apropos') }}">- À propos</a></p>
-                <p><a href="{{ path('gram_cgv') }}">- CGV</a></p>
-                <p><a href="{{ path('gram_contact') }}">- Nous contacter</p>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <p><a href="{{ path('gram_newsletter') }}">- Newsletter</a></p>
-                <p><a href="{{ path('gram_contact') }}">- Contact</a></p>
-            </div>
-        </nav>
 
-        <div class="copyright">
-            {#        Pour avoir un copyright toujours à jours, vive la fonction date() de twig ! #}
-            {#        Le  {{ "now" | date("Y") }} s'écrirai <?= date_create("Y") ?> en pur php. #}
-            <p>
-                ©Gram 2022 - {{ "now" | date("Y") }} 
-            </p>
-        </div>
-    </footer>
+
+
+
+
+    <footer>
+
+    <div id="footer">
+      <div class="container min-vw-100 menu-resto">
+        <a href="/"> ©Gram {{ "now" | date("Y") }} </a>
+        <a href="/cgv">Condition général des ventes et mentions légales</a>
+        <a href="gram_newsletter">Information sur les cookies</a>
+        <a href="gram_newsletter">Politique de confidentialité</a>
+        <a href="/contact">Contactez-nous</a>
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+  
 
 {% endblock %}

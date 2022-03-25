@@ -1,0 +1,284 @@
+/* import des font */
+
+@font-face {
+    font-family: 'Moonbright';
+    src: url("/styles/css/font/font-categorie-american/moonbrightdemo.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url("/styles/css/font/font-categorie-american/metropolis.otf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'oldgatel';
+    src: url('/styles/css/font/OLDGATEL.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sunday';
+    src: url('/styles/css/font/Sunday.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'vague';
+    src: url('/styles/css/font/nouvelle_vague_final.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Newsletter';
+    src: url('/styles/css/font/font-newsletter/happy-camper-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas';
+    src: url('/styles/css/font/font-newsletter/bebasneue-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'rimbaandalas';
+    src: url('/styles/css/font/font-categorie-africa/rimbaandalas-b.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'dalmais';
+    src: url('/styles/css/font/font-categorie-vegan/dalmais.otf');
+}
+
+/*****************************************************************************/
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+#texte-header {
+    top: 200px;
+    position: relative;
+}
+
+.div-gauche h1 {
+    font-size: 90px;
+    text-align: center;
+}
+#gram {
+    font-family: Moonbright;
+    color: red;
+}
+#repere {
+    font-family: oldgatel;
+}
+#des {
+    font-family: sunday;
+}
+#resto {
+    font-family: vague;
+}
+#tendance {
+    font-family: Metropolis;
+}
+
+.contenu {
+    display: flex;
+}
+
+
+.div-droite {
+    background-image: url(/styles/css/img/img-restaurant/img-mise-en-avant-restaurant.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 500px;
+}
+
+.menu-resto {
+    display: flex;
+    justify-content: center;
+    background-color: #1b1b1b;
+    padding: 15px;
+}
+.menu-resto a {
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+}
+.contenu-partie2, .contenu-partie4 {
+    padding-left: 300px !important;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.card-conteneur {
+    display: flex;
+}
+.card {
+    width: 300px;
+    padding-top: 40px;
+    margin: 10px;
+}
+
+.contenu-partie3 {
+    display: flex;
+    height: 1000px;
+}
+
+.contenu-partie3 .div-gauche {
+    background-image: url(/styles/css/img/img-restaurant/img-mise-en-avant-restaurant.jpg);
+    background-size: cover;
+    
+}
+
+.contenu-partie3 .div-droite {
+    background-image: none;
+    background-color: #1b1b1b;
+    height: 1000px;
+    color: white;
+    padding: 5%;
+}
+
+#texte-cadre {
+    text-align: -webkit-center;
+    padding: 50px;
+    border: 1px solid white;
+    height: 800px;
+    padding-top: 220px;
+}
+
+#texte-cadre h1, #texte-cadre p {
+    width: 70%;
+}
+
+.contenu-partie5 {
+    background-color: #1b1b1b;
+    padding: 100px;
+    color: white;
+    height: 1000px;
+}
+#image1,#image2,#image3 {
+    width: 300px;
+    margin: 30px;
+    text-align: center;
+}
+
+#image1 h2,#image2 h2,#image3 h2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#image1 img, #image2 img, #image3 img  {
+    border: 1px white solid;
+
+}
+#image-svg {
+    display: flex;
+    justify-content: space-around;
+    padding: 5%;
+}
+
+#galerie-p2 {
+    display: flex;
+}
+/* 
+
+#galerie-p1 {
+    width: 51%;
+}
+#galerie-p2 {
+    width: 49%;
+}
+
+#g-p2 {
+    display: inline-grid;
+} */
+
+.contenu-partie7 {
+    display: flex;
+
+}
+
+#news-letter-gauche, #news-letter-droite{
+    top: 150px;
+    position: relative;
+    text-align: center;
+}
+#news-letter-droite {
+    text-align: -webkit-center;
+    position: relative;
+    top: 550px;
+}
+.contenu-partie7 h1 {
+    font-family: Newsletter;
+    font-size: 100px;
+}
+#click, #gram {
+    font-family: Moonbright;
+}
+#newsletter {
+    font-family: Bebas ;
+}
+#notre img {
+    width: 100px;
+}
+#footer .menu-resto {
+    justify-content: space-between;
+    padding: 50px;
+}
+
+#logo {
+    width: 60px;
+}
+
+#contenu-text-img h1 {
+    padding-left: 230px;
+}
+
+#galerie-contenu1, #galerie-contenu2 {
+    display: flex;
+}
+#galerie-contenu1 {
+    justify-content: space-evenly;
+    padding-left: 0;
+    padding-right: 0;
+}
+#galerie-contenu1 img {
+    padding: 9px;
+}
+.contenu-partie6 h1 {
+    margin-top: 100px;
+}
+input {
+    border: none;
+    width: 250px;
+}
+#input-div {
+    border: 2px solid black;
+    width: 450px;
+    padding: 10px;
+ 
+}
+#input-div button {
+background-color: red;
+color: white;
+border: none;
+padding: 5px;
+margin-left: 60px;
+}
+
+
+/*************************************************************************/
+.texte-resto-african h1 {
+    font-family: rimbaandalas;
+}
+
+.texte-resto-african h1 span {
+    font-family: dalmais;
+}

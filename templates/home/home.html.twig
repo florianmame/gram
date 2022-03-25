@@ -5,41 +5,35 @@
     
 
 {% block innerContent %}
- {% if allCategories is empty  %}
-        <h3> Il n'y a aucune catégorie pour l'instant. </h3>
-    {% else %}
-     <table class="table table-striped table-hover">
-              <thead class="thead-dark">
-              <tr>
-                  <th>Categories</th>
-  {% endif %}
-              </tr>
-              </thead>
-              <tbody>
-                  {% for category in allCategories %}
-                      <tr>
-                          <td>
-                          <a href="{{path('api_data', {category : category.id})}}">{{ category.name }}</a>
-                             
-                          
-                          </td>
-                      </tr>
-             
-                {% endfor %}
-              </tbody>
-    </table>
-  
-    <h2>Nos Restaurants par catégorie</h2>
 
-    <ul>
-    {# On boucle sur le tableau des catégories #}
+
+{# Anne #}
+{% if allCategories is empty  %}
+<h3> Il n'y a aucune catégorie pour l'instant. </h3>
+{% else %}
+<table class="table table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Categories</th>
+      {% endif %}
+    </tr>
+  </thead>
+  <tbody>
     {% for category in allCategories %}
-    {# Puis on affiche le nom de chaque catégorie #}
-        <li>{{ category.name }}</li>
+    <tr>
+      <td>
+        <a href="{{path('api_data', {category : category.id})}}">{{ category.name }}</a>
+        {# Fin de Anne #}
+        {# Anne #}
+        <ul>
+          {# On boucle sur le tableau des catégories #}
+          {% for category in allCategories %}
+          {# Puis on affiche le nom de chaque catégorie #}
+          <li>{{ category.name }}</li>
+          <ul>
+            {# A l'intérieur de cette catégorie, on boucle sur les restaurants présents dans la table Category #}
+            {% for restaurant in category.restaurants %}
             <ul>
-                {# A l'intérieur de cette catégorie, on boucle sur les restaurants présents dans la table Category #}
-                {% for restaurant in category.restaurants %}
-                <ul>
                     <a href="#">
                         {# On affiche le nom de chaque restaurant correspondant à cette catégorie #}
                         <li>{{restaurant.name}}
@@ -53,7 +47,7 @@
                                 {% else %}
                                     {# On appelle la fonction add sur l'id du restaurant concerné #}
                                     <a href="{{ path('gram_main_add', {restaurant: restaurant.id}) }}"><strong> Ajouter aux favoris</strong></a>
-                                {% endif %}
+                                    {% endif %}
                             {% endif %}
                         </li>
                     </a>
@@ -62,5 +56,210 @@
             </ul>
     {% endfor %}
     </ul>
+    {% endfor %}
+    {# Fin de Anne #}
 
+
+
+
+    {# Florian #}
+    {# Florian #}
+    
+    <body>
+      <main>
+        <div class="container-fluid contenu">
+          
+          <div class="container  div-gauche">
+            <div id="texte-header">
+              <h1 id="gram">Gram</h1>
+              <h1 id="repere">Le repère</h1>
+              <h1 id="des">des <span id="resto">resto</span></h1>
+              <h1 id="tendance">tendance</h1>
+            </div>
+          </div>
+          
+          <div class="container min-vh-100 div-droite"></div>
+        </div>
+        
+        <div class="container min-vw-100 menu-resto">
+          
+          
+          
+          {% for category in allCategories %}
+          
+          <a href="{{path('api_data', {category : category.id})}}">{{ category.name }}</a>
+          
+          {# Fin de Florian #}
+          {% endfor %}
+        </div>
+    
+        <div class="container-fluid contenu-partie2">
+
+
+
+    
+        {% for category in allCategories %}
+
+            
+                      <div class='texte-resto-african'>
+                        <h1>{{ category.name }} <span>LIVE</span></h1>
+                        <h2>Un <span id="safari">Safari</span> <span id="gustatif">gustatif</span> <span id="a">à</span> <span id="paris">PARIS</span></h2>
+                      </div>
+                
+                  <div class="card-conteneur">
+                    {% for restaurant in category.restaurants %}
+                        <div class="card" style="width: 20rem;">
+                          <img src="public/styles/css/img/img-card/alcazar_paris.jpeg" class="card-img-top" alt="{{restaurant.name}}">
+                          <div class="card-body">
+                            <h5 class="card-title">{{restaurant.name}}</h5>
+                            <p class="card-text">{{restaurant.address}}</p>
+                          </div>
+                          {% for user in restaurant.users %}
+                              <li>{{user.name}}</li>
+
+                          {% endfor %}
+                        </div>
+              
+                
+                      
+                    {% endfor %}
+            </div>
+        {% endfor %}
+      
+
+
+        <div class="container-fluid contenu-partie3">
+    <div class="container div-gauche">
+
+    </div>
+
+    <div class="container div-droite">
+        <div id="texte-cadre">
+          <h1>Restaurant <span>Africain</span></h1><br>
+          <p>Restaurant Africain
+            Lorem ipsum dolor sit amet, consectetur adipiscing 
+            elit. Sed vitae, suspendisse tristique faucibus eu. 
+            Eleifend fusce porttitor eu bibendum sed interdum 
+            ullamcorper. Elit et duis aliquam est tristique lacus 
+            egestas. 
+            </p>
+            <br>
+            <p>Viverra vestibulum enim, ut amet placerat luctus 
+            aenean ac porta. Sed iaculis sagittis, varius enim. 
+            Ultricies pharetra elementum, eu est.
+            
+            Pharetra, eget ornare dignissim elementum tortor. 
+            
+            N ibendum ultricies nisl facilisi nibh id. </p>
+        </div>
+    </div>
+</div>
+
+  <div class="container-fluid contenu-partie5">
+
+    <div id="contenu-text-img">
+      <h1>Nos <span>VALEURS</span></h1>
+      <div id="image-svg">
+
+
+        <div id="image1">
+          <img src="styles/css/img/img-illustration/partage.svg" alt="">
+          <h2>Partage</h2>
+          <p>partager des bonnes adresses 
+            que des posts originaux sur tes 
+            réseaux sociaux</p>
+        </div>
+
+
+
+
+        <div id="image2">
+          <img src="styles/css/img/img-illustration/Qualité.svg" alt="">
+
+          <h2>Qualité</h2>
+          <p>Gram selectionne des restaurants 
+            esthétiques et super bon pour une 
+            expérience unique.</p>
+
+        </div>
+        
+        <div id="image3">
+          <img src="styles/css/img/img-illustration/bon plan.svg" alt="">
+
+          <h2>Bon Plan</h2>
+          <p>Quoi de mieux que des avantages 
+            pour se rendre dans l’un de tes 
+            restaurants favoris.</p>
+        </div>
+    </div>
+    </div>
+  </div>
+
+      
+  <div class="container-fluid contenu-partie6">
+
+    <h1>Gallery</h1>
+
+        <div id="galerie-contenu1">
+          <div id="galerie-p1">
+            <img src="styles/css/img/img-gallerie/img-gallerie-carré/brooke-lark.jpg" alt="">
+            <img src="styles/css/img/img-gallerie/img-gallerie-carré/ pablo-merchan-montes.jpg" alt="">
+            <img src="styles/css/img/img-gallerie/img-gallerie-rectangle/pexels-mikechie-esparagoza.jpg" alt="">
+          </div>
+
+          <div id="galerie-p2">
+            
+              <img src="styles/css/img/img-gallerie/img-gallerie-rectangle/festin.jpg" alt="" id="vertical">
+              <div id="g-p2">
+              <img src="styles/css/img/img-gallerie/img-gallerie-carré/burger.jpg" alt="">
+              <img src="styles/css/img/img-gallerie/img-gallerie-carré/femme_qui_bois.jpg" alt="">
+            </div>
+            </div>
+          </div>
+        </div>  
+
+        <div id="galerie-contenu1">
+          <div id="galerie-p1">
+            <img src="styles/css/img/img-gallerie/img-gallerie-carré/femme_sushi.jpg" alt="">
+            <img src="styles/css/img/img-gallerie/img-gallerie-carré/pexels-cottonbro.jpg" alt="">
+            <img src="styles/css/img/img-gallerie/img-gallerie-rectangle/pexels-rachel-claire-plat.jpg" alt="" id="vertical">
+          </div>
+
+          <div id="galerie-p2">
+            
+            <div id="g-p2">
+            <img src="styles/css/img/img-gallerie/img-gallerie-carré/pexels-jonathan-borba.jpg" alt="">
+            <img src="styles/css/img/img-gallerie/img-gallerie-carré/jonathan-nguyen.jpg" alt="">
+          </div>
+          <img src="styles/css/img/img-gallerie/img-gallerie-rectangle/joao-mansano.jpg" alt="" id="vertical">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid contenu-partie7">
+
+
+    <div class="container min-vh-100 div-gauche-news">
+      <div id="news-letter-gauche">
+        <h1 id="gram">Gram</h1>
+        <h1 id="vous">INSCRIVEZ-VOUS</h1>
+        <h1 id="notre">A NOTRE <span><img src="styles/css/img/logo_gram.png" alt=""></span></h1>
+        <H1 id="newsletter">NEWSLETTER</H1>
+        <H1 id="click">Click Click Gram</H1>
+      </div>
+    </div>
+
+    <div class="container min-vh-100 div-droite-news">
+      <div id="news-letter-droite">
+        
+        <div id="input-div">
+          <input type="text" placeholder="votre-courriel@exemple.com"> <button>S'INSCRIRE</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  </body>
+{# Fin de Florian #}
 {% endblock innerContent %}
