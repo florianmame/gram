@@ -1,39 +1,64 @@
-{# {% extends 'layout.html.twig' %}
-
-{% block title %}User - {{ parent() }}{% endblock title %}
-
-{% block innerContent %}
-    <h2>Profil</h2>
-<h2>{{user.id }}</h2>
-<p>{{user.name }}</p>
-<h2>{{user.city }}</h2>
-
-
-    <ul>
-       {{ dump(user) }}
-    </ul>
-
-{% endblock innerContent %} #}
-
 {% extends 'layout.html.twig' %} 
   
-  {% block title %}Profile - {{ parent() }}{% endblock title %}
+{% block title %}Profil - {{ parent() }}{% endblock title %}
 
+{# Correspond au bloc main du HTML d'origine #}
 {% block innerContent %}
+{# Section de la description de chaque card quand elle est cliquée. Un bandeau s'ouvre et se ferme (modale). #}
 
+{# Début de la section Descriptif Profil #}
+<section class="container-fluid partenaire  mw-100 pt-1 mb-1 mt-5"> 
            
-                  <h2>Profile</h2>
-                      {{ user.urlPhoto}} 
-                      {{ user.name}} 
-                      {{ user.firstName }}
-                      {{ user.city }}
-                      {{ user.description }}
+    <div>
+        <h2 class="flex-start pt-5 mb-5"> 
+            <span>  </span> 
+            <span> </span> 
+        </h2>            
+    </div>
 
+    <div class="row justify-content-center">
+        <article class=" justify-content-center "> 
+            <div id="valeur-illustration john" class="d-flex justify-content-center mw-100 mt-n5 col-6 offset-3 pb-4 mt-n5" style="margin-top: -350px;">
+                <img class=" d-flex john" src="{{ user.urlPhoto }}" alt="Photo de profil">
+            </div>
+            <h4 class="text-center justify-content-center">{{ user.firstName }} <span class="brandon">{{ user.name }}</span></h4>
+            <p class="text-center col-6 offset-3 justify-content-center flex-wrap">{{ user.description }}</p>
+        </article>
+    </div>
+</section>
+        {# Fin de la section Descriptif Profil #}
 
-                    {% for restaurant in restaurants.user %}
-                <a href="{{path('gram_restaurant_show', {restaurant : restaurant.id})}}"><li>{{restaurant.name}}</li>
-                </a>
-               {% endfor %}
-                        {{ dump(user ) }}
+        {# Début de la section Restaurants favoris Profil #}
+        <section class="container">
+            <h2> Tes restaurants préférés</h2>
+            <h3 class="mb-4"> Retrouve tous tes restaurants favoris</h3>
+            <div class="item mb-4 row">
+            {# Card #}
+            {# On boucle sur les restaurants de user pour afficher les favoris grâce à la fonction show de UserController.php #}
+        {% for restaurant in user.restaurants %}
+        {# On récupère l'id du restaurant dans l'url générée par le lien cliqué pour le passer en argument de la fonction remove dans UserController.php #}
+            <div class="col-3"> 
+                <div class="card shadow ">
+                    <img  class="card-img-top" src="{{ restaurant.urlPhoto }}" alt="Image du restaurant">
+                    <div class="card-body">
+                        <h4>{{ restaurant.name }}</h4>
+                        <p class="space-betwen">{{ restaurant.address }}</p>
+                    </div>
+                    <a href="{{ path('gram_profile_remove', {restaurant: restaurant.id}) }}">
+                        <strong> Supprimer des favoris</strong>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+
+        {# <!-- On boucle sur les restaurants de user pour afficher les favoris grâce à la fonction show de UserController.php -->
+        {% for restaurant in user.restaurants %}
+        <!-- On récupère l'id du restaurant dans l'url générée par le lien cliqué pour le passer en argument de la fonction remove dans UserController.php  -->
+        <li>{{ restaurant.name }}
+            <a href="{{ path('gram_profile_remove', {restaurant: restaurant.id}) }}">
+                <strong> Supprimer des favoris</strong>
+            </a>
+        </li>
+        {% endfor %} #}
   
 {% endblock innerContent %}

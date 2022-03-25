@@ -1,9 +1,25 @@
+# ################################################################
+# #                           MAIN              #
+# ################################################################
+
 gram_main_home:
   path: / 
   controller: 
       App\Controller\HomeController::Home
+<<<<<<< HEAD
+=======
 
-# le controlleur à appeler quand l'url correspond sous la forme :
+gram_main_remove:
+    path: /remove{restaurant}
+    controller: App\Controller\HomeController::remove
+>>>>>>> origin/anne
+
+gram_main_add:
+    path: /add{restaurant}
+    controller:
+        App\Controller\HomeController::add
+
+# le controller à appeler quand l'url correspond sous la forme :
 #    App\Controller\NomDuController::nomDeLaMethodePublique
 
 #la route pour le logout est particulière : il suffit de créer une route qui a le name entré dans le fichier
@@ -18,9 +34,12 @@ app_logout:
 # ################################################################
 
 gram_profile_show:
-    path: /profile/show/{user}
+    path: /profile/show
     controller: App\Controller\UserController::show
 
+gram_profile_remove:
+    path: /profile/remove/{restaurant}
+    controller: App\Controller\UserController::remove
 
 ################################################################
 # #                           PARAMETER             #
@@ -28,8 +47,6 @@ gram_profile_show:
 gram_parameter_show:
     path: /parameter/show/{user}
     controller: App\Controller\UserController::parameter
-
-
 
 ################################################################
 #                            URLPHOTO                      #

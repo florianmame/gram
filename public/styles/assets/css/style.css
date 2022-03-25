@@ -84,39 +84,22 @@ src: url("/font/font-general/jolly-retro-demo.ttf") format("ttf"),
 
 
 /******* Début de la Nav Bar *****/
-/********* NAV-Header ************/
-.transparentes{
-  width: 100%;
-  padding: 20px;
-  position: fixed;
-  top: 0px;
-  text-align: center;
-  transition: .5s;
-  background: rgba(0, 0, 0, 0,1);
+.icons-header{
+    list-style: none;
+    width: -80%;
 }
-.transparentes .navbar ul li{
-  list-style-type: none;
-  display:inline-block;
-  padding: 10px 50px;
-  font-size: 24px;
-  font-family: sans-serif;
-  cursor: pointer;
-  border-radius:10px;
-  transition: .5s;
+.logo-header {
+    width:70%; 
+    height:70%;
+    margin: -10px;
+    display:inline ;
 }
-.transparentes ul li a{    
-  color: #1D201F;
+.logo-header-mobile {
+    width:70%; 
+    height:70%;
+    margin: -10px;
+    display: none;
 }
-.noir{    
-  background: #1D201F;
-}
-.noir ul li a{    
-  color: #F9F9F9;
-}
-.noir ul li a:hover, .transparentes ul li a:hover{    
-  color: #EF3054;
-}
-/* FIN - NAV-Header*/
 /*******  Fin de la Nav Bar *****/
 
 /*TYPO-Header*/
@@ -195,7 +178,6 @@ src: url("/font/font-general/jolly-retro-demo.ttf") format("ttf"),
     width: 100%;
     z-index: 1000;
     overflow-x: scroll;
-  
 }
 .nav-item {
     padding-right: 10px;
@@ -421,22 +403,22 @@ src: url("/font/font-general/jolly-retro-demo.ttf") format("ttf"),
 }
 /*****Placer chaque image avec leur rgba adapté*****/
 #mise-en-avant{
-    background-image: linear-gradient(to right, rgba(40, 46, 124, 0.5), rgba(83, 30, 168, 0.5) 55%, black -55%), url("/styles/assets/img/img-restaurant/img-mise-en-avant-restaurant.jpg");
+    background-image: linear-gradient(to right, rgba(40, 46, 124, 0.5), rgba(83, 30, 168, 0.5) 55%, black -55%), url("../img/img-restaurant/img-mise-en-avant-restaurant.jpg");
 }
 #savane{
-    background-image: linear-gradient(to right, rgba(40, 46, 124, 0.5), rgba(83, 30, 168, 0.5) 55%, black 55%) , url("/styles/assets/img/img-restaurant/img-mise-en-avant-restaurant.jpg");
+    background-image: linear-gradient(to right, rgba(40, 46, 124, 0.5), rgba(83, 30, 168, 0.5) 55%, black 55%) , url("../img/img-restaurant/img-mise-en-avant-restaurant.jpg");
 }
 #alcaza{
-    background-image: linear-gradient(to right, rgba(40, 46, 124, 0.5), rgba(83, 30, 168, 0.5) 55%, black 55%) , url("/styles/assets/img/img-restaurant/img-mise-en-avant-restaurant.jpg");
+    background-image: linear-gradient(to right, rgba(40, 46, 124, 0.5), rgba(83, 30, 168, 0.5) 55%, black 55%) , url("../img/img-restaurant/img-mise-en-avant-restaurant.jpg");
 }
 #akara{
-    background-image: linear-gradient(to right, rgba(40, 46, 124, 0.5), rgba(83, 30, 168, 0.5) 55%, black 55%) , url("/styles/assets/img/img-restaurant/img-mise-en-avant-restaurant.jpg");
+    background-image: linear-gradient(to right, rgba(40, 46, 124, 0.5), rgba(83, 30, 168, 0.5) 55%, black 55%) , url("../img/img-restaurant/img-mise-en-avant-restaurant.jpg");
 }
 #groove{
-    background-image: linear-gradient(to right, rgba(121, 32, 32, 0.178), rgba(122, 35, 50, 0.157) 55%, black 55%) ,  url("/styles/assets/img/img-restaurant/img-mise-en-avant-restaurant.jpg");
+    background-image: linear-gradient(to right, rgba(121, 32, 32, 0.178), rgba(122, 35, 50, 0.157) 55%, black 55%) , url("../img/img-restaurant/img-mise-en-avant-restaurant.jpg");
 }
 #lagos{
-    background-image: linear-gradient(to right, rgba(40, 46, 124, 0.5), rgba(83, 30, 168, 0.5) 55%, black 55%) ,  url("/styles/assets/img/img-restaurant/img-mise-en-avant-restaurant.jpg");;
+    background-image: linear-gradient(to right, rgba(40, 46, 124, 0.5), rgba(83, 30, 168, 0.5) 55%, black 55%) , url("../img/img-card/");
 }
 /*****Fin de placer chaque image avec leur rgba adapté*****/
 #discription article, #mise-en-avant article {
@@ -589,72 +571,12 @@ src: url("/font/font-general/jolly-retro-demo.ttf") format("ttf"),
 /******* FIN - DE LA SECTION GALERIE *******/
 
 /***** DEBOUT SECTION NEWSLETTER *******/
-.contenu-partie7 {
-  display: flex;
-
+#newletter1 {
+    width: 100%;
+    height: 100%;
+    justify-content: end;
+    display: flex;
 }
-
-#news-letter-gauche, #news-letter-droite{
-  top: 150px;
-  position: relative;
-  text-align: center;
-}
-#news-letter-droite {
-  text-align: -webkit-center;
-  position: relative;
-  top: 550px;
-}
-.contenu-partie7 h1 {
-  font-family: Newsletter;
-  font-size: 100px;
-}
-#click, #gram {
-  font-family: Moonbright;
-}
-#newsletter {
-  font-family: Bebas ;
-}
-#notre img {
-  width: 100px;
-}
-#footer .menu-resto {
-  justify-content: space-between;
-  padding: 50px;
-}
-
-#logo {
-  width: 60px;
-
-}
-
-.div-gauche h1 {
-  font-size: 90px;
-  text-align: center;
-}
-#gram {
-  font-family: Moonbright;
-  color: red;
-}
-
-input {
-  border: none;
-  width: 250px;
-}
-#input-div {
-  border: 2px solid black;
-  width: 450px;
-  padding: 10px;
-
-}
-#input-div button {
-background-color: red;
-color: white;
-border: none;
-padding: 5px;
-margin-left: 60px;
-}
-
-
 /***** FIN - SECTION NEWSLETTER *******/
 
 /***** DEBOUT - MODAL - FORMULAIRE *******/

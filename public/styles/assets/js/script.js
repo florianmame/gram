@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(function () {
     $(window).on('scroll', function () {
         if ( $(window).scrollTop() > 10 ) {
@@ -6,4 +7,14 @@ $(function () {
             $('.navbar').removeClass('active');
         }
     });
+=======
+$(function () {
+    $(window).on('scroll', function () {
+        if ( $(window).scrollTop() > 10 ) {
+            $('.navbar').addClass('active');
+        } else {
+            $('.navbar').removeClass('active');
+        }
+    });
+>>>>>>> origin/anne
 });
