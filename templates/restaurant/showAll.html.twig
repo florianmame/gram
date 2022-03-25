@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Restaurants - {{ parent() }}{% endblock title %}
+
+{% block innerContent %}
+    <h2>Nos Restaurants par catégorie</h2>
+
+
+    <ul>
+    {% for category in categories %}
+
+        <li>{{ category.name }}</li>
+        <ul>
+            {% for restaurant in category.restaurants %}
+                <a href="{{path('gram_restaurant_showall')}}"><li>{{restaurant.name}}</li></a>
+
+            {% endfor %}
+        </ul>
+
+    {% endfor %}
+    </ul>
+
+
+
+{% endblock innerContent %} 

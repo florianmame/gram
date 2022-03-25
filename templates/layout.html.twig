@@ -1,0 +1,211 @@
+
+{% extends "base.html.twig" %}
+{#    le template "layout.html.twig" étends "base.html.twig".#}
+{#    On ne réécrit que le bloc "body" de base.html.twig.#}
+
+{#    C'est ici qu'on définit le header et le footer qui seront commun aux autres pages.#}
+{#    On définit aussi le bloc "content", pour pouvoir y placer tous les contenus propres#}
+{#    aux différentes pages du projet.#}
+
+{#    Ceci permet de modifier en une fois la mise en forme globale de tout le projet#}
+{#    et rends le templating plus fléxible. #}
+
+{% block body %}
+<body>
+    <header id="header">
+        {# <------DÉBUT DE LA NAV BAR---------> #}
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light transparentes">
+            
+            <div class="container">
+                <a class="navbar-brand active" href="/">
+                    <img class="logo-header" src="styles/assets/img/logo/logo.png" alt="logo gram du site" class="d-inline-block align-text-rigth">
+                </a>
+                <a class="navbar-brand" href="/">
+                    <img class="logo-header-mobile" src="styles/assets/img/logo/logo-news.png" alt="logo gram du site" class="d-inline-block align-text-rigth">
+                </a>
+                {# <----menu-burger-----> #}
+                <img src="styles/assets/icons/menu-burguer.png" alt="Icon menu burger" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
+                {# <----menu-burger-----> #}
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">Home</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">Galerie</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/"> A propos</a>
+                        </li>
+                        {# <----Icons de la nav bar-----> #}
+                        </ul>
+                        <ul class="d-inline-flex icons-header">
+                            {# <----Icon de la nav bar - notification -----> #}
+                                <li class="nav-item"> 
+                                    <a class="navbar-brand" href="/" class="nav-link"><img src="styles/assets/icons/cloche-notifcation-inactif.png" alt="Icon notification"></a>
+                                </li>
+                                {# <----Fin icons de la nav bar - notification -----> #}
+                                    
+                                    {# <----Icon de la nav bar - connecter -----> #}
+                                        <li class="nav-item">
+                                            <a class="navbar-brand" href="/"class="nav-link"><img src="/styles/assets/icons/compte-inactif.png" alt="Icon connecter"></a>
+                                        </li>
+                                        {# Anne #}
+                                        {# Le if ... else ... endif ci-dessous permet d'afficher un contenu différent suivant que l'utilisateur #}
+                                                    {# est authentifié (loged-in) ou pas, grace à la fonction is_granted de twig #}
+                                                    {% if is_granted('ROLE_USER') %}
+                                                        {# Quand un utilisateur est connecté, on peut accéder à l'objet qui le représente dans  #}
+                                                        {# app.user, qui est disponible par défaut dans tous les templates  #}
+                                                        <p>Bonjour {{ app.user.firstName }}</p>
+                                                        <a href="{{ path("app_logout") }}">Déconnexion</a>
+                                                        <a href="{{ path('gram_profile_show') }}">Profil</a>
+                                                    {% else %}
+                                                        <a href="{{ path('app_login') }}">Se connecter</a>
+                                                        <a href="{{ path('app_register') }}">Créer un compte</a>
+                                                    {% endif %}
+                                          
+                                        {# //////////////////////////////////////////////////////////////////////////////////////////////////////////////// #}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {# <------FIN DE LA NAV BAR---------> #}
+        
+        {# <------DEBUT DU TITRE HEADER---------> #}
+        <div class="row">
+            <div id="gram-header">
+                <div class="col-md-6">  
+                    <h1 class="align-middle"> 
+                        <span class="gram">Gram</span>
+                        <span class="reper">le</span><span class="reper">&nbsp;Repère</span> 
+                        <span class="des">des</span><span class="resto">&nbsp;resto</span>
+                        <img id="logo-header-tendance" src="styles/assets/img/logo/logo-header-tendance.png" alt="logo de la page">
+                        <span class="tendance">tendance</span>
+                    </h1> 
+                </div>  
+            </div> 
+        <div> 
+
+    
+    
+    
+
+  
+  
+  </header>
+
+        {# <------FIN DU TITRE HEADER--------->              #}
+  
+    
+
+  
+    <main>
+        {#         Le bloc content, qu'on crée ici et qu'on laisse vide. #}
+        {#           C'est là que viendra s'insérer le contenu affichable propre à chaque template de notre projet #}
+        {% block innerContent %}
+        {% endblock %}
+    </main>
+
+
+
+
+{# <!------DÉBUT FOOTER---------> #}
+    <footer>
+        <nav class="navbar navbar-expand-lg align noir">
+            <div class="container">
+  
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+  
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">© <span>Gram</span> 2022</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Condition général et mentions légales</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Information sur les cookies</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Politique de confidentialité</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Contactez-nous</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+      </footer>
+    {# <!------FIN FOOTER--------> #}
+
+
+    {# <!------**** CDN - JS / Jquery *****-------->
+    <!-- CDN-  Bootstrap Bundle with Popper --> #}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    {# <!-- CDN- Jquery--> #}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+    {# <!-- CDN - Owl - Carrousel--> #}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+    {# <!------**** FIN CDN - JS / Jquery *****--------> #}
+
+    {# <!--Script -text - Js ---> #}
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:5
+                }
+            }
+        })
+
+
+   	
+    var  nav = document.getElementById('nav');
+     
+     window.onscroll = function(){
+
+         if (window.pageYOffset >100) {
+
+             nav.style.background = "#007bff";
+             nav.style.boxShadow = "0px 4px 2px blue";
+         }
+         else{
+             nav.style.background = "transparent";
+             nav.style.boxShadow = "none";
+         }
+     }
+    </script>
+    {# <!-- Fin texte - Js ---> #}
+
+    
+
+
+
+ </body>
+
+  
+
+{% endblock body %}

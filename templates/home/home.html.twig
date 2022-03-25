@@ -1,0 +1,164 @@
+
+{% extends 'layout.html.twig' %} 
+
+  {% block title %}Category - {{ parent() }}{% endblock title %}
+
+    
+
+{% block innerContent %}
+
+    
+    <body>
+      <main>
+        
+        
+        <div class="container-fluid contenu-partie2">
+          
+
+
+          
+          {% for category in allCategories %}
+                        {% if category.name == 'Africain'%}
+                        <section class="restau-section">             
+                          <div class="container">
+                            <h2 class="text-left fw-bold display-1 mb-3" id="ancre-africain">
+                              <span class="africain">Africain</span> 
+                              <span class="live">Live</span> <br>
+                              <span class="un">un</span> 
+                              <span class="safari">Safari</span> 
+                              <span class="gustatif">gustatif</span> 
+                              <span class="a">à</span> 
+                              <span class="paris">paris</span> 
+                            </h2>
+                          {% elseif category.name == 'Asiatique'%}
+                          <section class="restau-section">             
+                            <div class="container">
+                              <h2 class="text-left fw-bold display-1" id="ancre-asiatique">
+                                <span class="asiat">Asiat</span> 
+                              <span class="gram">Gram</span> <br>
+                              <span class="art">l'art</span> 
+                              <span class="du">du</span> 
+                              <span class="soja">soja</span> 
+                              <span class="avec">avec</span> 
+                              <span class="soin">soin</span> 
+                          </h2>
+                          {% elseif category.name == 'Américain'%}
+                          
+                          <section class="restau-section">             
+                            <div class="container">
+                              <h2 class="text-left fw-bold display-1" id="ancre-americain">
+                              <span class="american">American</span> 
+                              <span class="food">Food Story</span> <br>
+                              <span class="story">les</span> 
+                              <span class="les">Cow-boys</span> 
+                              <span class="vous">vous</span> 
+                              <span class="ouvre">ouvrent les</span> 
+                              <span class="portes">portes</span> 
+                          </h2>
+                         
+          
+                          {% elseif category.name == 'Indian'%}
+                          <section class="restau-section">
+                      <div class="container mt-5">
+                          <h2 class="text-left fw-bold display-1 mb-3" id="ancre-indien">
+                              <span class="indian">Indian</span> 
+                              <span class="typo-like">Like</span> <br>
+                              <span class="typo-de">De</span> 
+                              <span class="bollywood">Bollywood</span> 
+                              <span class="typo-a">A</span> 
+                              <span class="typo-gram">Gram</span> 
+                              <span class="typo-point">..</span> 
+                          </h2>
+                          
+                          
+          
+                          {% elseif category.name == 'Végétarien'%}
+                          <section class="restau-section">             
+                            <div class="container">
+                          <h2 class="text-left fw-bold display-1" id="ancre-italien">
+                              <span class="vegan">Vegan</span> 
+                              <span class="tag">Tag</span> <br>
+                              <span class="du">Du</span> 
+                              <span class="vert">vert</span> 
+                              <span class="plein">plein</span> 
+                              <span class="assiette">l'assiette</span> 
+                          </h2>
+                          {% endif %}
+                          
+                          
+                          
+                          
+          
+          
+                          {# <!-----Début de card------> #}
+                                    
+                           <div class="row mt-5">
+                              <div class="owl-carousel owl-theme">
+                                      {% for restaurant in category.restaurants %}
+                                        <div class="card mr-20">
+                                  
+                                          <a data-bs-toggle="collapse" href="#savane" aria-expanded="false" aria-controls="discription">
+                                              <img class="image-card" src="/styles/assets/img/img-card/alcazar_paris.jpeg" alt="{{restaurant.name}}">
+                                          </a>
+                                            <div class="card-text-like d-flex align-items-center justify-content-between">
+                                                  <div class="card-text d-flex flex-column justify-content-center">
+                                                    <h3 class="m-0">{{restaurant.name}}</h3>
+                                              <p>{{restaurant.address}}</p>
+                                            </div>
+                                            <img class="col-2 like-resto" src="/styles/assets/icons/like-actif.png" alt="coeur d'ajout aux favoris">
+                                            {# /////////////////////////////////////////////////////////////////////// #}
+                                            {# Si l'utilisateur est connecté #}
+                                            {% if is_granted('ROLE_USER') %}
+                                            {# Si l'user est présent dans la table de ce restaurant (et donc que le restaurant est en favori de ce user, étant donné qu'on est dans une relation many to many) #}
+                                            {% if app.user in restaurant.users %}
+                                                {# On appelle la fonction remove sur l'id du restaurant concerné #}
+                                                <a href="{{ path('gram_main_remove', {restaurant: restaurant.id}) }}"><strong> Supprimer des favoris</strong></a>
+                                                {# Sinon, si ce restaurant n'est pas en favori #}
+                                            {% else %}
+                                                {# On appelle la fonction add sur l'id du restaurant concerné #}
+                                                <a href="{{ path('gram_main_add', {restaurant: restaurant.id}) }}"><strong> Ajouter aux favoris</strong></a>
+                                                {% endif %}
+                                            {% endif %}
+                                          </div>   
+                                        </div>  
+                                                                
+                                    {% endfor %}
+                             </div>  
+                              </div>
+                          
+                            </section>
+                {% endfor %}
+      
+
+
+        <div class="container-fluid contenu-partie3">
+    <div class="container div-gauche">
+
+    </div>
+
+    <div class="container div-droite">
+        <div id="texte-cadre">
+          <h1>Restaurant <span>Africain</span></h1><br>
+          <p>Restaurant Africain
+            Lorem ipsum dolor sit amet, consectetur adipiscing 
+            elit. Sed vitae, suspendisse tristique faucibus eu. 
+            Eleifend fusce porttitor eu bibendum sed interdum 
+            ullamcorper. Elit et duis aliquam est tristique lacus 
+            egestas. 
+            </p>
+            <br>
+            <p>Viverra vestibulum enim, ut amet placerat luctus 
+            aenean ac porta. Sed iaculis sagittis, varius enim. 
+            Ultricies pharetra elementum, eu est.
+            
+            Pharetra, eget ornare dignissim elementum tortor. 
+            
+            N ibendum ultricies nisl facilisi nibh id. </p>
+        </div>
+    </div>
+</div>
+
+</div>
+  </body>
+{# Fin de Florian #}
+{% endblock innerContent %}
