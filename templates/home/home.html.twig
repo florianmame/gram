@@ -5,7 +5,21 @@
     
 
 {% block innerContent %}
+<div class="container-fluid contenu">
+          
+  <div class="container  div-gauche">
+    <div id="texte-header">
+      <h1 id="gram">Gram</h1>
+      <h1 id="repere">Le repère</h1>
+      <h1 id="des">des <span id="resto">resto</span></h1>
+      <h1 id="tendance">tendance</h1>
+    </div>
+  </div>
+  
+  <div class="container min-vh-100 div-droite"></div>
+</div>
 
+<div class="container min-vw-100 menu-resto">
 
 {# Anne #}
 {% if allCategories is empty  %}
@@ -155,111 +169,7 @@
     </div>
 </div>
 
-  <div class="container-fluid contenu-partie5">
-
-    <div id="contenu-text-img">
-      <h1>Nos <span>VALEURS</span></h1>
-      <div id="image-svg">
-
-
-        <div id="image1">
-          <img src="styles/css/img/img-illustration/partage.svg" alt="">
-          <h2>Partage</h2>
-          <p>partager des bonnes adresses 
-            que des posts originaux sur tes 
-            réseaux sociaux</p>
-        </div>
-
-
-
-
-        <div id="image2">
-          <img src="styles/css/img/img-illustration/Qualité.svg" alt="">
-
-          <h2>Qualité</h2>
-          <p>Gram selectionne des restaurants 
-            esthétiques et super bon pour une 
-            expérience unique.</p>
-
-        </div>
-        
-        <div id="image3">
-          <img src="styles/css/img/img-illustration/bon plan.svg" alt="">
-
-          <h2>Bon Plan</h2>
-          <p>Quoi de mieux que des avantages 
-            pour se rendre dans l’un de tes 
-            restaurants favoris.</p>
-        </div>
-    </div>
-    </div>
-  </div>
-
-      
-  <div class="container-fluid contenu-partie6">
-
-    <h1>Gallery</h1>
-
-        <div id="galerie-contenu1">
-          <div id="galerie-p1">
-            <img src="styles/css/img/img-gallerie/img-gallerie-carré/brooke-lark.jpg" alt="">
-            <img src="styles/css/img/img-gallerie/img-gallerie-carré/ pablo-merchan-montes.jpg" alt="">
-            <img src="styles/css/img/img-gallerie/img-gallerie-rectangle/pexels-mikechie-esparagoza.jpg" alt="">
-          </div>
-
-          <div id="galerie-p2">
-            
-              <img src="styles/css/img/img-gallerie/img-gallerie-rectangle/festin.jpg" alt="" id="vertical">
-              <div id="g-p2">
-              <img src="styles/css/img/img-gallerie/img-gallerie-carré/burger.jpg" alt="">
-              <img src="styles/css/img/img-gallerie/img-gallerie-carré/femme_qui_bois.jpg" alt="">
-            </div>
-            </div>
-          </div>
-        </div>  
-
-        <div id="galerie-contenu1">
-          <div id="galerie-p1">
-            <img src="styles/css/img/img-gallerie/img-gallerie-carré/femme_sushi.jpg" alt="">
-            <img src="styles/css/img/img-gallerie/img-gallerie-carré/pexels-cottonbro.jpg" alt="">
-            <img src="styles/css/img/img-gallerie/img-gallerie-rectangle/pexels-rachel-claire-plat.jpg" alt="" id="vertical">
-          </div>
-
-          <div id="galerie-p2">
-            
-            <div id="g-p2">
-            <img src="styles/css/img/img-gallerie/img-gallerie-carré/pexels-jonathan-borba.jpg" alt="">
-            <img src="styles/css/img/img-gallerie/img-gallerie-carré/jonathan-nguyen.jpg" alt="">
-          </div>
-          <img src="styles/css/img/img-gallerie/img-gallerie-rectangle/joao-mansano.jpg" alt="" id="vertical">
-
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid contenu-partie7">
-
-
-    <div class="container min-vh-100 div-gauche-news">
-      <div id="news-letter-gauche">
-        <h1 id="gram">Gram</h1>
-        <h1 id="vous">INSCRIVEZ-VOUS</h1>
-        <h1 id="notre">A NOTRE <span><img src="styles/css/img/logo_gram.png" alt=""></span></h1>
-        <H1 id="newsletter">NEWSLETTER</H1>
-        <H1 id="click">Click Click Gram</H1>
-      </div>
-    </div>
-
-    <div class="container min-vh-100 div-droite-news">
-      <div id="news-letter-droite">
-        
-        <div id="input-div">
-          <input type="text" placeholder="votre-courriel@exemple.com"> <button>S'INSCRIRE</button>
-        </div>
-      </div>
-    </div>
-
-  </main>
+<main>
   </body>
 {# Fin de Florian #}
 {% endblock innerContent %}
