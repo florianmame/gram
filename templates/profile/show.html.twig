@@ -33,32 +33,55 @@
             <h2> Tes restaurants préférés</h2>
             <h3 class="mb-4"> Retrouve tous tes restaurants favoris</h3>
             <div class="item mb-4 row">
-            {# Card #}
-            {# On boucle sur les restaurants de user pour afficher les favoris grâce à la fonction show de UserController.php #}
-        {% for restaurant in user.restaurants %}
-        {# On récupère l'id du restaurant dans l'url générée par le lien cliqué pour le passer en argument de la fonction remove dans UserController.php #}
-            <div class="col-3"> 
-                <div class="card shadow ">
-                    <img  class="card-img-top" src="{{ restaurant.urlPhoto }}" alt="Image du restaurant">
-                    <div class="card-body">
-                        <h4>{{ restaurant.name }}</h4>
-                        <p class="space-betwen">{{ restaurant.address }}</p>
-                    </div>
-                    <a href="{{ path('gram_profile_remove', {restaurant: restaurant.id}) }}">
-                        <strong> Supprimer des favoris</strong>
-                    </a>
-                </div>
-            </div>
-        {% endfor %}
 
-        {# <!-- On boucle sur les restaurants de user pour afficher les favoris grâce à la fonction show de UserController.php -->
-        {% for restaurant in user.restaurants %}
-        <!-- On récupère l'id du restaurant dans l'url générée par le lien cliqué pour le passer en argument de la fonction remove dans UserController.php  -->
-        <li>{{ restaurant.name }}
-            <a href="{{ path('gram_profile_remove', {restaurant: restaurant.id}) }}">
-                <strong> Supprimer des favoris</strong>
-            </a>
-        </li>
-        {% endfor %} #}
+        <section class="restau-section">             
+            <div class="container">
+                {# <!-----Début de card------> #}
+                            {# Début du row #}
+                            <div class="row mt-5">
+                                {# Début du caroussel #}
+                                <div class="owl-carousel owl-theme">
+                                    {# On boucle sur les restaurants de user pour afficher les favoris grâce à la fonction show de UserController.php #}
+                                    {% for restaurant in user.restaurants %}
+
+                                        {# Début de la card #}
+                                        <div class="card mr-20">
+                                  
+                                            <a data-bs-toggle="collapse" href="#savane" aria-expanded="false" aria-controls="discription">
+                                                <img class="image-card" src="/styles/assets/img/img-card/alcazar_paris.jpeg" alt="{{restaurant.name}}">
+                                            </a>
+
+                                            <div class="card-text-like d-flex align-items-center justify-content-between">
+                                                <div class="card-text d-flex flex-column justify-content-center">
+                                                <h3 class="m-0">{{restaurant.name}}</h3>
+                                                <p>{{restaurant.address}}</p>
+                                            </div>
+                                            
+                                            {# Si l'user est présent dans la table de ce restaurant (et donc que le restaurant est en favori de ce user, étant donné qu'on est dans une relation many to many) #}
+                                            {% if app.user in restaurant.users %}
+                                                {# On récupère l'id du restaurant dans l'url générée par le lien cliqué pour le passer en argument de la fonction remove dans UserController.php #}
+                                                <a href="{{ path('gram_main_remove', {restaurant: restaurant.id}) }}"><img class="col-2 like-resto" src="/styles/assets/icons/like-actif.svg" alt="Supprimer des favoris"></a>
+                                                {# Sinon, si ce restaurant n'est pas en favori #}
+                                            {% else %}
+                                                {# On appelle la fonction add sur l'id du restaurant concerné #}
+                                                <a href="{{ path('gram_main_add', {restaurant: restaurant.id}) }}"><img class="col-2 like-resto" src="/styles/assets/icons/like-inactif.svg" alt="Ajouter aux favoris"></a>
+                                            {% endif %}
+
+                                        {# Fin de la card #}
+                                        </div>
+                                        
+                                    {# Fin du caroussel #}
+                                    </div>  
+                                {# Fin de la boucle affichant les restaurants par catégorie #}
+                                {% endfor %}
+                            {# Fin du row #}
+                            </div>
+                            {# <!-----Fin de card------> #}
+
+                        {# Fin du container de la catégorie et de ses restaurants #}
+                        </div>
+
+                    {# Fin de toutes les sections #}
+                    </section>
   
 {% endblock innerContent %}

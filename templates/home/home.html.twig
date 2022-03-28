@@ -90,43 +90,57 @@
                           
           
           
-                          {# <!-----Début de card------> #}
-                                    
-                           <div class="row mt-5">
-                              <div class="owl-carousel owl-theme">
-                                      {% for restaurant in category.restaurants %}
+                            {# <!-----Début de card------> #}
+                            {# Début du row #}
+                            <div class="row mt-5">
+                                {# Début du caroussel #}
+                                <div class="owl-carousel owl-theme">
+                                    {# On boucle sur les restaurants afin de les afficher par catégorie #}
+                                    {% for restaurant in category.restaurants %}
+
+                                        {# Début de la card #}
                                         <div class="card mr-20">
                                   
-                                          <a data-bs-toggle="collapse" href="#savane" aria-expanded="false" aria-controls="discription">
-                                              <img class="image-card" src="/styles/assets/img/img-card/alcazar_paris.jpeg" alt="{{restaurant.name}}">
-                                          </a>
+                                            <a data-bs-toggle="collapse" href="#savane" aria-expanded="false" aria-controls="discription">
+                                                <img class="image-card" src="/styles/assets/img/img-card/alcazar_paris.jpeg" alt="{{restaurant.name}}">
+                                            </a>
+
                                             <div class="card-text-like d-flex align-items-center justify-content-between">
-                                                  <div class="card-text d-flex flex-column justify-content-center">
-                                                    <h3 class="m-0">{{restaurant.name}}</h3>
-                                              <p>{{restaurant.address}}</p>
+                                                <div class="card-text d-flex flex-column justify-content-center">
+                                                <h3 class="m-0">{{restaurant.name}}</h3>
+                                                <p>{{restaurant.address}}</p>
                                             </div>
-                                            <img class="col-2 like-resto" src="/styles/assets/icons/like-actif.png" alt="coeur d'ajout aux favoris">
-                                            {# /////////////////////////////////////////////////////////////////////// #}
+                                            
                                             {# Si l'utilisateur est connecté #}
                                             {% if is_granted('ROLE_USER') %}
-                                            {# Si l'user est présent dans la table de ce restaurant (et donc que le restaurant est en favori de ce user, étant donné qu'on est dans une relation many to many) #}
-                                            {% if app.user in restaurant.users %}
-                                                {# On appelle la fonction remove sur l'id du restaurant concerné #}
-                                                <a href="{{ path('gram_main_remove', {restaurant: restaurant.id}) }}"><strong> Supprimer des favoris</strong></a>
-                                                {# Sinon, si ce restaurant n'est pas en favori #}
-                                            {% else %}
-                                                {# On appelle la fonction add sur l'id du restaurant concerné #}
-                                                <a href="{{ path('gram_main_add', {restaurant: restaurant.id}) }}"><strong> Ajouter aux favoris</strong></a>
+                                                {# Si l'user est présent dans la table de ce restaurant (et donc que le restaurant est en favori de ce user, étant donné qu'on est dans une relation many to many) #}
+                                                {% if app.user in restaurant.users %}
+                                                    {# On appelle la fonction remove sur l'id du restaurant concerné #}
+                                                    <a href="{{ path('gram_main_remove', {restaurant: restaurant.id}) }}"><img class="col-2 like-resto" src="/styles/assets/icons/like-actif.svg" alt="Supprimer des favoris"></a>
+                                                    {# Sinon, si ce restaurant n'est pas en favori #}
+                                                {% else %}
+                                                    {# On appelle la fonction add sur l'id du restaurant concerné #}
+                                                    <a href="{{ path('gram_main_add', {restaurant: restaurant.id}) }}"><img class="col-2 like-resto" src="/styles/assets/icons/like-inactif.svg" alt="Ajouter aux favoris"></a>
                                                 {% endif %}
                                             {% endif %}
-                                          </div>   
-                                        </div>  
-                                                                
-                                    {% endfor %}
-                             </div>  
-                              </div>
-                          
-                            </section>
+
+                                        {# Fin de la card #}
+                                        </div>
+                                        
+                                    {# Fin du caroussel #}
+                                    </div>  
+                                {# Fin de la boucle affichant les restaurants par catégorie #}
+                                {% endfor %}
+                            {# Fin du row #}
+                            </div>
+                            {# <!-----Fin de card------> #}
+
+                        {# Fin du container de la catégorie et de ses restaurants #}
+                        </div>
+
+                    {# Fin de toutes les sections #}
+                    </section>
+                {# Fin de la boucle affichant les catégories #}
                 {% endfor %}
       
 
@@ -158,7 +172,193 @@
     </div>
 </div>
 
+{# <!------***** SECTION NOUS VALEURS *****------->
+        <!-----Débout de la section Nous valeurs-----> #}
+        <section class="container-valeurs bg-dark text-white section-valeurs"> 
+          <div>
+              <h2 class="flex-start pt.1"> 
+                  <span class="nos"> Nos</span> 
+                  <span class="valeurs"> Valeurs</span> 
+              </h2>
+          </div>
+          <div class="container-fluid valeurs">
+              <div class="row">
+                  <div class="col-4 pb-2">
+                      <div id="valeur-illustration"><img class="text-white border solid 1 white" src="/styles/assets/img/img-illustration/partage.svg" alt="Illustration partage"></div>
+                      <h4 class="text-center"> Partage </h4>
+                      <p class="text-center"> Tu pourras partager les bonnes adresses et des posts originaux sur tes réseaux sociaux </p>
+                  </div>
+                  <div class="col-4 pb-2">
+                     <div id="valeur-illustration"><img class="text-white border solid 1 white" src="/styles/assets/img/img-illustration/qualite.png" alt="Illustration Qualité"></div>
+                      <h4 class="text-center"> Qualité </h4>
+                      <p class="text-center"> Gram sélectionne des beaux restaurants et super bon pour une expérience unique. </p>
+                  </div>
+                  <div class="col-4 pb-2">
+                      <div id="valeur-illustration"><img class="text-white border solid 1 white p5" src="/styles/assets/img/img-illustration/bon plan.svg" alt="Illustration bon plan"></div>
+                      <h4 class="text-center"> Bon Plan </h4>
+                      <p class="text-center"> Quoi de mieux qu'avoir des avantages pour se rendre dans l’un de tes restaurants favoris. </p>
+                  </div>
+              </div>
+          </div>
+      </section>
+    {# <!-----Fin de la section Nous valeurs-----> #}
+
+
+{# <!-----Débout de la section Galerie-----> #}
+      {# <!-----****** Débout de la section Galerie - le js ne functione pas - a verifier - les icons flechs ******-----> #}
+          <div class="col-md-12 section-gallery">
+              <h2 class="fw-bold">
+                  <span class="galerie">Galerie</span> 
+              </h2>
+          </div>
+
+          <div class="gallery">
+              <div>
+                  <a href="/styles/assets/img/img-gallerie/brooke-lark.jpg" data-lightbox="mygallery" data-title="Brooke Lark" >
+                      <img src="/styles/assets/img/img-gallerie/brooke-lark.jpg"alt="photo brooke-lark">
+                  </a>
+              </div>
+
+              <div class="v-stretch">
+                  <a href="/styles/assets/img/img-gallerie/burger.jpg" data-lightbox="mygallery" data-title="Burger" >
+                      <img src="/styles/assets/img/img-gallerie/burger.jpg"alt="photo burger">
+                  </a>
+              </div>
+
+              <div class="h-stretch">
+                  <a href="/styles/assets/img/img-gallerie/resteau_bleu.jpg" data-lightbox="mygallery" data-title="Resteau Bleu" >
+                      <img src="/styles/assets/img/img-gallerie/resteau_bleu.jpg"alt="photo resteau_bleu">
+                  </a>
+              </div>
+
+              <div>
+                  <a href="/styles/assets/img/img-gallerie/femme_qui_bois.jpg" data-lightbox="mygallery" data-title="Femme Qui Bois" >
+                      <img src="/styles/assets/img/img-gallerie/femme_qui_bois.jpg" alt="photo femme_qui_bois">
+                  </a>
+              </div>
+
+              <div>
+                  <a href="/styles/assets/img/img-gallerie/femme_sushi.jpg" data-lightbox="mygallery" data-title="Femme Sushi" >
+                      <img src="/styles/assets/img/img-gallerie/femme_sushi.jpg" alt="photo femme_sushi">
+                  </a>
+              </div>
+
+              <div class="v-stretch">
+                  <a href="/styles/assets/img/img-gallerie/festin.jpg" data-lightbox="mygallery" data-title="Festin" >
+                      <img src="/styles/assets/img/img-gallerie/festin.jpg" alt="photo festin">
+                  </a>
+              </div>
+
+              <div class="big-stretch">
+                  <a href="/styles/assets/img/img-gallerie/joao-mansano.jpg" data-lightbox="mygallery" data-title="Joao Mansano" >
+                      <img src="/styles/assets/img/img-gallerie/joao-mansano.jpg" alt="photo joao-mansano">
+                  </a>
+              </div>
+
+              <div>
+                  <a href="/styles/assets/img/img-gallerie/jonathan-nguyen.jpg" data-lightbox="mygallery" data-title="Jonathan Nguyen" >
+                      <img src="/styles/assets/img/img-gallerie/jonathan-nguyen.jpg" alt="photo jonathan-nguyen">
+                  </a>
+              </div>
+
+              <div class="h-stretch" >
+                  <a href="/styles/assets/img/img-gallerie/rod-long.jpg" data-lightbox="mygallery" data-title="Rod Long">
+                      <img src="/styles/assets/img/img-gallerie/rod-long.jpg" alt="photo rod-long">
+                  </a>
+              </div>
+
+              <div>
+                  <a href="/styles/assets/img/img-gallerie/thibault-penin.jpg" data-lightbox="mygallery" data-title="Thibault Penin" >
+                      <img src="/styles/assets/img/img-gallerie/thibault-penin.jpg" alt="photo thibault-penin">
+                  </a>
+              </div>
+
+              <div>
+                  <a href="/styles/assets/img/img-gallerie/pablo-merchan-montes.jpg" data-lightbox="mygallery" data-title="Pablo Merchan Montes" >
+                      <img src="/styles/assets/img/img-gallerie/pablo-merchan-montes.jpg" alt="photo pablo-merchan-montes">
+                  </a>
+              </div>
+
+              <div>
+                  <a href="/styles/assets/img/img-gallerie/pexels-cottonbro.jpg" data-lightbox="mygallery" data-title="Pexels Cottonbro" >
+                      <img src="/styles/assets/img/img-gallerie/pexels-cottonbro.jpg" alt="photo pexels-cottonbro">
+                  </a>
+              </div>
+
+              <div class="v-stretch" >
+                  <a href="/styles/assets/img/img-gallerie/pexels-jonathan-borba.jpg" data-lightbox="mygallery" data-title="Pexels Jonathan Borba">
+                      <img src="/styles/assets/img/img-gallerie/pexels-jonathan-borba.jpg" alt="photo pexels-jonathan-borba">
+                  </a>
+              </div>
+
+              <div>
+                  <a href="/styles/assets/img/img-gallerie/pexels-lucas-guizo.jpg" data-lightbox="mygallery" data-title="Pexels Lucas Guizo" >
+                      <img src="/styles/assets/img/img-gallerie/pexels-lucas-guizo.jpg" alt="photo pexels-lucas-guizo">
+                  </a>
+              </div>
+
+              <div class="big-stretch" >
+                  <a href="/styles/assets/img/img-gallerie/pexels-meruyert-gonullu.jpg" data-lightbox="mygallery" data-title="Pexels Meruyert Gonullu">
+                      <img src="/styles/assets/img/img-gallerie/pexels-meruyert-gonullu.jpg" alt="photo pexels-meruyert-gonullu">
+                  </a>
+              </div>
+
+              <div>
+                  <a href="/styles/assets/img/img-gallerie/pexels-mikechie-esparagoza.jpg" data-lightbox="mygallery" data-title="Pexels Mikechie Esparagoza" >
+                      <img src="/styles/assets/img/img-gallerie/pexels-mikechie-esparagoza.jpg" alt="photo pexels-mikechie-esparagoza">
+                  </a>
+              </div>
+
+              <div class="h-stretch">
+                  <a href="/styles/assets/img/img-gallerie/pexels-rachel-claire-plat.jpg" data-lightbox="mygallery" data-title="Pexels Rachel Claire Plat" >
+                      <img src="/styles/assets/img/img-gallerie/pexels-rachel-claire-plat.jpg" alt="photo pexels-rachel-claire-plat">
+                  </a>
+              </div>
+
+              <div >
+                  <a href="/styles/assets/img/img-gallerie/pizzeria.jpg" data-lightbox="mygallery" data-title="Pizzeria" >
+                      <img src="/styles/assets/img/img-gallerie/pizzeria.jpg" alt="photo pizzeria">
+                  </a>
+              </div>  
+
+              <div >
+                  <a href="/styles/assets/img/img-gallerie/pizzeria.jpg" data-lightbox="mygallery" data-title="Pizzeria" >
+                      <img src="/styles/assets/img/img-gallerie/pizzeria.jpg" alt="photo pizzeria">
+                  </a>
+              </div> 
+          </div>
+      {# <!-----Fin de la section Galerie-----> #}
+
+
+    {# <!-----Débout de la section Newsletter----->
+      <!-----Manque apliquer de style css-----> #}
+<div class="container-fluid contenu-partie7">
+
+
+  <div class="container min-vh-100 div-gauche-news">
+    <div id="news-letter-gauche">
+      <h1 id="gram">Gram</h1>
+      <h1 id="vous">INSCRIVEZ-VOUS</h1>
+      <h1 id="notre">A NOTRE <span><img src="styles/assets/img/logo/logo-news.png" alt=""></span></h1>
+      <H1 id="newsletter">NEWSLETTER</H1>
+      <H1 id="click">Click Click Gram</H1>
+    </div>
+  </div>
+
+  <div class="container min-vh-100 div-droite-news">
+    <div id="news-letter-droite">
+      
+      <div id="input-div">
+        <input type="text" placeholder="votre-courriel@exemple.com"> <button>S'INSCRIRE</button>
+      </div>
+    </div>
+  </div>
+
+
 </div>
+  {# <!-----Fin de la section Newsletter-----> #}
+
+</main>
   </body>
-{# Fin de Florian #}
+
 {% endblock innerContent %}

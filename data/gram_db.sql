@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.7
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:8889
--- Généré le : jeu. 24 mars 2022 à 15:36
--- Version du serveur :  5.7.32
--- Version de PHP : 7.4.12
+-- Hôte : 127.0.0.1:3306
+-- Généré le : lun. 28 mars 2022 à 19:35
+-- Version du serveur : 5.7.36
+-- Version de PHP : 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -26,10 +27,12 @@ SET time_zone = "+00:00";
 -- Structure de la table `category`
 --
 
-CREATE TABLE `category` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+DROP TABLE IF EXISTS `category`;
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `category`
@@ -52,10 +55,12 @@ INSERT INTO `category` (`id`, `name`) VALUES
 -- Structure de la table `doctrine_migration_versions`
 --
 
-CREATE TABLE `doctrine_migration_versions` (
+DROP TABLE IF EXISTS `doctrine_migration_versions`;
+CREATE TABLE IF NOT EXISTS `doctrine_migration_versions` (
   `version` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
   `executed_at` datetime DEFAULT NULL,
-  `execution_time` int(11) DEFAULT NULL
+  `execution_time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -80,8 +85,9 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 -- Structure de la table `restaurant`
 --
 
-CREATE TABLE `restaurant` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `restaurant`;
+CREATE TABLE IF NOT EXISTS `restaurant` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8mb4_unicode_ci,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -89,8 +95,9 @@ CREATE TABLE `restaurant` (
   `city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` int(11) NOT NULL,
   `opening_times` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url_photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `url_photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `restaurant`
@@ -135,9 +142,13 @@ INSERT INTO `restaurant` (`id`, `name`, `description`, `address`, `zip_code`, `c
 -- Structure de la table `restaurant_category`
 --
 
-CREATE TABLE `restaurant_category` (
+DROP TABLE IF EXISTS `restaurant_category`;
+CREATE TABLE IF NOT EXISTS `restaurant_category` (
   `restaurant_id` int(11) NOT NULL,
-  `category_id` int(11) NOT NULL
+  `category_id` int(11) NOT NULL,
+  PRIMARY KEY (`restaurant_id`,`category_id`),
+  KEY `IDX_26E9D72EB1E7706E` (`restaurant_id`),
+  KEY `IDX_26E9D72E12469DE2` (`category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -183,8 +194,9 @@ INSERT INTO `restaurant_category` (`restaurant_id`, `category_id`) VALUES
 -- Structure de la table `user`
 --
 
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
   `roles` json NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -193,31 +205,26 @@ CREATE TABLE `user` (
   `description` longtext COLLATE utf8mb4_unicode_ci,
   `city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` int(11) NOT NULL,
-  `url_photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `url_photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `name`, `first_name`, `description`, `city`, `phone`, `url_photo`) VALUES
-(1, 'ac@outlook.fr', '[\"ROLE_USER\"]', '123456', 'Dupoint', 'Lara', NULL, 'Paris', 665489732, NULL),
-(2, 'non.lacinia@outlook.fr', '[\"ROLE_USER\"]', '123456', 'Fartrant', 'Marrine', NULL, 'Paris', 623546865, NULL),
-(3, 'neque.sed@yahoo.com', '[\"ROLE_USER\"]', '123456', 'Closcart', 'Vivienne', NULL, 'Paris', 641384000, NULL),
-(4, 'dolor@protonmail.net', '[\"ROLE_USER\"]', '123456', 'Clayton', 'Valentine', NULL, 'Paris', 623248696, NULL),
-(5, 'viverra.maecenas.iaculis@hotmail.fr', '[\"ROLE_USER\"]', '123456', 'Peck', 'Riley', NULL, 'Paris', 623545686, NULL),
-(6, 'ristique.pellentesque@protonmail.com', '[\"ROLE_USER\"]', '123456', 'Henderson', 'Philip', NULL, 'Paris', 623545897, NULL),
-(7, 'aliquet.nec@aol.net', '[\"ROLE_USER\"]', '123456', 'Alexander', 'Tanner', NULL, 'Paris', 623546865, NULL),
-(8, 'est.arcu@outlook.com', '[\"ROLE_USER\"]', '123456', 'Haley', 'Zahir', NULL, 'Paris', 623547896, NULL),
-(9, 'nullam@yahoo.com', '[\"ROLE_USER\"]', '123456', 'Robertson', 'Joel', NULL, 'Paris', 623548519, NULL),
-(10, 'sed@outlook.com', '[\"ROLE_USER\"]', '123456', 'Avila', 'Heidi', NULL, 'Paris', 623651566, NULL),
-(12, 'anne.b@gmail.com', '[\"ROLE_USER\"]', '$2y$13$7G6Gz/C1EiWFMMPvOwwg0OD.fIRiu52KgF/GWGg23zU0ClP7QaCFC', 'Bouaniche', 'Anne', NULL, 'Paris', 607080910, NULL),
-(13, 'lorem@gmail.com', '[\"ROLE_USER\"]', '$2y$13$lfPnS67gkBnHZKSr0ZmU..B6Ri.RXqu838tEdNcOMUCimhOemo3MG', 'Ipsum', 'Lorem', NULL, 'Paris', 607080910, NULL),
-(14, 'ipsum@gmail.com', '[\"ROLE_USER\"]', '$2y$13$oowiubjsZdWY6NKMHKTbou6lVyj79XsH/2IFdq0WPpDTytAXmds..', 'Sic', 'Amet', NULL, 'Paris', 607080910, NULL),
-(15, 'jeanne@gmail.com', '[\"ROLE_USER\"]', '$2y$13$pnmsa9InErLmozOCspCXh.KXbXw3yMuO7oOdsdOEuCP2XnXiq5Fku', 'Sic', 'Jeanne', NULL, 'Paris', 607080910, NULL),
-(16, 'marcel@gmail.com', '[\"ROLE_USER\"]', '$2y$13$mNogT.k/Irkg/89VRaZnkeCp40IXIeKgocpj39IkjTNnyPPz9OhQO', 'Lin', 'Marcel', NULL, 'Paris', 607080910, NULL),
-(17, 'michel@protonmail.com', '[\"ROLE_USER\"]', '$2y$13$qdtnYGptwuVR6XuhGtJeveE463lAvrVBuXsVeNDmtn4WzmGHJrge.', 'Simon', 'Michel', 'Je suis un utilisateur à la recherche de bons restaurants.', 'Paris 20ème', 607080910, NULL),
-(18, 'maria@tutanota.com', '[\"ROLE_USER\"]', '$2y$13$0nIQymrliIBUC8y0QOsl6OMcG6KPMV61mm1Tk1By75.ztMbu2cNM2', 'Le Tallec', 'Maria', 'Je suis passionnée de cuisine fusion.', 'Pont-Aven', 607080910, NULL);
+(19, 'ac@outlook.fr', '[\"ROLE_USER\"]', '$2y$13$fQJqHco92BRJeK/uMg9gH.Q63Hec0XTKbVB69b.o4q/GGhiL3BfZK', 'Dupoint', 'Lara', 'ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a cras semper auctor neque vitae tempus quam pellentesque nec nam aliquam sem et tortor', 'Paris', 665489732, 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80'),
+(20, 'non.lacinia@outlook.fr', '[\"ROLE_USER\"]', '$2y$13$FE1ENl7Oav6NwLoqPKJxEe0e39FwqQ.66HRZ8ZOJk2KJEzR1LysJO', 'Fartrant', 'Marrine', 'nisl purus in mollis nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris augue neque gravida in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam', 'Paris', 623546865, 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'),
+(21, 'neque.sed@yahoo.com', '[\"ROLE_USER\"]', '$2y$13$.tBIpjNvhuTIb45Dh8yDOetx5V1R6C5Uu92UHK2JMXJ4wr/u.YxxK', 'Closcart', 'Vivienne', 'et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa', 'Paris', 641384000, 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'),
+(22, 'dolor@protonmail.net', '[\"ROLE_USER\"]', '$2y$13$GNEpGApdll1EYo3jgjcUC.T3n55DjtT09.Zl3IUm.RGKf/EhZi47S', 'Clayton', 'Valentine', 'nec ullamcorper sit amet risus nullam eget felis eget nunc lobortis mattis aliquam faucibus purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse sed', 'Paris', 623248696, 'https://images.unsplash.com/photo-1628890923662-2cb23c2e0cfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'),
+(23, 'viverra.maecenas.iaculis@hotmail.fr', '[\"ROLE_USER\"]', '$2y$13$uCfPlKIOgfVLVc7B0H9ktOWOs3AmHw8rb8Z7pqF3AIUElp5WkT5g6', 'Peck', 'Riley', 'lacus viverra vitae congue eu consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit', 'Paris', 623545686, 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
+(24, 'ristique.pellentesque@protonmail.com', '[\"ROLE_USER\"]', '$2y$13$QFqtZtEqmRS0BUHWC7hVweeHx.BsdXDZklV0WARQydaHGK5vJjg3.', 'Henderson', 'Philip', 'at quis risus sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in dictum non consectetur a erat nam at lectus urna duis convallis convallis tellus id interdum velit laoreet id donec ultrices tincidunt', 'Paris', 623545897, 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
+(25, 'aliquet.nec@aol.net', '[\"ROLE_USER\"]', '$2y$13$bh61EEll3pHgIFGTcS8UMewBijfAgoXSzM8sQFU8.RUkXBaYby6Ka', 'Alexander', 'Tanner', 'sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget lorem', 'Paris', 623546865, 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
+(26, 'est.arcu@outlook.com', '[\"ROLE_USER\"]', '$2y$13$toime72NSOstrl9qhXpfQuADbaEBoMKlUFtkg0b1mthf6Kf.64HC2', 'Haley', 'Zahir', 'viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a cras semper', 'Paris', 623547896, 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
+(27, 'nullam@yahoo.com', '[\"ROLE_USER\"]', '$2y$13$QMKBmCX8qHfbu8IeX/h8ZeIEMNOx9igCkifRspUEO4ster3TU5uJK', 'Robertson', 'Joel', 'est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien et', 'Paris', 623548519, 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
+(28, 'sed@outlook.com', '[\"ROLE_USER\"]', '$2y$13$dcDdavko/fGCCvVDH5Gzg.sO2/oagNp/0F3EjEhxvPwNa7vLjIb7W', 'Avila', 'Heidi', 'volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam', 'Paris', 623651566, 'https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
 
 -- --------------------------------------------------------
 
@@ -225,98 +232,14 @@ INSERT INTO `user` (`id`, `email`, `roles`, `password`, `name`, `first_name`, `d
 -- Structure de la table `user_restaurant`
 --
 
-CREATE TABLE `user_restaurant` (
+DROP TABLE IF EXISTS `user_restaurant`;
+CREATE TABLE IF NOT EXISTS `user_restaurant` (
   `user_id` int(11) NOT NULL,
-  `restaurant_id` int(11) NOT NULL
+  `restaurant_id` int(11) NOT NULL,
+  PRIMARY KEY (`user_id`,`restaurant_id`),
+  KEY `IDX_4CF2D4D3A76ED395` (`user_id`),
+  KEY `IDX_4CF2D4D3B1E7706E` (`restaurant_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `user_restaurant`
---
-
-INSERT INTO `user_restaurant` (`user_id`, `restaurant_id`) VALUES
-(10, 3),
-(10, 5),
-(12, 8),
-(12, 26),
-(12, 30),
-(13, 2),
-(13, 5),
-(14, 6),
-(14, 7),
-(15, 9),
-(15, 12),
-(18, 16),
-(18, 22),
-(18, 25),
-(18, 30);
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `category`
---
-ALTER TABLE `category`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `doctrine_migration_versions`
---
-ALTER TABLE `doctrine_migration_versions`
-  ADD PRIMARY KEY (`version`);
-
---
--- Index pour la table `restaurant`
---
-ALTER TABLE `restaurant`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `restaurant_category`
---
-ALTER TABLE `restaurant_category`
-  ADD PRIMARY KEY (`restaurant_id`,`category_id`),
-  ADD KEY `IDX_26E9D72EB1E7706E` (`restaurant_id`),
-  ADD KEY `IDX_26E9D72E12469DE2` (`category_id`);
-
---
--- Index pour la table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`);
-
---
--- Index pour la table `user_restaurant`
---
-ALTER TABLE `user_restaurant`
-  ADD PRIMARY KEY (`user_id`,`restaurant_id`),
-  ADD KEY `IDX_4CF2D4D3A76ED395` (`user_id`),
-  ADD KEY `IDX_4CF2D4D3B1E7706E` (`restaurant_id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `category`
---
-ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT pour la table `restaurant`
---
-ALTER TABLE `restaurant`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
-
---
--- AUTO_INCREMENT pour la table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Contraintes pour les tables déchargées
@@ -335,6 +258,7 @@ ALTER TABLE `restaurant_category`
 ALTER TABLE `user_restaurant`
   ADD CONSTRAINT `FK_4CF2D4D3A76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `FK_4CF2D4D3B1E7706E` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurant` (`id`) ON DELETE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
