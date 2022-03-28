@@ -50,21 +50,26 @@
                                     
                                     {# <----Icon de la nav bar - connecter -----> #}
                                         <li class="nav-item">
-                                            <a class="navbar-brand" href="/"class="nav-link"><img src="/styles/assets/icons/compte-inactif.png" alt="Icon connecter"></a>
+                                            {% if is_granted('ROLE_USER') %}
+                                                <p>Bonjour {{ app.user.firstName }}</p>
+                                                <a class="navbar-brand" href="{{ path('gram_profile_show') }}"class="nav-link"><img src="/styles/assets/icons/compte-inactif.png" alt="Mon profil"></a>
+                                            {% else %}
+                                                <a class="navbar-brand" href="{{ path('app_login') }}"class="nav-link"><img src="/styles/assets/icons/compte-inactif.png" alt="Connexion"></a>
+                                            {% endif %}
+
                                         </li>
-                                        {# Anne #}
                                         {# Le if ... else ... endif ci-dessous permet d'afficher un contenu différent suivant que l'utilisateur #}
                                                     {# est authentifié (loged-in) ou pas, grace à la fonction is_granted de twig #}
-                                                    {% if is_granted('ROLE_USER') %}
+                                                    {# {% if is_granted('ROLE_USER') %}
                                                         {# Quand un utilisateur est connecté, on peut accéder à l'objet qui le représente dans  #}
                                                         {# app.user, qui est disponible par défaut dans tous les templates  #}
-                                                        <p>Bonjour {{ app.user.firstName }}</p>
+                                                        {# <p>Bonjour {{ app.user.firstName }}</p>
                                                         <a href="{{ path("app_logout") }}">Déconnexion</a>
-                                                        <a href="{{ path('gram_profile_show') }}">Profil</a>
-                                                    {% else %}
-                                                        <a href="{{ path('app_login') }}">Se connecter</a>
-                                                        <a href="{{ path('app_register') }}">Créer un compte</a>
-                                                    {% endif %}
+                                                        <a href="{{ path('gram_profile_show') }}">Profil</a> #}
+                                                    {# {% else %} #}
+                                                        {# <a href="{{ path('app_login') }}">Se connecter</a>
+                                                        <a href="{{ path('app_register') }}">Créer un compte</a> #}
+                                                    {# {% endif %} #}
                                           
                                         {# //////////////////////////////////////////////////////////////////////////////////////////////////////////////// #}
                     </ul>
