@@ -44,7 +44,7 @@
                         <ul class="d-inline-flex icons-header">
                             {# <----Icon de la nav bar - notification -----> #}
                                 <li class="nav-item"> 
-                                    <a class="navbar-brand" href="/" class="nav-link"><img src="styles/assets/icons/cloche-notifcation-inactif.png" alt="Icon notification"></a>
+                                    <a class="navbar-brand" href="#" class="nav-link"><img src="styles/assets/icons/cloche-notifcation-inactif.png" alt="Icon notification"></a>
                                 </li>
                                 {# <----Fin icons de la nav bar - notification -----> #}
                                     
@@ -53,6 +53,7 @@
                                             {% if is_granted('ROLE_USER') %}
                                                 <p>Bonjour {{ app.user.firstName }}</p>
                                                 <a class="navbar-brand" href="{{ path('gram_profile_show') }}"class="nav-link"><img src="/styles/assets/icons/compte-inactif.png" alt="Mon profil"></a>
+                                                <a href="{{ path("app_logout") }}">Déconnexion</a>
                                             {% else %}
                                                 <a class="navbar-brand" href="{{ path('app_login') }}"class="nav-link"><img src="/styles/assets/icons/compte-inactif.png" alt="Connexion"></a>
                                             {% endif %}
