@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 28 mars 2022 à 19:35
+-- Généré le : mar. 29 mars 2022 à 19:19
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -208,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `url_photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `user`
@@ -224,7 +224,8 @@ INSERT INTO `user` (`id`, `email`, `roles`, `password`, `name`, `first_name`, `d
 (25, 'aliquet.nec@aol.net', '[\"ROLE_USER\"]', '$2y$13$bh61EEll3pHgIFGTcS8UMewBijfAgoXSzM8sQFU8.RUkXBaYby6Ka', 'Alexander', 'Tanner', 'sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget lorem', 'Paris', 623546865, 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
 (26, 'est.arcu@outlook.com', '[\"ROLE_USER\"]', '$2y$13$toime72NSOstrl9qhXpfQuADbaEBoMKlUFtkg0b1mthf6Kf.64HC2', 'Haley', 'Zahir', 'viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a cras semper', 'Paris', 623547896, 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
 (27, 'nullam@yahoo.com', '[\"ROLE_USER\"]', '$2y$13$QMKBmCX8qHfbu8IeX/h8ZeIEMNOx9igCkifRspUEO4ster3TU5uJK', 'Robertson', 'Joel', 'est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien et', 'Paris', 623548519, 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
-(28, 'sed@outlook.com', '[\"ROLE_USER\"]', '$2y$13$dcDdavko/fGCCvVDH5Gzg.sO2/oagNp/0F3EjEhxvPwNa7vLjIb7W', 'Avila', 'Heidi', 'volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam', 'Paris', 623651566, 'https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+(28, 'sed@outlook.com', '[\"ROLE_USER\"]', '$2y$13$dcDdavko/fGCCvVDH5Gzg.sO2/oagNp/0F3EjEhxvPwNa7vLjIb7W', 'Avila', 'Heidi', 'volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam', 'Paris', 623651566, 'https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'),
+(29, 'anne.bouaniche@protonmail.com', '[\"ROLE_ADMIN\"]', '$2y$13$fQJqHco92BRJeK/uMg9gH.Q63Hec0XTKbVB69b.o4q/GGhiL3BfZK', 'Bouaniche', 'Anne', 'ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a cras semper auctor neque vitae tempus quam pellentesque nec nam aliquam sem et tortor', 'Paris', 665489732, 'https://images.unsplash.com/photo-1592621385612-4d7129426394?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
 
 -- --------------------------------------------------------
 
@@ -240,6 +241,14 @@ CREATE TABLE IF NOT EXISTS `user_restaurant` (
   KEY `IDX_4CF2D4D3A76ED395` (`user_id`),
   KEY `IDX_4CF2D4D3B1E7706E` (`restaurant_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `user_restaurant`
+--
+
+INSERT INTO `user_restaurant` (`user_id`, `restaurant_id`) VALUES
+(19, 17),
+(19, 22);
 
 --
 -- Contraintes pour les tables déchargées
