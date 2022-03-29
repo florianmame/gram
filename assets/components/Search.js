@@ -46,4 +46,6 @@ function Search() {
     );
 }
 
+const domContainer = document.querySelector('#research-bar');ReactDOM.render(e(LikeButton), domContainer);
+
 export default Search
