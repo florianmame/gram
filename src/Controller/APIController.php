@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class APIController extends AbstractController
 {
     /**
- * @Route("/restaurants/getdata", name="list", methods={"GET"})
+ * @Route("/restaurants/getdata", name="getdata", methods={"GET"})
  */
 public function getData(RestaurantRepository $restaurantRepo)
 {
