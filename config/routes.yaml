@@ -26,8 +26,19 @@ gram_main_add:
 app_logout:
     path: /logout
     methods: GET
+
 # ################################################################
-# #                           PROFILE              #
+# #                        SEARCH BAR                 #
+# ################################################################
+
+# Cette route mène vers l'API des restaurants (en JSON) dans laquelle on va chercher les résultats de la requête de la barre de recherche (en React)
+api_data:
+  path: /api
+  controller: App\Controller\APIController::getData
+  methods: GET
+  
+##################################################################
+#                           PROFILE             #
 # ################################################################
 
 gram_profile_show:
@@ -38,38 +49,12 @@ gram_profile_remove:
     path: /profile/remove/{restaurant}
     controller: App\Controller\UserController::remove
 
-################################################################
-# #                           PARAMETER             #
+##################################################################
+#                           PARAMETER             #
 # ################################################################
 gram_parameter_show:
     path: /parameter/show/{user}
     controller: App\Controller\UserController::parameter
-
-################################################################
-#                            URLPHOTO                      #
-################################################################
-
-# gram_url_photo_create:
-#   path: /url_photo/create
-#   controller: App\Controller\UrlphotoController::create
-
-# gram_url_photo_update:
-#   path: /url_photo/update/{idUser}
-#   controller: App\Controller\UrlphotoController::update
-
-################################################################
-#                            DESCRIPTION                   #
-################################################################
-
-# gram_description_create:
-#     path: /description/create
-#     controller: App\Controller\DescriptionController::create
-
-# gram_description_update:
-#     path: /description/update/{idUser}
-#     controller: App\Controller\DescriptionController::update
-#     requirements:
-#         idDescription: '\d+'
 
 ################################################################
 #                            RESTAURANT                    #
@@ -92,14 +77,6 @@ gram_favorite_showall: #
     path: /favorite/show-all
     controller: App\Controller\FavoriteController::showAll
 
-# gram_favorite_create: # Faire un switch avec findBy dans user pour afficher par restaurant
-#     path: /favorite/create
-#     controller: App\Controller\FavoriteController::create
-
-# gram_favorite_remove:
-#     path: /favorite/remove/{idRestaurant}
-#      controller: App\Controller\FavoriteController::remove
-
 # ################################################################
 # #                           GALLERY               #
 # ################################################################
@@ -107,7 +84,6 @@ gram_favorite_showall: #
 # gram_gallery_showAll:
 #     path: /gallery/show-all
 #     controller: App\Controller\GalleryController::showAll 
-
 
 ################################################################
 #                         Pages Statiques                      #
@@ -154,8 +130,3 @@ gram_contact:
     defaults:
         # le chemin du template à afficher.
         template:  'statique/contact.html.twig'
-
-
-api_data:
-  path: /api_data
-  controller: App\Controller\ApiController::getData

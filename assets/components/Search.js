@@ -7,7 +7,7 @@ function Search() {
     const [ searchTerm, setSearchTerm ] = useState("");
 
     useEffect(() => {
-        fetch("")
+        fetch("api")
             .then((response) => response.json())
             .then((json) => setDatas(json));
     }, []);
