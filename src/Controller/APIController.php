@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Repository\ArticlesRepository;
 use App\Repository\RestaurantRepository;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,9 +16,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class APIController extends AbstractController
 {
     /**
- * @Route("/restaurants/list", name="list", methods={"GET"})
+ * @Route("/restaurants/getdata", name="list", methods={"GET"})
  */
-public function list(RestaurantRepository $restaurantRepo)
+public function getData(RestaurantRepository $restaurantRepo)
 {
     // On récupère la liste des articles
     $restaurants = $restaurantRepo->findAll();
