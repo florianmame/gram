@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react/cjs/react.production.min';
+import { useState, useEffect } from 'react';
 
 function Search() {
 
@@ -45,7 +45,5 @@ function Search() {
         </>
     );
 }
-
-const domContainer = document.querySelector('#research-bar');ReactDOM.render(e(LikeButton), domContainer);
 
 export default Search

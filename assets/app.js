@@ -6,6 +6,6 @@ import { App } from './components/App';
 // import './styles/app.css';
 
 
-let reactRoot = document.getElementById('root');
+let reactRoot = document.getElementById('research-bar');
 
 ReactDOM.render(<App />, reactRoot);
