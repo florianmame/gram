@@ -7,7 +7,7 @@ function Search() {
     const [ searchTerm, setSearchTerm ] = useState("");
 
     useEffect(() => {
-        fetch("api")
+        fetch("/api")
             .then((response) => response.json())
             .then((json) => setDatas(json));
     }, []);
@@ -33,11 +33,13 @@ function Search() {
             </div>
             <div className='search-results'>
                 { datas.filter((val) => {
-                    return val.title.toLowerCase().includes(searchTerm.toLowerCase());
+                    if(searchTerm.length != 0) {
+                        return val.name.toLowerCase().startsWith(searchTerm.toLowerCase());
+                    }
                 }).map((val) => {
                     return (
                         <div className='search-result' key={val.id}>
-                            {val.title}
+                            {val.name}
                         </div>
                     );
                 })}
