@@ -18,7 +18,8 @@ function Search() {
         setSearchTerm(value);
     }
 
-    console.log(searchTerm);
+    // Grâce à ce console.log, on peut voir que le DOM récupère bien la saisie de l'utilisateur
+    // console.log(searchTerm);
 
     return (
         <>

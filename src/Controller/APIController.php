@@ -20,7 +20,7 @@ class APIController extends AbstractController
  */
 public function getData(RestaurantRepository $restaurantRepo)
 {
-    // On récupère la liste des articles
+    // On récupère la liste des restaurants
     $restaurants = $restaurantRepo->findAll();
 
     // On spécifie qu'on utilise l'encodeur JSON
