@@ -49,13 +49,6 @@ gram_profile_remove:
     path: /profile/remove/{restaurant}
     controller: App\Controller\UserController::remove
 
-##################################################################
-#                           PARAMETER             #
-# ################################################################
-gram_parameter_show:
-    path: /parameter/show/{user}
-    controller: App\Controller\UserController::parameter
-
 ################################################################
 #                            RESTAURANT                    #
 ################################################################
@@ -68,23 +61,6 @@ gram_restaurant_show:
     requirements:
         idRestaurant: '\d+'
 
-# ###############################################################
-# #                            FAVORITE                  #
-# ################################################################
-
-
-gram_favorite_showall: # 
-    path: /favorite/show-all
-    controller: App\Controller\FavoriteController::showAll
-
-# ################################################################
-# #                           GALLERY               #
-# ################################################################
-
-# gram_gallery_showAll:
-#     path: /gallery/show-all
-#     controller: App\Controller\GalleryController::showAll 
-
 ################################################################
 #                         Pages Statiques                      #
 ################################################################
@@ -93,40 +69,41 @@ gram_favorite_showall: #
 # un controlleur Symfony : le TemplateController. Et on precise quel template il faut
 # rendre.
 
+# Ces pages statiques pourront être intégrées dans une version ultérieure
 # Dans notre projet ce sont tous les liens du footer
-gram_apropos:
-    path:          /a-propos
-    controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    defaults:
-        # le chemin du template à afficher.
-        template:  'statique/apropos.html.twig'
 
-gram_condition_general:
-    path:          /
-    controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    defaults:
-        # le chemin du template à afficher.
-        template:  'statique/apropos.html.twig'
+# gram_apropos:
+#     path:          /a-propos
+#     controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+#     defaults:
+#         # le chemin du template à afficher.
+#         template:  'statique/apropos.html.twig'
+
+# gram_condition_general:
+#     path:          /
+#     controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+#     defaults:
+#         # le chemin du template à afficher.
+#         template:  'statique/apropos.html.twig'
+
+# gram_cgv:
+#     path:          /cgv
+#     controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+#     defaults:
+#         # le chemin du template à afficher.
+#         template:  'statique/cgv.html.twig'
+
+# gram_newsletter:
+#     path:          /newsletter
+#     controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+#     defaults:
+#         # le chemin du template à afficher.
+#         template:  'statique/newsletter.html.twig'
 
 
-gram_cgv:
-    path:          /cgv
-    controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    defaults:
-        # le chemin du template à afficher.
-        template:  'statique/cgv.html.twig'
-
-gram_newsletter:
-    path:          /newsletter
-    controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    defaults:
-        # le chemin du template à afficher.
-        template:  'statique/newsletter.html.twig'
-
-
-gram_contact:
-    path:          /contact
-    controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    defaults:
-        # le chemin du template à afficher.
-        template:  'statique/contact.html.twig'
+# gram_contact:
+#     path:          /contact
+#     controller:    Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+#     defaults:
+#         # le chemin du template à afficher.
+#         template:  'statique/contact.html.twig'
