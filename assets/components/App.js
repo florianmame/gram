@@ -1,8 +1,9 @@
 import React from 'react';
+import Search from "./Search.js";
 
 export function App()
 {
     return (
-        <h2>Hello !</h2>
+        <Search />
     );
 }
