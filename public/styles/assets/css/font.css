@@ -45,180 +45,180 @@ font-header
 
 @font-face {
     font-family: "Metropolis";
-    src: url("/font/font-header/Metropolis.otf") format("otf");
+    src: url("/styles/assets/font/font-header/Metropolis.otf") format("otf");
 }
 
 @font-face {
     font-family: "Moonbright";
-    src: url("/font/font-header/moonbright.ttf") format("ttf");
+    src: url("/styles/assets/font/font-header/moonbright.ttf") format("ttf");
 }
 
 @font-face {
     font-family: "nouvelle_vague_final";
-    src: url("/font/font-header/nouvelle_vague_final.ttf") format("ttf");
+    src: url("/styles/assets/font/font-header/nouvelle_vague_final.ttf") format("ttf");
 }
 
 @font-face {
     font-family: "oldgatel";
-    src: url("font/font-header/oldgatel.ttf") format("truetype");
+    src: url("/styles/assets/font/font-header/oldgatel.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Sunday-Monday";
-    src: url("/font/font-header/Sunday-Monday.ttf") format("ttf");
+    src: url("/styles/assets/font/font-header/Sunday-Monday.ttf") format("ttf");
 }
 
 /*font categorie indian*/
 @font-face {
     font-family: "candlescript-demo-version";
-    src: url("../font/font-categorie-indian/candlescript-demo-version.otf");
+    src: url("/styles/assets/font/font-categorie-indian/candlescript-demo-version.otf");
     }
     @font-face {
     font-family: "helvetica-neue-ltstd-light";
-    src: url("../font/font-categorie-indian/helvetica-neue-ltstd-light.otf");
+    src: url("/styles/assets/font/font-categorie-indian/helvetica-neue-ltstd-light.otf");
     }
     @font-face {
     font-family: "jolly-retro-demo";
-    src: url("../font/font-categorie-indian/jolly-retro-demo.otf");
+    src: url("/styles/assets/font/font-categorie-indian/jolly-retro-demo.otf");
     }
     @font-face {
     font-family: "magna-blackcondensed";
-    src: url("../font/font-categorie-indian/magna-blackcondensed.otf");
+    src: url("/styles/assets/font/font-categorie-indian/magna-blackcondensed.otf");
     }
     @font-face {
     font-family: "resavy";
-    src: url("../font/font-categorie-indian/resavy.ttf");
+    src: url("/styles/assets/font/font-categorie-indian/resavy.ttf");
     }
     @font-face {
     font-family: "sf-port-mckenzie-bold-italic";
-    src: url("../font/font-categorie-indian/sf-port-mckenzie-bold-italic.ttf");
+    src: url("/styles/assets/font/font-categorie-indian/sf-port-mckenzie-bold-italic.ttf");
     }
     @font-face {
     font-family: "sf-port-mckenzie-bold";
-    src: url("../font/font-categorie-indian/sf-port-mckenzie-bold.ttf");
+    src: url("/styles/assets/font/font-categorie-indian/sf-port-mckenzie-bold.ttf");
     }
     @font-face {
     font-family: "sf-port-mckenzie-italic";
-    src: url("../font/font-categorie-indian/sf-port-mckenzie-italic.ttf");
+    src: url("/styles/assets/font/font-categorie-indian/sf-port-mckenzie-italic.ttf");
     }
     @font-face {
     font-family: "sf-port-mckenzie-italic";
-    src: url("../font/font-categorie-indian/sf-port-mckenzie.ttf");
+    src: url("/styles/assets/font/font-categorie-indian/sf-port-mckenzie.ttf");
     }
                 
     /*font categorie vegan*/
     @font-face {
     font-family: "benthem-bold";
-    src: url("../font/font-categorie-vegan/benthem-bold.otf");
+    src: url("/styles/assets/font/font-categorie-vegan/benthem-bold.otf");
     }
 
     @font-face {
     font-family: "benthem-regular";
-    src: url("../font/font-categorie-vegan/benthem-regular.otf");
+    src: url("/styles/assets/font/font-categorie-vegan/benthem-regular.otf");
     }
  
     @font-face {
     font-family: "dalmais";
-    src: url("../font/font-categorie-vegan/dalmais.otf");
+    src: url("/styles/assets/font/font-categorie-vegan/dalmais.otf");
     }
 
     @font-face {
     font-family: "daniel-bold";
-    src: url("../font/font-categorie-vegan/daniel-bold.ttf");
+    src: url("/styles/assets/font/font-categorie-vegan/daniel-bold.ttf");
     }
 
     @font-face {
     font-family: "daniel";
-    src: url("../font/font-categorie-vegan/daniel.ttf");
+    src: url("/styles/assets/font/font-categorie-vegan/daniel.ttf");
     }
     @font-face {
     font-family: "echinos-park-script";
-    src: url("../font/font-categorie-vegan/echinos-park-script.ttf");
+    src: url("/styles/assets/font/font-categorie-vegan/echinos-park-script.ttf");
     }
     @font-face {
     font-family: "sunday-monday";
-    src: url("../font/font-categorie-vegan/sunday-monday.ttf");
+    src: url("/styles/assets/font/font-categorie-vegan/sunday-monday.ttf");
     }
             
     /*font gallerie*/
     @font-face {
     font-family: "cherry-blossom-script";
-    src: url("../font/font-gallerie/cherry-blossom-script.ttf");
+    src: url("/styles/assets/font/font-gallerie/cherry-blossom-script.ttf");
     }
     @font-face {
     font-family: "stea-font";
-    src: url("../font/font-gallerie/stea-font.otf");
+    src: url("/styles/assets/font/font-gallerie/stea-font.otf");
     }
     @font-face {
     font-family: "yessy";
-    src: url("../font/font-gallerie/yessy.otf");
+    src: url("/styles/assets/font/font-gallerie/yessy.otf");
     }
                 
     /*font general*/
     @font-face {
     font-family: "poppins-bold";
-    src: url("../font/font-general/poppins-bold.ttf");
+    src: url("/styles/assets/font/font-general/poppins-bold.ttf");
     }
     @font-face {
     font-family: "poppins-regular";
-    src: url("../font/font-general/poppins-regular.ttf");
+    src: url("/styles/assets/font/font-general/poppins-regular.ttf");
     }
             
     /*font-header*/
     @font-face {
     font-family: "Metropolis_1920";
-    src: url("../font/font-general/Metropolis_1920.otf");
+    src: url("/styles/assets/font/font-general/Metropolis_1920.otf");
     }
     @font-face {
     font-family: "MoonbrightDemo-1GGn2";
-    src: url("../font/font-general/MoonbrightDemo-1GGn2.ttf");
+    src: url("/styles/assets/font/font-general/MoonbrightDemo-1GGn2.ttf");
     }
     @font-face {
     font-family: "nouvelle_vague_final";
-    src: url("../font/font-header/nouvelle_vague_final.ttf");
+    src: url("/styles/assets/font/font-header/nouvelle_vague_final.ttf");
     }
     @font-face {
     font-family: "oldgatel";
-    src: url("../font/font-header/oldgatel.ttf");
+    src: url("/styles/assets/font/font-header/oldgatel.ttf");
     }
     @font-face {
     font-family: "Sunday-Monday";
-    src: url("../font/font-general/Sunday-Monday.ttf");
+    src: url("/styles/assets/font/font-general/Sunday-Monday.ttf");
     }
     
     /*font-newsletter*/
     @font-face {
     font-family: "bebasneue-regular";
-    src: url("../font/font-general/bebasneue-regular.ttf");
+    src: url("/styles/assets/font/font-general/bebasneue-regular.ttf");
     }
     @font-face {
     font-family: "billiondreams";
-    src: url("../font/font-general/billiondreams.ttf");
+    src: url("/styles/assets/font/font-general/billiondreams.ttf");
     }
     @font-face {
     font-family: "happy-camper-regular";
-    src: url("../font/font-general/happy-camper-regular.ttf");
+    src: url("/styles/assets/font/font-general/happy-camper-regular.ttf");
     }
     @font-face {
     font-family: "moonbrightdemo";
-    src: url("../font/font-general/moonbrightdemo.ttf");
+    src: url("/styles/assets/font/font-general/moonbrightdemo.ttf");
     }
                         
     /*font-valeur*/
     @font-face {
     font-family: "jolly-retro-demo";
-    src: url("../font/font-general/jolly-retro-demo.otf");
+    src: url("/styles/assets/font/font-general/jolly-retro-demo.otf");
     }
     @font-face {
     font-family: "jolly-retro-demo";
-    src: url("../font/font-general/jolly-retro-demo.ttf");
+    src: url("/styles/assets/font/font-general/jolly-retro-demo.ttf");
     }    
 
         
     /*font categorie african*/
     @font-face {
         font-family: "bakery";
-        src: url("public/styles/assets/font/font-categorie-africa/bakery.ttf");
+        src: url("/styles/assets/font/font-categorie-africa/bakery.ttf");
     }
 
     @font-face {
@@ -295,286 +295,286 @@ font-header
 
     @font-face {
         font-family: "resavy-italic";
-        src: url("../font/font-categorie-asiat/resavy-italic.ttf");
+        src: url("/styles/assets/font/font-categorie-asiat/resavy-italic.ttf");
     }
 
     @font-face {
         font-family: "resavy";
-        src: url("../font/font-categorie-asiat/resavy.ttf");
+        src: url("/styles/assets/font/font-categorie-asiat/resavy.ttf");
     }
 
     @font-face {
         font-family: "sudoku-Italic";
-        src: url("../font/font-categorie-asiat/sudoku-Italic.ttf");
+        src: url("/styles/assets/font/font-categorie-asiat/sudoku-Italic.ttf");
     }
 
     @font-face {
         font-family: "sudoku";
-        src: url("../font/font-categorie-asiat/sudoku.ttf");
+        src: url("/styles/assets/font/font-categorie-asiat/sudoku.ttf");
     }
 
 
     /*font categorie american*/
     @font-face {
         font-family: "bebasneue";
-        src: url("../font/font-categorie-american/bebasneue.ttf");
+        src: url("/styles/assets/font/font-categorie-american/bebasneue.ttf");
     }
 
     @font-face {
         font-family: "billiondreams";
-        src: url("../font/font-categorie-american/billiondreams.ttf");
+        src: url("/styles/assets/font/font-categorie-american/billiondreams.ttf");
     }
 
     @font-face {
         font-family: "faltura-regular";
-        src: url("../font/font-categorie-american/faltura-regular.ttf");
+        src: url("/styles/assets/font/font-categorie-american/faltura-regular.ttf");
     }
 
     @font-face {
         font-family: "metropolis";
-        src: url("../font/font-categorie-american/metropolis.otf");
+        src: url("/styles/assets/font/font-categorie-american/metropolis.otf");
     }
 
     @font-face {
         font-family: "moonbright";
-        src: url("../font/font-categorie-american/moonbright.ttf");
+        src: url("/styles/assets/font/font-categorie-american/moonbright.ttf");
     }
 
     /*font categorie italian*/
     @font-face {
         font-family: "bebasneue-regular";
-        src: url("../font/font-categorie-italian/bebasneue-regular.ttf");
+        src: url("/styles/assets/font/font-categorie-italian/bebasneue-regular.ttf");
     }
 
     @font-face {
         font-family: "infinity";
-        src: url("../font/font-categorie-italian/infinity.ttf");
+        src: url("/styles/assets/font/font-categorie-italian/infinity.ttf");
     }
 
     @font-face {
         font-family: "blackcondensed";
-        src: url("../font/font-categorie-italian/magna-blackcondensed.otf");
+        src: url("/styles/assets/font/font-categorie-italian/magna-blackcondensed.otf");
     }
 
     @font-face {
         font-family: "masterics";
-        src: url("../font/font-categorie-italian/masterics-personal-use.ttf");
+        src: url("/styles/assets/font/font-categorie-italian/masterics-personal-use.ttf");
     }
 
     @font-face {
         font-family: "moonbrightdemo";
-        src: url("../font/font-categorie-italian/moonbrightdemo.ttf");
+        src: url("/styles/assets/font/font-categorie-italian/moonbrightdemo.ttf");
     }
 
 
     /*font categorie vegan/*/
     @font-face {
         font-family: "benthem-bold";
-        src: url("../font/font-categorie-vegan/benthem-bold.otf");
+        src: url("/styles/assets/font/font-categorie-vegan/benthem-bold.otf");
     }
 
     @font-face {
         font-family: "benthem-regular";
-        src: url("../font/font-categorie-vegan/benthem-regular.otf");
+        src: url("/styles/assets/font/font-categorie-vegan/benthem-regular.otf");
     }
 
     @font-face {
         font-family: "brusher";
-        src: url("../font/font-categorie-vegan/brusher.ttf");
+        src: url("/styles/assets/font/font-categorie-vegan/brusher.ttf");
     }
 
     @font-face {
         font-family: "dalmais";
-        src: url("../font/font-categorie-vegan/dalmais.otf");
+        src: url("/styles/assets/font/font-categorie-vegan/dalmais.otf");
     }
 
     @font-face {
         font-family: "daniel-bold";
-        src: url("../font/font-categorie-vegan/daniel-bold.ttf");
+        src: url("/styles/assets/font/font-categorie-vegan/daniel-bold.ttf");
     }
 
     @font-face {
         font-family: "daniel";
-        src: url("../font/font-categorie-vegan/daniel.ttf");
+        src: url("/styles/assets/font/font-categorie-vegan/daniel.ttf");
     }
 
     @font-face {
         font-family: "echinos-park-script";
-        src: url("../font/font-categorie-vegan/echinos-park-script.ttf");
+        src: url("/styles/assets/font/font-categorie-vegan/echinos-park-script.ttf");
     }
 
     @font-face {
         font-family: "sunday-monday";
-        src: url("../font/font-categorie-vegan/sunday-monday.ttf");
+        src: url("/styles/assets/font/font-categorie-vegan/sunday-monday.ttf");
     }
 
     /*font categorie indian */
     @font-face {
         font-family: "candlescript-demo-version";
-        src: url("../font/font-categorie-indian/candlescript-demo-version.otf");
+        src: url("/styles/assets/font/font-categorie-indian/candlescript-demo-version.otf");
     }
 
     @font-face {
         font-family: "helvetica-neue-ltstd-light";
-        src: url("../font/font-categorie-indian/helvetica-neue-ltstd-light.otf");
+        src: url("/styles/assets/font/font-categorie-indian/helvetica-neue-ltstd-light.otf");
     }
 
     @font-face {
         font-family: "jolly-retro-demo";
-        src: url("../font/font-categorie-indian/jolly-retro-demo.otf");
+        src: url("/styles/assets/font/font-categorie-indian/jolly-retro-demo.otf");
     }
 
     @font-face {
         font-family: "magna-blackcondensed";
-        src: url("../font/font-categorie-indian/magna-blackcondensed.otf");
+        src: url("/styles/assets/font/font-categorie-indian/magna-blackcondensed.otf");
     }
 
     @font-face {
         font-family: "resavy";
-        src: url("../font/font-categorie-indian/resavy.ttf");
+        src: url("/styles/assets/font/font-categorie-indian/resavy.ttf");
     }
 
     @font-face {
         font-family: "sf-port-mckenzie-bold-italic";
-        src: url("../font/font-categorie-indian/sf-port-mckenzie-bold-italic.ttf");
+        src: url("/styles/assets/font/font-categorie-indian/sf-port-mckenzie-bold-italic.ttf");
     }
 
     @font-face {
         font-family: "sf-port-mckenzie-bold";
-        src: url("../font/font-categorie-indian/sf-port-mckenzie-bold.ttf");
+        src: url("/styles/assets/font/font-categorie-indian/sf-port-mckenzie-bold.ttf");
     }
 
     @font-face {
         font-family: "sf-port-mckenzie-italic";
-        src: url("../font/font-categorie-indian/sf-port-mckenzie-italic.ttf");
+        src: url("/styles/assets/font/font-categorie-indian/sf-port-mckenzie-italic.ttf");
     }
 
     @font-face {
         font-family: "sf-port-mckenzie-italic";
-        src: url("../font/font-categorie-indian/sf-port-mckenzie.ttf");
+        src: url("/styles/assets/font/font-categorie-indian/sf-port-mckenzie.ttf");
     }
 
     /*font Nous valleurs*/
     @font-face {
         font-family: "jolly-retro-demo";
-        src: url("../font/font-general/jolly-retro-demo.otf");
+        src: url("/styles/assets/font/font-general/jolly-retro-demo.otf");
     }
 
     @font-face {
         font-family: "jolly-retro-demo";
-        src: url("../font/font-general/jolly-retro-demo.ttf");
+        src: url("/styles/assets/font/font-general/jolly-retro-demo.ttf");
     }
     /* fin font nous valleurs*/
 
     /*font gallerie*/
     @font-face {
         font-family: "cherry-blossom-script";
-        src: url("../font/font-gallerie/cherry-blossom-script.ttf");
+        src: url("/styles/assets/font/font-gallerie/cherry-blossom-script.ttf");
     }
 
     @font-face {
         font-family: "stea-font";
-        src: url("../font/font-gallerie/stea-font.otf");
+        src: url("/styles/assets/font/font-gallerie/stea-font.otf");
     }
 
     @font-face {
         font-family: "yessy";
-        src: url("../font/font-gallerie/yessy.otf");
+        src: url("/styles/assets/font/font-gallerie/yessy.otf");
     }
     /*fin font gallerie*/
 
     /*font newsletter*/
     @font-face {
         font-family: 'Moonbright';
-        src: url('../font/font-categorie-american/moonbrightdemo.ttf') format('truetype');
+        src: url('/styles/assets/font/font-categorie-american/moonbrightdemo.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'Metropolis';
-        src: url('../font/font-categorie-american/metropolis.otf') format('truetype');
+        src: url('/styles/assets/font/font-categorie-american/metropolis.otf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'oldgatel';
-        src: url('../font/OLDGATEL.ttf') format('truetype');
+        src: url('/styles/assets/font/OLDGATEL.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'sunday';
-        src: url('../font/Sunday.otf') format('truetype');
+        src: url('/styles/assets/font/Sunday.otf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
     @font-face {
         font-family: 'vague';
-        src: url('../font/nouvelle_vague_final.ttf') format('truetype');
+        src: url('/styles/assets/font/nouvelle_vague_final.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
     @font-face {
         font-family: 'Newsletter';
-        src: url('../font/font-newsletter/happy-camper-regular.ttf') format('truetype');
+        src: url('/styles/assets/font/font-newsletter/happy-camper-regular.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'Bebas';
-        src: url('../font/font-newsletter/bebasneue-regular.ttf') format('truetype');
+        src: url('/styles/assets/font/font-newsletter/bebasneue-regular.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'rimbaandalas';
-        src: url('../font/font-categorie-africa/rimbaandalas-b.otf') format('truetype');
+        src: url('/styles/assets/font/font-categorie-africa/rimbaandalas-b.otf') format('truetype');
     }
 
     @font-face {
         font-family: 'dalmais';
-        src: url('../font/font-categorie-vegan/dalmais.otf') format('truetype');
+        src: url('/styles/assets/font/font-categorie-vegan/dalmais.otf') format('truetype');
     }
     /*fin font newsletter*/
 
     /*font general*/
     @font-face {
         font-family: "poppins-bold";
-        src: url("../font/font-general/poppins-bold.ttf");
+        src: url("/styles/assets/font/font-general/poppins-bold.ttf");
     }
 
     @font-face {
         font-family: "poppins-regular";
-        src: url("../font/font-general/poppins-regular.ttf");
+        src: url("/styles/assets/font/font-general/poppins-regular.ttf");
     }
     @font-face {
         font-family: "Metropolis";
-        src: url("../font/font-header/Metropolis_1920.otf");
+        src: url("/styles/assets/font/font-header/Metropolis_1920.otf");
     }
 
     @font-face {
         font-family: "moonbright";
-        src: url("../font/font-header/moonbright.ttf");
+        src: url("/styles/assets/font/font-header/moonbright.ttf");
     }
 
     @font-face {
         font-family: "nouvelle_vague_final";
-        src: url("../font/font-header/nouvelle_vague_final.ttf");
+        src: url("/styles/assets/font/font-header/nouvelle_vague_final.ttf");
     }
 
     @font-face {
         font-family: "oldgatel";
-        src: url("../font/font-header/oldgatel.ttf");
+        src: url("/styles/assets/font/font-header/oldgatel.ttf");
     }
 
     @font-face {
         font-family: "Sunday-Monday";
-        src: url("../font/font-header/Sunday-Monday.ttf");
+        src: url("/styles/assets/font/font-header/Sunday-Monday.ttf");
     }
 /******* FIN DE LA TYPOGRAPHY *******/
 /*Montage Header*/
@@ -594,17 +594,17 @@ font-header
     color: #EF3054;
 }
 /***font-family: "nouvelle_vague_final";
-src: url("/font/font-header/nouvelle_vague_final.ttf") format("ttf");
+src: url("/styles/assets/font/font-header/nouvelle_vague_final.ttf") format("ttf");
 }
 
 @font-face {
 font-family: "oldgatel";
-src: url("font/font-header/oldgatel.ttf") format("truetype");
+src: url("/styles/assets/font/font-header/oldgatel.ttf") format("truetype");
 }
 
 @font-face {
 font-family: "Sunday-Monday";
-src: url("/font/font-header/Sunday-Monday.ttf") format("ttf");*/
+src: url("/styles/assets/font/font-header/Sunday-Monday.ttf") format("ttf");*/
 #gram-header .reper{
     font-size: 130px; 
     text-transform: uppercase;

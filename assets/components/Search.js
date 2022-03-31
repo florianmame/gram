@@ -6,6 +6,7 @@ function Search() {
     const [ datas, setDatas ] = useState([]);
     const [ searchTerm, setSearchTerm ] = useState("");
 
+    // Ajax : on utilise une requête PHP dans du JavaScript
     useEffect(() => {
         fetch("/api")
             .then((response) => response.json())
