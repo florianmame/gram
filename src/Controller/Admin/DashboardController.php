@@ -41,8 +41,6 @@ class DashboardController extends AbstractDashboardController
             ->setAction('new'),
             MenuItem::linkToCrud('Edit Restaurant', 'fa fa-tags', Restaurant::class)
             ->setAction('edit'),
-            // ->setAction('show'),
-            // ->setEntityId($context->getEntity()->getPrimaryKeyValue()),
             MenuItem::linkToLogout('Logout', 'fa fa-exit'),
         ];
     }
