@@ -33,7 +33,10 @@ class DashboardController extends AbstractDashboardController
     {
         return [
             MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
-            MenuItem::linkToCrud('Restaurants', 'fa fa-restaurant', Restaurant::class),
+            MenuItem::linkToCrud('Restaurants', 'fa fa-restaurant', Restaurant::class)
+            ->setAction('new')
+            ->setAction('edit')
+            ->setAction('delete'),
             MenuItem::linkToCrud('Add Restaurant', 'fa fa-tags', Restaurant::class)
             ->setAction('new'),
             MenuItem::linkToCrud('Edit Restaurant', 'fa fa-tags', Restaurant::class)
