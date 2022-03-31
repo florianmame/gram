@@ -1,284 +1,44 @@
-/*
-font categorie african
-*/
-@font-face {
-    font-family: "bakery";
-    src: url("font/font-categorie-africa/bakery.otf") format("otf");
-}
 
-@font-face {
-    font-family: "benthem-bold";
-    src: url("font/font-categorie-africa/Benthem-Bold.otf") format("otf");
-}
+/*******  DEBOUT DE LA TYPOGRAPHY *******/    
 
-@font-face {
-    font-family: "benthem-regular";
-    src: url("font/font-categorie-africa/benthem-regular.otf") format("otf");
-}
-
-@font-face {
+/* CSS FONTS PROPRE - EXEMPLE POUR POUR LA PROCHAINE FOIS IMPLENTER LES MEME METHODES- METHODE JS */
+/****
+.bizarre {
     font-family: "bizarre";
-    src: url("font/font-categorie-africa/bizarre.otf") format("otf");
 }
-
-@font-face {
-    font-family: "brusher";
-    src: url("font/font-categorie-africa/brusher.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "code-Light";
-    src: url("font/font-categorie-africa/code-Light.otf") format("otf");
-}
-
-@font-face {
+.rimbaandalas {
     font-family: "rimbaandalas";
-    src: url("font/font-categorie-africa/rimbaandalas-a.ttf");
 }
-
-@font-face {
-    font-family: "rimbaandalas-b";
-    src: url("font/font-categorie-africa/rimbaandalas-b.otf") format("otf");
-}
-
-/*
-font categorie american
-*/
-@font-face {
-    font-family: "bebasneue";
-    src: url("font/font-categorie-american/bebasneue.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "billiondreams";
-    src: url("font/font-categorie-american/billiondreams.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "faltura-regular";
-    src: url("font/font-categorie-american/faltura-regular.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "metropolis";
-    src: url("font/font-categorie-american/metropolis.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "moonbright";
-    src: url("font/font-categorie-american/moonbright.ttf") format("truetype");
-}
-
-/*
-font categorie asiat
-*/
-@font-face {
-    font-family: "jolly";
-    src: url("font/font-categorie-asiat/jolly-retro-demo.otf");
-}
-
-@font-face {
-    font-family: "oldgatel";
-    src: url("font/font-categorie-asiat/oldgatel.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Praise-Regular";
-    src: url("font/font-categorie-asiat/Praise-Regular.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "quicksandbookoblique";
-    src: url("font/font-categorie-asiat/quicksand_book_oblique.otf");
-}
-
-@font-face {
-    font-family: "quicksandbook";
-    src: url("font/font-categorie-asiat/quicksand_book.otf") format("otf");
-}
-
-@font-face {
-    font-family: "resavy-bold-italic";
-    src: url("font/font-categorie-asiat/resavy-bold-italic.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "resavy-bold";
-    src: url("font/font-categorie-asiat/resavy-bold.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "resavy-italic";
-    src: url("font/font-categorie-asiat/resavy-italic.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "resavy";
-    src: url("font/font-categorie-asiat/resavy.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "sudoku-Italic";
-    src: url("font/font-categorie-asiat/sudoku-Italic.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "sudoku";
-    src: url("../font/font-categorie-asiat/sudoku.ttf") format("ttf");
-}
-
-/*
-font categorie indian */
-
-@font-face {
-    font-family: "candlescript-demo-version";
-    src: url("/font/font-categorie-indian/candlescript-demo-version.otf") format("otf");
-}
-
-@font-face {
-    font-family: "helvetica-neue-ltstd-light";
-    src: url("/font/font-categorie-indian/helvetica-neue-ltstd-light.otf") format("otf");
-}
-
-@font-face {
-    font-family: "jolly-retro-demo";
-    src: url("/font/font-categorie-indian/jolly-retro-demo.otf") format("otf");
-}
-
-@font-face {
-    font-family: "magna-blackcondensed";
-    src: url("/font/font-categorie-indian/magna-blackcondensed.otf") format("otf");
-}
-
-@font-face {
-    font-family: "resavy";
-    src: url("/font/font-categorie-indian/resavy.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "sf-port-mckenzie-bold-italic";
-    src: url("/font/font-categorie-indian/sf-port-mckenzie-bold-italic.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "sf-port-mckenzie-bold";
-    src: url("/font/font-categorie-indian/sf-port-mckenzie-bold.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "sf-port-mckenzie-italic";
-    src: url("/font/font-categorie-indian/sf-port-mckenzie-italic.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "sf-port-mckenzie-italic";
-    src: url("/font/font-categorie-indian/sf-port-mckenzie.ttf") format("ttf");
-}
-
-/*
-font categorie italian
-*/
-
-@font-face {
-    font-family: "bebasneue-regular";
-    src: url("font/font-categorie-italian/bebasneue-regular.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "infinity";
-    src: url("font/font-categorie-italian/infinity.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "blackcondensed";
-    src: url("font/font-categorie-italian/magna-blackcondensed.otf") format("otf");
-}
-
-@font-face {
-    font-family: "masterics";
-    src: url("font/font-categorie-italian/masterics-personal-use.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "moonbrightdemo";
-    src: url("font/font-categorie-italian/moonbrightdemo.ttf") format("ttf");
-}
-
-/*
-font categorie vegan
-/*/
-@font-face {
+.benthem-bold {
     font-family: "benthem-bold";
-    src: url("/font/font-categorie-vegan/benthem-bold.otf") format("otf");
 }
-
-@font-face {
-    font-family: "benthem-regular";
-    src: url("/font/font-categorie-vegan/benthem-regular.otf") format("otf");
+.bakery {
+    font-family: "bakery";
 }
-
-@font-face {
+.brusher {
     font-family: "brusher";
-    src: url("/font/font-categorie-vegan/brusher.ttf") format("ttf");
+}
+.f36 {
+    font-size: 36px;
+}
+.f40 {
+    font-size: 40px;
+}
+.f52 {
+    font-size: 52spx;
+}
+.f55 {
+    font-size: 55px;
 }
 
-@font-face {
-    font-family: "dalmais";
-    src: url("/font/font-categorie-vegan/dalmais.otf") format("otf");
+.black {
+    color: #1D201F;
 }
+.red {
+    color: #EF3054;
+}****/
+/** FIN - CSS FONTS PROPRE - EXEMPLE POUR POUR LA PROCHAINE FOIS IMPLENTER LES MEME METHODES- METHODE JS **/
 
-@font-face {
-    font-family: "daniel-bold";
-    src: url("/font/font-categorie-vegan/daniel-bold.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "daniel";
-    src: url("/font/font-categorie-vegan/daniel.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "echinos-park-script";
-    src: url("/font/font-categorie-vegan/echinos-park-script.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "sunday-monday";
-    src: url("/font/font-categorie-vegan/sunday-monday.ttf") format("ttf");
-}
-
-
-
-/*
-font gallerie
-
-@font-face {
-    font-family: "cherry-blossom-script";
-    src: url("/font/font-gallerie/cherry-blossom-script.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "stea-font";
-    src: url("/font/font-gallerie/stea-font.otf") format("otf");
-}
-
-@font-face {
-    font-family: "yessy";
-    src: url("/font/font-gallerie/yessy.otf") format("otf");
-}
-*/
-/*
-font general
-
-@font-face {
-    font-family: "poppins-bold";
-    src: url("/font/font-general/poppins-bold.ttf") format("ttf");
-}
-
-@font-face {
-    font-family: "poppins-regular";
-    src: url("/font/font-general/poppins-regular.ttf") format("ttf");
-}
 /*
 font-header
 */
@@ -308,109 +68,623 @@ font-header
     src: url("/font/font-header/Sunday-Monday.ttf") format("ttf");
 }
 
-/*
-font-newsletter
-
+/*font categorie indian*/
 @font-face {
+    font-family: "candlescript-demo-version";
+    src: url("../font/font-categorie-indian/candlescript-demo-version.otf");
+    }
+    @font-face {
+    font-family: "helvetica-neue-ltstd-light";
+    src: url("../font/font-categorie-indian/helvetica-neue-ltstd-light.otf");
+    }
+    @font-face {
+    font-family: "jolly-retro-demo";
+    src: url("../font/font-categorie-indian/jolly-retro-demo.otf");
+    }
+    @font-face {
+    font-family: "magna-blackcondensed";
+    src: url("../font/font-categorie-indian/magna-blackcondensed.otf");
+    }
+    @font-face {
+    font-family: "resavy";
+    src: url("../font/font-categorie-indian/resavy.ttf");
+    }
+    @font-face {
+    font-family: "sf-port-mckenzie-bold-italic";
+    src: url("../font/font-categorie-indian/sf-port-mckenzie-bold-italic.ttf");
+    }
+    @font-face {
+    font-family: "sf-port-mckenzie-bold";
+    src: url("../font/font-categorie-indian/sf-port-mckenzie-bold.ttf");
+    }
+    @font-face {
+    font-family: "sf-port-mckenzie-italic";
+    src: url("../font/font-categorie-indian/sf-port-mckenzie-italic.ttf");
+    }
+    @font-face {
+    font-family: "sf-port-mckenzie-italic";
+    src: url("../font/font-categorie-indian/sf-port-mckenzie.ttf");
+    }
+                
+    /*font categorie vegan*/
+    @font-face {
+    font-family: "benthem-bold";
+    src: url("../font/font-categorie-vegan/benthem-bold.otf");
+    }
+
+    @font-face {
+    font-family: "benthem-regular";
+    src: url("../font/font-categorie-vegan/benthem-regular.otf");
+    }
+ 
+    @font-face {
+    font-family: "dalmais";
+    src: url("../font/font-categorie-vegan/dalmais.otf");
+    }
+
+    @font-face {
+    font-family: "daniel-bold";
+    src: url("../font/font-categorie-vegan/daniel-bold.ttf");
+    }
+
+    @font-face {
+    font-family: "daniel";
+    src: url("../font/font-categorie-vegan/daniel.ttf");
+    }
+    @font-face {
+    font-family: "echinos-park-script";
+    src: url("../font/font-categorie-vegan/echinos-park-script.ttf");
+    }
+    @font-face {
+    font-family: "sunday-monday";
+    src: url("../font/font-categorie-vegan/sunday-monday.ttf");
+    }
+            
+    /*font gallerie*/
+    @font-face {
+    font-family: "cherry-blossom-script";
+    src: url("../font/font-gallerie/cherry-blossom-script.ttf");
+    }
+    @font-face {
+    font-family: "stea-font";
+    src: url("../font/font-gallerie/stea-font.otf");
+    }
+    @font-face {
+    font-family: "yessy";
+    src: url("../font/font-gallerie/yessy.otf");
+    }
+                
+    /*font general*/
+    @font-face {
+    font-family: "poppins-bold";
+    src: url("../font/font-general/poppins-bold.ttf");
+    }
+    @font-face {
+    font-family: "poppins-regular";
+    src: url("../font/font-general/poppins-regular.ttf");
+    }
+            
+    /*font-header*/
+    @font-face {
+    font-family: "Metropolis_1920";
+    src: url("../font/font-general/Metropolis_1920.otf");
+    }
+    @font-face {
+    font-family: "MoonbrightDemo-1GGn2";
+    src: url("../font/font-general/MoonbrightDemo-1GGn2.ttf");
+    }
+    @font-face {
+    font-family: "nouvelle_vague_final";
+    src: url("../font/font-header/nouvelle_vague_final.ttf");
+    }
+    @font-face {
+    font-family: "oldgatel";
+    src: url("../font/font-header/oldgatel.ttf");
+    }
+    @font-face {
+    font-family: "Sunday-Monday";
+    src: url("../font/font-general/Sunday-Monday.ttf");
+    }
+    
+    /*font-newsletter*/
+    @font-face {
     font-family: "bebasneue-regular";
-    src: url("/font/font-general/bebasneue-regular.ttf") format("ttf");
-}
-
-@font-face {
+    src: url("../font/font-general/bebasneue-regular.ttf");
+    }
+    @font-face {
     font-family: "billiondreams";
-    src: url("/font/font-general/billiondreams.ttf") format("ttf");
-}
-
-@font-face {
+    src: url("../font/font-general/billiondreams.ttf");
+    }
+    @font-face {
     font-family: "happy-camper-regular";
-    src: url("/font/font-general/happy-camper-regular.ttf") format("ttf");
-}
-
-@font-face {
+    src: url("../font/font-general/happy-camper-regular.ttf");
+    }
+    @font-face {
     font-family: "moonbrightdemo";
-    src: url("/font/font-general/moonbrightdemo.ttf") format("ttf");
+    src: url("../font/font-general/moonbrightdemo.ttf");
+    }
+                        
+    /*font-valeur*/
+    @font-face {
+    font-family: "jolly-retro-demo";
+    src: url("../font/font-general/jolly-retro-demo.otf");
+    }
+    @font-face {
+    font-family: "jolly-retro-demo";
+    src: url("../font/font-general/jolly-retro-demo.ttf");
+    }    
+
+        
+    /*font categorie african*/
+    @font-face {
+        font-family: "bakery";
+        src: url("public/styles/assets/font/font-categorie-africa/bakery.ttf");
+    }
+
+    @font-face {
+        font-family: "benthem-bold";
+        src: url("/styles/assets/font/font-categorie-africa/benthem-Bold.otf");
+    }
+
+    @font-face {
+        font-family: "benthem-regular";
+        src: url("/styles/assets/font/font-categorie-africa/benthem-regular.otf");
+    }
+
+    @font-face {
+        font-family: "bizarre";
+        src: url("/styles/assets/font/font-categorie-africa/bizarre.otf");
+    }
+
+    @font-face {
+        font-family: "brusher";
+        src: url("/styles/assets/font/font-categorie-africa/brusher.ttf");
+    }
+
+    @font-face {
+        font-family: "code-Light";
+        src: url("/styles/font/font-categorie-africa/brusher.ttf");
+    }
+
+    @font-face {
+        font-family: "rimbaandalas";
+        src: url("/styles/font/font-categorie-africa/rimbaandalas-a.ttf");
+    }
+
+    @font-face {
+        font-family: "rimbaandalas-b";
+        src: url("/styles/font/font-categorie-africa/rimbaandalas-b.otf");
+    }
+
+
+    /*font categorie asiat*/
+    @font-face {
+        font-family: "jolly";
+        src: url("/styles/assets/font/font-categorie-asiat/jolly-retro-demo.otf");
+    }
+
+    @font-face {
+        font-family: "oldgatel";
+        src: url("/styles/assets/font/font-categorie-asiat/oldgatel.ttf");
+    }
+
+    @font-face {
+        font-family: "Praise-Regular";
+        src: url("/styles/assets/font/font-categorie-asiat/Praise-Regular.ttf");
+    }
+
+    @font-face {
+        font-family: "quicksandbookoblique";
+        src: url("/styles/assets/font/font-categorie-asiat/quicksand_book_oblique.otf");
+    }
+
+    @font-face {
+        font-family: "quicksandbook";
+        src: url("/styles/assets/font/font-categorie-asiat/quicksand_book.otf");
+    }
+
+    @font-face {
+        font-family: "resavy-bold-italic";
+        src: url("/styles/assets/font/font-categorie-asiat/resavy-bold-italic.ttf");
+    }
+
+    @font-face {
+        font-family: "resavy-bold";
+        src: url("/styles/assets/font/font-categorie-asiat/resavy-bold.ttf");
+    }
+
+    @font-face {
+        font-family: "resavy-italic";
+        src: url("../font/font-categorie-asiat/resavy-italic.ttf");
+    }
+
+    @font-face {
+        font-family: "resavy";
+        src: url("../font/font-categorie-asiat/resavy.ttf");
+    }
+
+    @font-face {
+        font-family: "sudoku-Italic";
+        src: url("../font/font-categorie-asiat/sudoku-Italic.ttf");
+    }
+
+    @font-face {
+        font-family: "sudoku";
+        src: url("../font/font-categorie-asiat/sudoku.ttf");
+    }
+
+
+    /*font categorie american*/
+    @font-face {
+        font-family: "bebasneue";
+        src: url("../font/font-categorie-american/bebasneue.ttf");
+    }
+
+    @font-face {
+        font-family: "billiondreams";
+        src: url("../font/font-categorie-american/billiondreams.ttf");
+    }
+
+    @font-face {
+        font-family: "faltura-regular";
+        src: url("../font/font-categorie-american/faltura-regular.ttf");
+    }
+
+    @font-face {
+        font-family: "metropolis";
+        src: url("../font/font-categorie-american/metropolis.otf");
+    }
+
+    @font-face {
+        font-family: "moonbright";
+        src: url("../font/font-categorie-american/moonbright.ttf");
+    }
+
+    /*font categorie italian*/
+    @font-face {
+        font-family: "bebasneue-regular";
+        src: url("../font/font-categorie-italian/bebasneue-regular.ttf");
+    }
+
+    @font-face {
+        font-family: "infinity";
+        src: url("../font/font-categorie-italian/infinity.ttf");
+    }
+
+    @font-face {
+        font-family: "blackcondensed";
+        src: url("../font/font-categorie-italian/magna-blackcondensed.otf");
+    }
+
+    @font-face {
+        font-family: "masterics";
+        src: url("../font/font-categorie-italian/masterics-personal-use.ttf");
+    }
+
+    @font-face {
+        font-family: "moonbrightdemo";
+        src: url("../font/font-categorie-italian/moonbrightdemo.ttf");
+    }
+
+
+    /*font categorie vegan/*/
+    @font-face {
+        font-family: "benthem-bold";
+        src: url("../font/font-categorie-vegan/benthem-bold.otf");
+    }
+
+    @font-face {
+        font-family: "benthem-regular";
+        src: url("../font/font-categorie-vegan/benthem-regular.otf");
+    }
+
+    @font-face {
+        font-family: "brusher";
+        src: url("../font/font-categorie-vegan/brusher.ttf");
+    }
+
+    @font-face {
+        font-family: "dalmais";
+        src: url("../font/font-categorie-vegan/dalmais.otf");
+    }
+
+    @font-face {
+        font-family: "daniel-bold";
+        src: url("../font/font-categorie-vegan/daniel-bold.ttf");
+    }
+
+    @font-face {
+        font-family: "daniel";
+        src: url("../font/font-categorie-vegan/daniel.ttf");
+    }
+
+    @font-face {
+        font-family: "echinos-park-script";
+        src: url("../font/font-categorie-vegan/echinos-park-script.ttf");
+    }
+
+    @font-face {
+        font-family: "sunday-monday";
+        src: url("../font/font-categorie-vegan/sunday-monday.ttf");
+    }
+
+    /*font categorie indian */
+    @font-face {
+        font-family: "candlescript-demo-version";
+        src: url("../font/font-categorie-indian/candlescript-demo-version.otf");
+    }
+
+    @font-face {
+        font-family: "helvetica-neue-ltstd-light";
+        src: url("../font/font-categorie-indian/helvetica-neue-ltstd-light.otf");
+    }
+
+    @font-face {
+        font-family: "jolly-retro-demo";
+        src: url("../font/font-categorie-indian/jolly-retro-demo.otf");
+    }
+
+    @font-face {
+        font-family: "magna-blackcondensed";
+        src: url("../font/font-categorie-indian/magna-blackcondensed.otf");
+    }
+
+    @font-face {
+        font-family: "resavy";
+        src: url("../font/font-categorie-indian/resavy.ttf");
+    }
+
+    @font-face {
+        font-family: "sf-port-mckenzie-bold-italic";
+        src: url("../font/font-categorie-indian/sf-port-mckenzie-bold-italic.ttf");
+    }
+
+    @font-face {
+        font-family: "sf-port-mckenzie-bold";
+        src: url("../font/font-categorie-indian/sf-port-mckenzie-bold.ttf");
+    }
+
+    @font-face {
+        font-family: "sf-port-mckenzie-italic";
+        src: url("../font/font-categorie-indian/sf-port-mckenzie-italic.ttf");
+    }
+
+    @font-face {
+        font-family: "sf-port-mckenzie-italic";
+        src: url("../font/font-categorie-indian/sf-port-mckenzie.ttf");
+    }
+
+    /*font Nous valleurs*/
+    @font-face {
+        font-family: "jolly-retro-demo";
+        src: url("../font/font-general/jolly-retro-demo.otf");
+    }
+
+    @font-face {
+        font-family: "jolly-retro-demo";
+        src: url("../font/font-general/jolly-retro-demo.ttf");
+    }
+    /* fin font nous valleurs*/
+
+    /*font gallerie*/
+    @font-face {
+        font-family: "cherry-blossom-script";
+        src: url("../font/font-gallerie/cherry-blossom-script.ttf");
+    }
+
+    @font-face {
+        font-family: "stea-font";
+        src: url("../font/font-gallerie/stea-font.otf");
+    }
+
+    @font-face {
+        font-family: "yessy";
+        src: url("../font/font-gallerie/yessy.otf");
+    }
+    /*fin font gallerie*/
+
+    /*font newsletter*/
+    @font-face {
+        font-family: 'Moonbright';
+        src: url('../font/font-categorie-american/moonbrightdemo.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Metropolis';
+        src: url('../font/font-categorie-american/metropolis.otf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'oldgatel';
+        src: url('../font/OLDGATEL.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'sunday';
+        src: url('../font/Sunday.otf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'vague';
+        src: url('../font/nouvelle_vague_final.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Newsletter';
+        src: url('../font/font-newsletter/happy-camper-regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Bebas';
+        src: url('../font/font-newsletter/bebasneue-regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'rimbaandalas';
+        src: url('../font/font-categorie-africa/rimbaandalas-b.otf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'dalmais';
+        src: url('../font/font-categorie-vegan/dalmais.otf') format('truetype');
+    }
+    /*fin font newsletter*/
+
+    /*font general*/
+    @font-face {
+        font-family: "poppins-bold";
+        src: url("../font/font-general/poppins-bold.ttf");
+    }
+
+    @font-face {
+        font-family: "poppins-regular";
+        src: url("../font/font-general/poppins-regular.ttf");
+    }
+    @font-face {
+        font-family: "Metropolis";
+        src: url("../font/font-header/Metropolis_1920.otf");
+    }
+
+    @font-face {
+        font-family: "moonbright";
+        src: url("../font/font-header/moonbright.ttf");
+    }
+
+    @font-face {
+        font-family: "nouvelle_vague_final";
+        src: url("../font/font-header/nouvelle_vague_final.ttf");
+    }
+
+    @font-face {
+        font-family: "oldgatel";
+        src: url("../font/font-header/oldgatel.ttf");
+    }
+
+    @font-face {
+        font-family: "Sunday-Monday";
+        src: url("../font/font-header/Sunday-Monday.ttf");
+    }
+/******* FIN DE LA TYPOGRAPHY *******/
+/*Montage Header*/
+
+/*TYPO-Header*/
+#gram-header{
+    font-family: "Moonbright";
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 500px;
+    text-align: center;
 }
-*/
-/*
-font-valeur
+#gram-header .gram{
+    font-family: 'Moonbright Demo';
+    font-size: 90px;
+    line-height: 56px;
+    color: #EF3054;
+}
+/***font-family: "nouvelle_vague_final";
+src: url("/font/font-header/nouvelle_vague_final.ttf") format("ttf");
+}
 
 @font-face {
-    font-family: "jolly-retro-demo";
-    src: url("/font/font-general/jolly-retro-demo.otf") format("otf");
+font-family: "oldgatel";
+src: url("font/font-header/oldgatel.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "jolly-retro-demo";
-    src: url("/font/font-general/jolly-retro-demo.ttf") format("ttf");
+font-family: "Sunday-Monday";
+src: url("/font/font-header/Sunday-Monday.ttf") format("ttf");*/
+#gram-header .reper{
+    font-size: 130px; 
+    text-transform: uppercase;
+    color: #000000;
+        font-family: 'OldgateLaneOutline';
+    font-size: 130px;
 }
-*/
-/*
-montage typo
-*/
+#gram-header .des{
+    font-family: 'Sunday  Monday';
+    font-size: 45px;
+    margin-left: 5rem;
+}
+#gram-header .resto{ 
+    font-family: 'Nouvelle  Vague';
+    font-size: 150px; 
+    margin-left: 1rem;
+    margin-top: 15rem;
+}
+#gram-header .tendance{
+    font-family: 'Metropolis 1920';
+    font-size: 116px; 
+    margin-left: 8rem;
+    clear:right;
+}
+/* FIN TYPO-Header*/
 
-
-/*
-montage africain
-*/
-.africain {
+/* montage africain */
+.africain-discriptif{
     font-family: "rimbaandalas";
     font-size: 52px;
+    color: white;
+}
+.africain {
+    font-family: "rimbaandalas";
+    font-size: 60px;
     color: #1D201F;
 }
-
 .live {
     font-family: "benthem-bold";
-    font-size: 36px;
+    font-size: 32px;
     color: #1D201F;
 }
-
 .un {
     font-family: "bakery";
-    font-size: 40px;
-    color: #1D201F;
-}
-
-.safari {
-    font-family: "bizarre";
     font-size: 55px;
     color: #1D201F;
 }
-
+.safari {
+    font-family: "bizarre";
+    font-size: 60px;
+    color: #1D201F;
+}
 .gustatif {
     font-family: "brusher";
     font-size: 55px;
     color: #EF3054;
 }
-
 .a {
     font-family: "bakery";
-    font-size: 55px;
-    color: #1D201F;
+    font-size:55px;
 }
-
 .paris {
     font-family: "code-light";
-    font-size: 55px;
-    color: #1D201F;
 }
-/*
-montage asiat
-*/
+/* Fin montage africain */
 
+/* montage asiat */
 .asiat{
     font-family: "sudoku";
-    font-size: 97px;
-    color: #1D201F;
+    font-size:9rem;
 }
-.gram{
-    font-family: "oldgatel";
-    font-size: 55px;
-    color: #1D201F;
+.gram2{
+    font-family:'OldgateLaneOutline';
+    font-size:60px;
+    text-transform: uppercase;  
 }
 .art{
     font-family: "resavy-bold";
-    font-size: 55px;
-    color: #1D201F;
+    font-size: 5rem;
+    color: #EF3054;
 }
 .du{
     font-family: "quicksandbookoblique";
@@ -419,7 +693,7 @@ montage asiat
 }
 .soja{
     font-family: "quicksandbook";
-    font-size: 69px;
+    font-size: 6rem;
     color: #1D201F;
 }
 .avec{
@@ -429,26 +703,28 @@ montage asiat
 }
 .soin{
     font-family: "jolly";
-    font-size: 84px;
+    font-size: 6rem;
     color: #1D201F;
 }
-≈
+/* Fin montage asiat */
+
+/** montage americain**/
 .american{
     font-family: "metropolis";
-    font-size: 84px;
-    color: #1D201F;
+    font-size: 5rem;
+    color: #EF3054;
 }
 .food{
     font-family: "moonbright";
-    font-size: 84px;
+    font-size: 4rem;
     color: #1D201F;
 }
-.story{
+.les{
     font-family: "moonbright";
     font-size: 63px;
     color: #1D201F;
 }
-.les{
+.boys{
     font-family: "billiondreams";
     font-size: 37px;
     color: #1D201F;
@@ -468,16 +744,15 @@ montage asiat
     font-size: 69px;
     color: #1D201F;
 }
-/*
-montage italian
-*/
+/** fin montage americain**/
+
+/* montage italian */
 .italian{
     font-family: "magna-blackcondensed";
     font-size: 88px;
     color: #1D201F;
     margin-right: 20px;
 }
-
 .post{
     font-family: "masterics";
     font-size: 80px;
@@ -500,44 +775,40 @@ montage italian
     font-size: 79px;
     color: #1D201F;
 }
-/*
-montage italian
-*/
+/* Fin montage italian */
 
 /* Montage Vegan*/
 .vegan {
     font-family: "benthem-regular";
     color: #EF3054;
-    font-size: 47px;
+    font-size: 80px;
 }
 .tag {
     font-family: "sunday-monday";
     color: #1D201F;
+    font-size: 47px;
 }
-
 .du {
     font-family: "echinos-park-script";
     color: #1D201F;
     font-size: 36px;
 }
-
 .vert {
     font-family: "brusher";
     color: #1D201F;
     font-size: 63px;
 }
-
 .plein {
     font-family: "daniel";
     color: #1D201F;
     font-size: 30px;
 }
-
 .assiette {
     font-family: "dalmais";
     color: #1D201F;
     font-size: 63px;
 }
+/* Fin montage Vegan*/
 
 /* Montage Indian*/
 .indian {
@@ -545,41 +816,82 @@ montage italian
     color: #1D201F;
     font-size: 63px;
 }
-
 .typo-like {
     font-family: "sf-port-mckenzie-bold";
     color: #1D201F;
     font-size: 98px;
 }
-
 .typo-de {
     font-family: "helvetica-neue-ltstd-light";
     color: #1D201F;
 }
-
 .typo-gram {
     font-family: "resavy";
     color: #1D201F;
     font-size: 20px;
 }
-
 .bollywood {
     font-family: "jolly-retro-demo";
     color: #EF3054;
     font-size: 63px;
 }
+/* Fin montage Indian*/
 
+/*Montage valeurs*/
+.nos {
+    font-family: "code-light";
+    color: white;
+    font-size: 2rem;
+}
+.typo-valeurs {
+    font-family: "jolly-retro-demo";
+    font-size: 4rem;
+}
+/*Fin montage valeurs*/
 
+/*Montage galery*/
+.g {
+    font-family: "yessy";
+    font-size: 8rem;
+}
+.a2 {/****manque la font Lovers Quarrel 130 ****/
+    font-family: "stea-font";
+    font-size: 130px;
+}
+.ll {
+    font-family: "yessy";
+    font-size: 100px;
+}
+.ery {
+    font-family: "stea-font";
+    font-size: 100px;
+}
+/*Fin montage galery*/
 
-
-.gram-header{
-    font-family: "Moonbright";
-    font-size: 90px;
+/*Montage newsletter*/
+.gram3{
+    font-family: "billiondreams";
+    font-size: 115px;
+}
+.vous{
+    font-family: "happy-camper-regular";
+    font-size: 122px;
+}
+.notre {
+    font-family: "happy-camper-regular";
+    font-size: 170px;
+}
+.newsletter {
+    font-family: "bebasneue-regular";
+    font-size: 180px;
+}
+.click {
+    font-family: "moonbrightdemo";
+    font-size: 125px;
     color: #EF3054;
 }
-.repere{
-    font-family: "oldgatel";
-    font-size: 143px;
-    color: #1D201F;
-}
+/*Fin montage newsletter*/
+
+
+
 
