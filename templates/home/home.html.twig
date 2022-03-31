@@ -7,11 +7,6 @@
 
 {% block innerContent %}
 
-    
-    <body>
-      <main>
-        
-        
         <div class="container-fluid contenu-partie2">
           
 
@@ -102,7 +97,7 @@
                                         <div class="card mr-20">
                                   
                                             <a data-bs-toggle="collapse" href="#savane" aria-expanded="false" aria-controls="discription">
-                                                <img class="image-card" src="/styles/assets/img/img-card/alcazar_paris.jpeg" alt="{{restaurant.name}}">
+                                                <img class="image-card" src="{{restaurant.urlPhoto}}" alt="{{restaurant.name}}">
                                             </a>
 
                                             <div class="card-text-like d-flex align-items-center justify-content-between">
@@ -369,8 +364,5 @@
 
 </div>
   {# <!-----Fin de la section Newsletter-----> #}
-
-</main>
-  </body>
 
 {% endblock innerContent %}

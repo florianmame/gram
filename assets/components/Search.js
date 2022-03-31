@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react/cjs/react.production.min';
+import { useState, useEffect } from 'react';
 
 function Search() {
 
@@ -7,7 +7,7 @@ function Search() {
     const [ searchTerm, setSearchTerm ] = useState("");
 
     useEffect(() => {
-        fetch("")
+        fetch("/api")
             .then((response) => response.json())
             .then((json) => setDatas(json));
     }, []);
@@ -33,11 +33,13 @@ function Search() {
             </div>
             <div className='search-results'>
                 { datas.filter((val) => {
-                    return val.title.toLowerCase().includes(searchTerm.toLowerCase());
+                    if(searchTerm.length != 0) {
+                        return val.name.toLowerCase().startsWith(searchTerm.toLowerCase());
+                    }
                 }).map((val) => {
                     return (
                         <div className='search-result' key={val.id}>
-                            {val.title}
+                            {val.name}
                         </div>
                     );
                 })}
@@ -45,7 +47,5 @@ function Search() {
         </>
     );
 }
-
-const domContainer = document.querySelector('#research-bar');ReactDOM.render(e(LikeButton), domContainer);
 
 export default Search
